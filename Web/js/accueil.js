@@ -3,12 +3,12 @@ let elements;
 
 $(document).ready( () => {
 
-  elements = document.getElementById("caroussel").children;
+  elements = document.getElementById("carousel").children;
 
-  setInterval(caroussel, 13000);
+  setInterval(carousel, 13000);
 });
 
-const caroussel = () => {
+const carousel = () => {
   
   
   if(pos == elements.length-1){ 

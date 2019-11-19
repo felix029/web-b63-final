@@ -9,7 +9,7 @@
 
 <script src="js/accueil.js"></script>
 
-<div id="caroussel">
+<div id="carousel">
 	<div class="page1"></div>
 	<div class="page2"></div>
 	<div class="page3"></div>
