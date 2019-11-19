@@ -8,6 +8,10 @@
     padding: 0;
 }
 
+body{
+    background-color: #f8c291;
+}
+
 header{
     width: 100%;
     height: 20vh;
@@ -124,4 +128,42 @@ a{
     #hamburger{
         display: none;
     }
+
+    /* Pour le caroussel de la page d'accueuil */
+  
+    #caroussel{
+        width: 100%;
+        height: 80vh;
+    }
+
+    [class^=page] {
+          position: relative;
+          left: 0;
+          top: 0;
+          width: 100%;   
+          height: 100%;
+          background-size: cover;
+          background-repeat: no-repeat;
+    }
+
+    .page1{
+        background-image: url("../images/resto1.jpg");
+    }
+
+    .page2{
+        background-image: url("../images/bouffe1.jpg");
+        display: none;
+    }
+
+    .page3{
+        background-image: url("../images/resto2.jpg");
+        display: none;
+    }
+
+    .page4{
+        background-image: url("../images/bouffe2.jpg");
+        display: none;
+    }
+        
+
 }
