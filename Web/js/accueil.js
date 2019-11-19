@@ -5,7 +5,7 @@ $(document).ready( () => {
 
   elements = document.getElementById("carousel").children;
 
-  setInterval(carousel, 13000);
+  setInterval(carousel, 20000);
 });
 
 const carousel = () => {

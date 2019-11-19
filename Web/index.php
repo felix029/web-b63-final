@@ -16,5 +16,9 @@
 	<div class="page4"></div>
 </div>
 
+<div id="content">
+	<h1>dkoncept, bon en exquis!</h1>
+</div>
+
 <?php
 	require_once("partial/footer.php");
