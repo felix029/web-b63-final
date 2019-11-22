@@ -18,7 +18,7 @@ Pour accéder à la console d'administration, appuyez, à partir de n'importe qu
 
 <table>
     <tr>
-        <th colspan="2">Utilisateur par défault</th>
+        <th colspan="2">Utilisateur par défaut</th>
     </tr>
         <td><b>Nom d'utilisateur</b></td>
         <td>dkadmin</td>
