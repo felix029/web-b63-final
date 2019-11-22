@@ -11,7 +11,7 @@ Avant toute chose, executer le script `creation_tables.sql` pour créer les tabl
 
 ## Administration
 
-Pour accéder à la console d'administration, appuyez, à partir de n'importe quelle page du site, sur `CTRL + 1`.
+Pour accéder à la console d'administration, appuyez, à partir de n'importe quelle page du site, sur `CTRL + 1`. *(seulement accessible via un ordinateur)*
 
 Vous serez alors redirigé sur la page de connexion des administrateurs/modérateurs du site, vous permettant ainsi de modifier le contenu du site avec l'éditeur de texte riche *Quill*.
 

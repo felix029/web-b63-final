@@ -33,6 +33,74 @@ a{
     color: #0c2461;
 }
 
+h1, h2{
+    font-family: "hasta";
+    font-size: 2em;
+}
+
+p{
+    font-size: 1.5em;
+    font-family: "above";
+}
+
+/* Pour le caroussel de la page d'accueuil */
+  
+#carousel{
+    width: 100%;
+    height: 80vh;
+    opacity: 20%;
+    position: relative;
+    z-index: 0;
+}
+
+[class^=page] {
+      position: relative;
+      left: 0;
+      top: 0;
+      width: 100%;   
+      height: 100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+}
+
+.page1{
+    background-image: url("../images/resto1.jpg");
+}
+
+.page2{
+    background-image: url("../images/bouffe1.jpg");
+    display: none;
+}
+
+.page3{
+    background-image: url("../images/resto2.jpg");
+    display: none;
+}
+
+.page4{
+    background-image: url("../images/bouffe2.jpg");
+    display: none;
+}
+
+#content{
+    position: absolute;
+    height: 75vh;
+    height: calc(var(--vh, 1vh) * 75);
+    width: calc(100% - 100px);
+    top: 20vh;
+    margin: 5vh 50px 0 50px;
+    color: #0c2461;
+    overflow-y: scroll;
+    -ms-overflow-style: none;
+    z-index: 100;
+}
+
+#content::-webkit-scrollbar{
+    display: none;
+}
+
+/* ==================== VERSION MOBILE ==================== */
+
 @media screen and (max-width:999px){
     
     /* HEADER */
@@ -52,6 +120,7 @@ a{
     }
 
     #hamburger{
+        position: relative;
         display: block;
         margin: auto;
         width: 100%;
@@ -60,16 +129,23 @@ a{
         background: url("../images/hamburger.png");
         background-repeat: no-repeat;
         background-size: 5vh;
-        background-color: #f8c291;
 
         background-position: center;
         
         text-indent: -9999px;
-
+        
+        z-index: 200;
     }
 
     #list{
         display:none;
+    }
+
+    nav{
+        position: relative;
+        z-index: 300;
+        background-color: #f8c291;
+        opacity: 1;
     }
 
     ul{
@@ -83,6 +159,8 @@ a{
 
 
 }
+
+/* ==================== VERSION BUREAU ==================== */
 
 @media screen and (min-width:1000px){
     /* HEADER */
@@ -134,62 +212,8 @@ a{
         display: none;
     }
 
-    /* Pour le caroussel de la page d'accueuil */
-  
-    #carousel{
-        width: 100%;
-        height: 80vh;
-        opacity: 20%;
-    }
-
-    [class^=page] {
-          position: relative;
-          left: 0;
-          top: 0;
-          width: 100%;   
-          height: 100%;
-          background-size: cover;
-          background-repeat: no-repeat;
-    }
-
-    .page1{
-        background-image: url("../images/resto1.jpg");
-    }
-
-    .page2{
-        background-image: url("../images/bouffe1.jpg");
-        display: none;
-    }
-
-    .page3{
-        background-image: url("../images/resto2.jpg");
-        display: none;
-    }
-
-    .page4{
-        background-image: url("../images/bouffe2.jpg");
-        display: none;
-    }
-
     h1{
-        font-family: "hasta";
         font-size: 3em;
     }
-
-    #content{
-        position: absolute;
-        height: 75vh;
-        width: calc(100% - 100px);
-        top: 20vh;
-        margin: 5vh 50px 0 50px;
-        color: #0c2461;
-        overflow-y: scroll;
-        -ms-overflow-style: none;
-    }
-
-    #content::-webkit-scrollbar{
-        display: none;
-    }
         
-
 }

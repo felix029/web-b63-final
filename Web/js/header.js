@@ -15,15 +15,21 @@ document.onkeyup = event =>{
     if(event.which == 49) oneKey = false;
 }
 
+window.addEventListener('resize', () => {
+    resize();
+});
+
 
 window.addEventListener("load", () =>{
     let done = true;
-
+    
+    resize();
 
     $('#hamburger').click( () => {
         
         if($('#list:hidden') && done == true){
             done = false;
+            $('#hamburger').css("background-color", "#f8c291");
             $('#list').slideDown(1000, () => {
                 $('#hamburger').css("background-image", "url(images/x.png)");
                 done = true;
@@ -34,6 +40,7 @@ window.addEventListener("load", () =>{
             done = false;
             $('#list').slideUp(1000, () => {
                 $('#hamburger').css("background-image", "url(images/hamburger.png)");
+                $('#hamburger').css("background-color", "transparent");
                 done = true;
             });
         }        
@@ -63,3 +70,10 @@ const carousel = () => {
       });
     }
   }
+
+const resize = () => {
+    //Adjusting div #content height for mobile
+    //source: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
