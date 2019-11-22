@@ -9,29 +9,28 @@
 ?>
 
 <div id="loginDiv">
-    <form action="admin-login.php" method="POST">
+    <form action="admin-login.php" method="POST" id="admin-login">
         <?php
             if($action->wrongLogin){
                 ?>
-                    <div id="login-error">Erreur: Connexion erroné</div>
+                    <div id="login-error" class="loginTitle">Erreur: Connexion erroné</div>
                 <?php
             }
             else{
                 ?>
-                    <div id="login-title">Connexion</div>
+                    <div id="login-title" class="loginTitle">Connexion</div>
                 <?php
             }
         ?>
-        <div>
-            <label>Nom d'utilisateur:</label>
-            <input type="text" name="username" />
-        </div>
-        <div>
-            <label>Mot de passe:</label>
-            <input type="password" name="pwd" />
-        </div>
-        <button id="buttonLogin">Connexion</button>
+        <label>Nom d'utilisateur:</label>
+        <input type="text" name="username" />
+        <label>Mot de passe:</label>
+        <input type="password" name="pwd" />
+        <button id="buttonLogin">connexion</button>
     </form>
+</div>
+<div id="loginMobile">
+    La gestion de ce site web n'est pas disponible sur sa version mobile.
 </div>
 
 <?php

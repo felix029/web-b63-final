@@ -91,6 +91,7 @@ p{
     margin: 5vh 50px 0 50px;
     color: #0c2461;
     overflow-y: scroll;
+    overflow-x: hidden;
     -ms-overflow-style: none;
     z-index: 100;
 }
@@ -158,6 +159,26 @@ p{
     }
 
 
+    /* ADMIN PAGE */
+    #loginDiv{
+        display: none;
+    }
+
+    #loginMobile{
+        width: 90%;
+        margin: auto;
+        text-align: center;
+        position: relative;
+        top: 20vh;
+        font-size: 1.8em;
+        background-color: #0c2461;
+        color: #f8c291;
+        border: solid #eb2f06 5px;
+        border-radius: 10px;
+        padding: 10px;
+        font-family: "above";
+    }
+
 }
 
 /* ==================== VERSION BUREAU ==================== */
@@ -212,8 +233,84 @@ p{
         display: none;
     }
 
+    /* GLOBAL CONTENT */
     h1{
         font-size: 3em;
+    }
+
+    /* ADMIN PAGE */
+    #loginDiv{
+        width: 30%;
+        margin: auto;
+        text-align: center;
+        position: relative;
+        top: 15vh;
+        font-size: 1.8em;
+        background-color: #0c2461;
+        color: #f8c291;
+        border: solid #eb2f06 5px;
+        border-radius: 10px;
+        padding: 10px;
+        font-family: "above";
+        
+    }
+
+    #admin-login{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+    }
+
+    .loginTitle{
+        grid-column: span 2;
+        font-size: 1.6em;
+        font-weight: bold;
+    }
+
+    #admin-login label{
+        height: 30%;
+        font-size: 0.8em;
+        justify-self: right;
+        align-self: center;
+        padding-right: 20px;
+        padding-bottom: 10px;
+    }
+
+    #admin-login input{
+        width: 80%;
+        height: 40%;
+        justify-self: left;
+        align-self: center;
+        margin-left: 20px;
+    }
+
+    #buttonLogin{
+        justify-self: center;
+        align-self: center;
+        grid-column: span 2;
+        width: 30%;
+        height: 80%;
+        background-color: #f8c291;
+        color: #0c2461;
+        border: solid #eb2f06 4px;
+        border-radius: 5px;
+
+        font-family: "hasta";
+        font-size: 1.2em;
+
+        margin-top: 10px;
+
+        box-shadow: 0 0 5px white;
+
+    }
+
+    #buttonLogin:hover{
+        cursor: pointer;
+        box-shadow: 0 0 20px white;
+    }
+
+    #loginMobile{
+        display: none;
     }
         
 }
