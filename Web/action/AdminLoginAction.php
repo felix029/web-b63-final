@@ -1,5 +1,6 @@
 <?php
 	require_once("action/CommonAction.php");
+	require_once("action/DAO/UserDAO.php");
 
 	class AdminLoginAction extends CommonAction {
 		public $wrongLogin = false;
@@ -10,7 +11,15 @@
 
 		protected function executeAction() {
 			if(isset($_POST["username"]) && isset($_POST["pwd"])){
-				
+				$user = UserDAO::authenticate($_POST["username"], $_POST["pwd"]);
+
+				if(!empty($user)){
+					$_SESSION["username"] = $user["USERNAME"];
+					$_SESSION["visibility"] = CommonAction::$VISIBILITY_ADMIN;
+				}
+				else{
+					$this->wrongLogin = true;
+				}
 			}
 		}
 	}

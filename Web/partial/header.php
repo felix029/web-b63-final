@@ -14,6 +14,20 @@
 	<div id="head-logo">
         <img src="images/logo.png" alt="logo.png">
     </div>
+    <?php
+        if($action->isLoggedIn()){
+            ?>
+            <div id="admin-bar">
+                <ul>
+                    <li>Bonjour, <?= $_SESSION["username"] ?>!</li>
+                    <li>Administration</li>
+                    <li>Paramètres</li>
+                    <li><a href="?logout=true">Déconnexion</a></li>
+                </ul>
+            </div>
+            <?php
+        }
+    ?>
     <div id="hamburger">
         <img src="images/hamburger.png" alt="hamburger.png">
     </div>

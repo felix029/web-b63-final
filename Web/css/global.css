@@ -105,6 +105,10 @@ p{
 @media screen and (max-width:999px){
     
     /* HEADER */
+    #admin-bar{
+        display: none;
+    }
+
     #head-logo{
         display: block;
         margin: auto;
@@ -231,6 +235,17 @@ p{
 
     #hamburger{
         display: none;
+    }
+
+    #admin-bar{
+        position: absolute;
+        width: 1000px;
+        height: 50px;
+        right: 0;
+        color: #f8c291;
+        font-size: 0.8em;
+        text-align: right;
+
     }
 
     /* GLOBAL CONTENT */

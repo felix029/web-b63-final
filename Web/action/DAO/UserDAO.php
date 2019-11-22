@@ -13,11 +13,12 @@
 			$statement->setFetchMode(PDO::FETCH_ASSOC); // row["USERNAME"]
 			$statement->execute();
 
-			if ($row = $statement->fetch()) {
-				if (password_verify($password, $row["PASSWORD"])) {
+			if ($row = $statement->fetch()) {				
+				$hash = hash('sha256', $password);
+				
+				if ($hash === $row["pwd"]) {
 					$user = [];
-					$user["USERNAME"] = $row["FIRST_NAME"];
-					$user["VISIBILITY"] = $row["VISIBILITY"];
+					$user["USERNAME"] = $row["username"];
 				}
 			}
 
@@ -27,8 +28,8 @@
 		public static function updatePassword($username, $newPassword) {
 			$connection = Connection::getConnection();
 
-			$statement = $connection->prepare("UPDATE users SET password = ? where username = ?");
-			$statement->bindParam(1, $newPassword);
+			$statement = $connection->prepare("UPDATE users SET pwd = ? where username = ?");
+			$statement->bindParam(1, hash('sha256', $newPassword));
 			$statement->bindParam(2, $username);
 			$statement->execute();
 		}
