@@ -15,7 +15,8 @@ Pour accéder à la console d'administration, appuyez, à partir de n'importe qu
 
 ### Connexion
 
-|:-------------------------------------:|
+|                       |               |
+| ---------------------:|:------------- |
 | **Nom d'utilisateur** | dkadmin       |
 | **Mot de passe**      | dkdefaultpwd  |
 
