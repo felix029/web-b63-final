@@ -9,6 +9,8 @@
 		}
 
 		protected function executeAction() {
-			
+			if(isset($_POST["username"]) && isset($_POST["pwd"])){
+				
+			}
 		}
 	}
