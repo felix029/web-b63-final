@@ -15,10 +15,20 @@ Pour accéder à la console d'administration, appuyez, à partir de n'importe qu
 
 ### Connexion
 
-|                       |               |
-| ---------------------:|:------------- |
-| **Nom d'utilisateur** | dkadmin       |
-| **Mot de passe**      | dkdefaultpwd  |
+
+<table>
+    <tr>
+        <th colspan="2">Utilisateur par défault</th>
+    </tr>
+        <td><b>Nom d'utilisateur</b></td>
+        <td>dkadmin</td>
+    <tr>
+    </tr>
+    <tr>
+        <td><b>Mot de passe</b></td>
+        <td>dkdefaultpwd</td>
+    </tr>
+</table>
 
 La connexion avec un compte administrateur vous permettra de modifier le contenu du site avec l'éditeur de texte *Quill*.
 
