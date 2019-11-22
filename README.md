@@ -14,8 +14,7 @@ Avant toute chose, executer le script `creation_tables.sql` pour créer les tabl
 Pour accéder à la console d'administration, appuyez, à partir de n'importe quelle page du site, sur `CTRL + 1`. *(seulement accessible via un ordinateur)*
 
 ### Connexion
-| Utilisateur par défaut                |
-| ---------------------:|:------------- |
+
 | **Nom d'utilisateur** | dkadmin       |
 | **Mot de passe**      | dkdefaultpwd  |
 
