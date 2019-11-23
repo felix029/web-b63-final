@@ -285,11 +285,14 @@ p{
         font-size: 1.6em;
     }
 
-    #login-error{
+    .error{
         font-size: 1.3em;
         background-color: #eb2f06;
         border-radius: 10px;
         padding-top: 8px;
+        font-family: "above";
+        width: 100%;
+        text-align: center;
     }
 
     #admin-login label{

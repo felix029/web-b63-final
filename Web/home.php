@@ -9,7 +9,18 @@
 
 <div id="change-pwd">
 	<form action="home.php" method="post">
-		<h1>changer votre mot de passe</h1>
+		<?php
+			if($action->error === "PWD_DIFFERENT"){
+				?>
+					<h1 class="error">Les MDP entrés sont différents.</h1>
+				<?php
+			}
+			else{
+				?>
+					<h1>changer votre mot de passe</h1>
+				<?php
+			}
+		?>
 		<label>Nouveau mot de passe:</label>
 		<input type="password" name="newpwd1" />
 		<label>Entrez le de nouveau:</label>
@@ -23,7 +34,18 @@ if($action->isAdmin()){
 	?>
 		<div id="add-user">
 			<form action="home.php" method="post">
-				<h1>ajouter un utilisateur</h1>
+				<?php
+					if($action->error === "USER_UNIQUE"){
+					?>
+						<h1 class="error">Cet utilisateur existe déjà.</h1>
+					<?php
+					}
+					else{
+						?>
+							<h1>ajouter un utilisateur</h1>
+						<?php
+					}
+				?>
 				<label>Nom d'utilisateur:</label>
 				<input type="text" name="newuser" />
 				<label>Mot de passe:</label>
@@ -41,7 +63,18 @@ if($action->isAdmin()){
 
 		<div id="delete-user">
 			<form action="home.php" method="post">
-				<h1>supprimer un utilisateur</h1>
+				<?php
+					if($action->error === "DELETE_PROBLEM"){
+					?>
+						<h1 class="error">Une erreur est survenue</h1>
+					<?php
+					}
+					else{
+					?>
+						<h1>supprimer un utilisateur</h1>
+					<?php
+					}
+				?>
 				<label>Nom d'utilisateur:</label>
 				<select name="deleteuser">
 				<?php

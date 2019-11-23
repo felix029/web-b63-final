@@ -3,7 +3,7 @@
     require_once("action/DAO/UserDAO.php");
 
 	class HomeAction extends CommonAction {
-        public $error = false;
+        public $error = "ok";
         public $users = [];
 
 		public function __construct() {
@@ -20,7 +20,7 @@
                     unset($_POST["newpwd2"]);
                 }
                 else{
-                    $this->error = true;
+                    $this->error = "PWD_DIFFERENT";
                 }
             }
 
@@ -32,19 +32,31 @@
                 if($_POST["role"] === "admin"){
                     $visibility = 3;
                 }
-                UserDAO::addUser($_POST["newuser"], $_POST["newuserpwd"], $visibility);
-                unset($_POST["newuser"]);
-                unset($_POST["newuserpwd"]);
-                unset($_POST["role"]);
-                header("location:home.php");
-				exit;
+                try{
+                    UserDAO::addUser($_POST["newuser"], $_POST["newuserpwd"], $visibility);
+                    unset($_POST["newuser"]);
+                    unset($_POST["newuserpwd"]);
+                    unset($_POST["role"]);
+                    header("location:home.php");
+				    exit;
+                }
+                catch(Exception $e){
+                    $this->error = "USER_UNIQUE";
+                }
+                
             }
 
             if(!empty($_POST["deleteuser"])){
-                UserDAO::deleteUser($_POST["deleteuser"]);
-                unset($_POST["deleteuser"]);
-                header("location:home.php");
-				exit;
+                try{
+                    UserDAO::deleteUser($_POST["deleteuser"]);
+                    unset($_POST["deleteuser"]);
+                    header("location:home.php");
+				    exit;
+                }
+                catch(Exception $e){
+                    $this->error = "DELETE_PROBLEM";
+                }
+                
             }
         }
 	}

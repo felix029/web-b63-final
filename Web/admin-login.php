@@ -13,7 +13,7 @@
         <?php
             if($action->wrongLogin){
                 ?>
-                    <div id="login-error" class="loginTitle">Erreur: Connexion erroné</div>
+                    <div class="loginTitle error">Erreur: Connexion erroné</div>
                 <?php
             }
             else{
