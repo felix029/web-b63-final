@@ -8,6 +8,6 @@
 		}
 
 		protected function executeAction() {
-			
+			$_SESSION["editable"] = true;
 		}
 	}

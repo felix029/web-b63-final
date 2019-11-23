@@ -10,6 +10,8 @@
 		}
 
 		protected function executeAction() {
+			$_SESSION["editable"] = false;
+			
 			if(isset($_POST["username"]) && isset($_POST["pwd"])){
 				$user = UserDAO::authenticate($_POST["username"], $_POST["pwd"]);
 

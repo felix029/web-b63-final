@@ -7,7 +7,30 @@
     <link rel="stylesheet" href="css/global.css" />
     <script src="js/jquery.js"></script>
     <script src="js/header.js"></script>
-	<title>DKoncept</title>
+    <?php
+        if($action->isLoggedIn() && $_SESSION["editable"] == true){
+            ?>
+            <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+            <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+            <script src="js/editor.js"></script>
+            <?php
+            if($action->isAdmin()){
+                ?>
+                <title>DKoncept - Administration</title>
+                <?php
+            }
+            else{
+                ?>
+                <title>DKoncept - Moderation</title>
+                <?php
+            }
+        }
+        else{
+            ?>
+            <title>DKoncept</title>
+            <?php
+        }
+        ?>
 </head>
 <body>
 <header>
@@ -49,6 +72,14 @@
 	<div class="page3"></div>
 	<div class="page4"></div>
 </div>
+
+<?php
+    if($action->isLoggedIn() && $_SESSION["editable"] == true){
+        ?>
+            <button id="save-btn">sauvegarder</button>
+        <?php
+    }
+?>
 
 <div id="content">
 

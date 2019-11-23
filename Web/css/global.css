@@ -452,4 +452,33 @@ p{
         margin-left: 15px;
     }
 
+    /* ADMINISTRATION (EDITEUR) */
+
+    .ql-toolbar{
+        position: absolute;
+        top:20vh;
+
+        background-color: #eb2f06;
+
+        width: 90%;
+        height: 4vh;
+        z-index: 1000;
+
+        border-radius: 5px;
+    }
+
+    #save-btn{
+        position: absolute;
+        top:20vh;
+        right: 0;
+        width: 10%;
+        height: 4vh;
+        background-color: #0c2461;
+        border-radius: 5px;
+        font-family: "above";
+        color: #f8c291;
+        font-weight: bolder;
+        font-size: 1.3em;
+    }
+
 }

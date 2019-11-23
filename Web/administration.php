@@ -9,5 +9,7 @@
 
 
 
+<div id="editor"></div>
+
 <?php
 	require_once("partial/footer.php");

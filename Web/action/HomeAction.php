@@ -11,6 +11,8 @@
 		}
 
 		protected function executeAction() {
+            $_SESSION["editable"] = false;
+
             $this->users = UserDAO::getUsers($_SESSION["username"]);
 
             if(!empty($_POST["newpwd1"]) && !empty($_POST["newpwd2"])){
