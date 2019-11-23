@@ -9,7 +9,7 @@
 
 <div id="change-pwd">
 	<form action="home.php" method="post">
-		<h1>Changer votre mot de passe</h1>
+		<h1>changer votre mot de passe</h1>
 		<label>Nouveau mot de passe:</label>
 		<input type="password" name="newpwd1" />
 		<label>Entrez le de nouveau:</label>
@@ -23,7 +23,7 @@ if($action->isAdmin()){
 	?>
 		<div id="add-user">
 			<form action="home.php" method="post">
-				<h1>Ajouter un utilisateur</h1>
+				<h1>ajouter un utilisateur</h1>
 				<label>Nom d'utilisateur:</label>
 				<input type="text" name="newuser" />
 				<label>Mot de passe:</label>
@@ -41,9 +41,17 @@ if($action->isAdmin()){
 
 		<div id="delete-user">
 			<form action="home.php" method="post">
-				<h1>Supprimer un utilisateur</h1>
+				<h1>supprimer un utilisateur</h1>
 				<label>Nom d'utilisateur:</label>
-				<input type="text" name="deleteuser" />
+				<select name="deleteuser">
+				<?php
+					foreach($action->users as $u){
+						?>
+							<option value="<?= $u ?>"><?= $u ?></option>
+						<?php
+					}
+				?>
+				</select>
 				<button>Confirmer</button>
 			</form>
 		</div>

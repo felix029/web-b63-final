@@ -4,13 +4,16 @@
 
 	class HomeAction extends CommonAction {
         public $error = false;
+        public $users = [];
 
 		public function __construct() {
 			parent::__construct(CommonAction::$VISIBILITY_MODERATOR);
 		}
 
 		protected function executeAction() {
-			if(!empty($_POST["newpwd1"]) && !empty($_POST["newpwd2"])){
+            $this->users = UserDAO::getUsers($_SESSION["username"]);
+
+            if(!empty($_POST["newpwd1"]) && !empty($_POST["newpwd2"])){
                 if($_POST["newpwd1"] === $_POST["newpwd2"]){
                     UserDAO::updatePassword($_SESSION["username"], $_POST["newpwd1"]);
                 }
@@ -33,5 +36,5 @@
             if(!empty($_POST["deleteuser"])){
                 UserDAO::deleteUser($_POST["deleteuser"]);
             }
-		}
+        }
 	}

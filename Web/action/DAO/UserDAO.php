@@ -56,4 +56,15 @@
 
 			}
 		}
+
+		public static function getUsers($username){
+			$connection = Connection::getConnection();
+			$sql = "SELECT username FROM users WHERE username <> 'dkadmin'";
+			$users = [];
+			foreach($connection->query($sql) as $row){
+				array_push($users, $row["username"]);
+			}
+			
+			return $users;
+		}
 	}
