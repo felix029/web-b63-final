@@ -19,6 +19,7 @@
 				if ($hash === $row["pwd"]) {
 					$user = [];
 					$user["USERNAME"] = $row["username"];
+					$user["VISIBILITY"] = $row["visibility"];
 				}
 			}
 
@@ -27,10 +28,32 @@
 
 		public static function updatePassword($username, $newPassword) {
 			$connection = Connection::getConnection();
+			$hash = hash('sha256', $newPassword);
 
 			$statement = $connection->prepare("UPDATE users SET pwd = ? where username = ?");
-			$statement->bindParam(1, hash('sha256', $newPassword));
+			$statement->bindParam(1, $hash);
 			$statement->bindParam(2, $username);
 			$statement->execute();
+		}
+
+		public static function addUser($username, $password, $visibility) {
+			$connection = Connection::getConnection();
+			$hash = hash('sha256', $password);
+
+			$statement = $connection->prepare("INSERT INTO users(username, pwd, visibility) VALUES (?, ?, ?)");
+			$statement->bindParam(1, $username);
+			$statement->bindParam(2, $hash);
+			$statement->bindParam(3, $visibility);
+			$statement->execute();
+		}
+
+		public static function deleteUser($username){
+			if($username != "dkadmin"){
+				$connection = Connection::getConnection();
+				$statement = $connection->prepare("DELETE FROM users WHERE username = ?");
+				$statement->bindParam(1, $username);
+				$statement->execute();
+
+			}
 		}
 	}

@@ -27,7 +27,7 @@
 			}
 
 			if ($_SESSION["visibility"] < $this->pageVisibility) {
-				header("location:login.php");
+				header("location:index.php");
 				exit;
 			}
 
@@ -39,6 +39,10 @@
 
 		public function isLoggedIn() {
 			return $_SESSION["visibility"] > CommonAction::$VISIBILITY_PUBLIC;
+		}
+
+		public function isAdmin() {
+			return $_SESSION["visibility"] === CommonAction::$VISIBILITY_ADMIN;
 		}
 
 		public function getUsername() {

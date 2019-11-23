@@ -15,7 +15,10 @@
 
 				if(!empty($user)){
 					$_SESSION["username"] = $user["USERNAME"];
-					$_SESSION["visibility"] = CommonAction::$VISIBILITY_ADMIN;
+					$_SESSION["visibility"] = $user["VISIBILITY"];
+
+					header("location:home.php");
+					exit;
 				}
 				else{
 					$this->wrongLogin = true;

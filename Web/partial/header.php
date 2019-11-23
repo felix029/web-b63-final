@@ -20,8 +20,8 @@
             <div id="admin-bar">
                 <ul>
                     <li>Bonjour, <?= $_SESSION["username"] ?>!</li>
-                    <li>Administration</li>
-                    <li>Paramètres</li>
+                    <li><a href="administration.php">Administration</a></li>
+                    <li><a href="home.php">Paramètres</a></li>
                     <li><a href="?logout=true">Déconnexion</a></li>
                 </ul>
             </div>

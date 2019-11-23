@@ -1,0 +1,37 @@
+<?php
+    require_once("action/CommonAction.php");
+    require_once("action/DAO/UserDAO.php");
+
+	class HomeAction extends CommonAction {
+        public $error = false;
+
+		public function __construct() {
+			parent::__construct(CommonAction::$VISIBILITY_MODERATOR);
+		}
+
+		protected function executeAction() {
+			if(!empty($_POST["newpwd1"]) && !empty($_POST["newpwd2"])){
+                if($_POST["newpwd1"] === $_POST["newpwd2"]){
+                    UserDAO::updatePassword($_SESSION["username"], $_POST["newpwd1"]);
+                }
+                else{
+                    $this->error = true;
+                }
+            }
+
+            if(!empty($_POST["newuser"]) && !empty($_POST["newuserpwd"]) && !empty($_POST["role"])){
+                $visibility = 0;
+                if($_POST["role"] === "mod"){
+                    $visibility = 2;
+                }
+                if($_POST["role"] === "admin"){
+                    $visibility = 3;
+                }
+                UserDAO::addUser($_POST["newuser"], $_POST["newuserpwd"], $visibility);
+            }
+
+            if(!empty($_POST["deleteuser"])){
+                UserDAO::deleteUser($_POST["deleteuser"]);
+            }
+		}
+	}

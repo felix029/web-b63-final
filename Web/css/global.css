@@ -253,7 +253,7 @@ p{
         font-size: 3em;
     }
 
-    /* ADMIN PAGE */
+    /* ADMIN LOGIN PAGE */
     #loginDiv{
         width: 30%;
         margin: auto;
@@ -337,5 +337,75 @@ p{
     #loginMobile{
         display: none;
     }
-        
+
+    /* ADMIN HOME PAGE */
+
+    #change-pwd form{
+        width: 30vw;
+        height: 20vh;
+        margin: auto;
+        background-color: #0c2461;
+        opacity: 0.9;
+        color: #f8c291;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+
+        border-radius: 10px;
+
+        margin-bottom: 3vh;
+    }
+
+    #change-pwd form h1, #change-pwd form button{
+        grid-column: span 2;
+    }
+
+    #add-user form{
+        width: 30vw;
+        height: 20vh;
+        margin: auto;
+        background-color: #0c2461;
+        opacity: 0.9;
+        color: #f8c291;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+
+        border-radius: 10px;
+
+        margin-bottom: 3vh;
+    }
+
+    #add-user form h1, #add-user form button{
+        grid-column: span 3;
+    }
+
+    #add-user form input, #delete-user form h1, #delete-user form button{
+        grid-column: span 2;
+    }
+
+    #delete-user form{
+        width: 30vw;
+        height: 20vh;
+        margin: auto;
+        background-color: #0c2461;
+        opacity: 0.9;
+        color: #f8c291;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+
+        border-radius: 10px;
+
+        margin-bottom: 3vh;
+    }
+
+    
+
 }
