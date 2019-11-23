@@ -26,7 +26,7 @@
         <input type="text" name="username" />
         <label>Mot de passe:</label>
         <input type="password" name="pwd" />
-        <button id="buttonLogin">connexion</button>
+        <button id="buttonLogin" class="button">connexion</button>
     </form>
 </div>
 <div id="loginMobile">

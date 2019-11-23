@@ -16,6 +16,8 @@
             if(!empty($_POST["newpwd1"]) && !empty($_POST["newpwd2"])){
                 if($_POST["newpwd1"] === $_POST["newpwd2"]){
                     UserDAO::updatePassword($_SESSION["username"], $_POST["newpwd1"]);
+                    unset($_POST["newpwd1"]);
+                    unset($_POST["newpwd2"]);
                 }
                 else{
                     $this->error = true;
@@ -31,10 +33,18 @@
                     $visibility = 3;
                 }
                 UserDAO::addUser($_POST["newuser"], $_POST["newuserpwd"], $visibility);
+                unset($_POST["newuser"]);
+                unset($_POST["newuserpwd"]);
+                unset($_POST["role"]);
+                header("location:home.php");
+				exit;
             }
 
             if(!empty($_POST["deleteuser"])){
                 UserDAO::deleteUser($_POST["deleteuser"]);
+                unset($_POST["deleteuser"]);
+                header("location:home.php");
+				exit;
             }
         }
 	}

@@ -14,7 +14,7 @@
 		<input type="password" name="newpwd1" />
 		<label>Entrez le de nouveau:</label>
 		<input type="password" name="newpwd2">
-		<button>Confirmer</button>
+		<button class="button">confirmer</button>
 	</form>
 </div>
 
@@ -30,12 +30,12 @@ if($action->isAdmin()){
 				<input type="password" name="newuserpwd">
 				<label>Rôle:</label>
 				<div>
-					<input type="radio" name="role" value="mod">Modérateur
+					<input type="radio" name="role" value="mod"> Modérateur
 				</div>
 				<div>
-					<input type="radio" name="role" value="admin">Administrateur
+					<input type="radio" name="role" value="admin"> Administrateur
 				</div>
-				<button>Confirmer</button>
+				<button class="button">confirmer</button>
 			</form>
 		</div>
 
@@ -52,7 +52,7 @@ if($action->isAdmin()){
 					}
 				?>
 				</select>
-				<button>Confirmer</button>
+				<button class="button">confirmer</button>
 			</form>
 		</div>
 	<?php

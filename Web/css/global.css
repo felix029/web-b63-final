@@ -312,26 +312,7 @@ p{
     #buttonLogin{
         justify-self: center;
         align-self: center;
-        grid-column: span 2;
-        width: 30%;
-        height: 80%;
-        background-color: #f8c291;
-        color: #0c2461;
-        border: solid #eb2f06 4px;
-        border-radius: 5px;
-
-        font-family: "hasta";
-        font-size: 1.2em;
-
-        margin-top: 10px;
-
-        box-shadow: 0 0 5px white;
-
-    }
-
-    #buttonLogin:hover{
-        cursor: pointer;
-        box-shadow: 0 0 20px white;
+        grid-column: span 2;      
     }
 
     #loginMobile{
@@ -356,10 +337,26 @@ p{
         border-radius: 10px;
 
         margin-bottom: 3vh;
+        padding: 10px;
     }
 
     #change-pwd form h1, #change-pwd form button{
         grid-column: span 2;
+    }
+
+    #change-pwd form label, #add-user form label, #delete-user form label{
+        font-family: "above";
+        align-self: center;
+        justify-self: right;
+        margin-right: 15px;
+    }
+
+    #change-pwd form input{
+        width: 200px;
+        height: 20px;
+        align-self: center;
+        justify-self: left;
+        margin-left: 15px;
     }
 
     #add-user form{
@@ -378,6 +375,8 @@ p{
         border-radius: 10px;
 
         margin-bottom: 3vh;
+
+        padding: 10px;
     }
 
     #add-user form h1, #add-user form button{
@@ -386,6 +385,17 @@ p{
 
     #add-user form input, #delete-user form h1, #delete-user form button{
         grid-column: span 2;
+    }
+
+    #add-user form > input{
+        width: 325px;
+        height: 20px;
+        justify-self: center;
+        align-self: center;
+    }
+
+    #add-user form div{
+        font-family: "above";
     }
 
     #delete-user form{
@@ -404,8 +414,39 @@ p{
         border-radius: 10px;
 
         margin-bottom: 3vh;
+
+        padding: 10px;
     }
 
-    
+    .button{
+        background-color: #f8c291;
+        color: #0c2461;
+        border: solid #eb2f06 4px;
+        border-radius: 5px;
+
+        font-family: "hasta";
+        font-size: 1.3em;
+
+        margin-top: 10px;
+
+        box-shadow: 0 0 5px white;
+
+        width: 180px;
+        height: 50px;
+    }
+
+    .button:hover{
+        cursor: pointer;
+        box-shadow: 0 0 20px white;
+    }
+
+    #delete-user form select{
+        width: 200px;
+        height: 25px;
+        font-size: 1.3em;
+        align-self: center;
+        justify-self: left;
+        margin-left: 15px;
+    }
 
 }
