@@ -20,6 +20,10 @@ window.addEventListener("load", () => {
         ['link', 'image', 'video', 'formula'],
     ];
 
+    // let Font = Quill.import('');
+    // Font.whitelist = ["above", "hasta"];
+    // Quill.register(Font, true);
+
     let quill = new Quill("#content", {
         modules: {
             toolbar: toolbarOptions

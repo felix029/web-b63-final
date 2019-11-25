@@ -104,6 +104,12 @@ p{
     display: none;
 }
 
+.ql-editor{
+    color: initial;
+    font-size: initial;
+    font-family: initial;
+}
+
 /* ==================== VERSION MOBILE ==================== */
 
 @media screen and (max-width:999px){
