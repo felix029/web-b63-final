@@ -1,6 +1,5 @@
 <?php
     require_once("action/CommonAction.php");
-    require_once("action/DAO/UserDAO.php");
 
 	class HomeAction extends CommonAction {
         public $error = "ok";
@@ -12,6 +11,7 @@
 
 		protected function executeAction() {
             $_SESSION["editable"] = false;
+            $_SESSION["page"] = "home.php";
 
             $this->users = UserDAO::getUsers($_SESSION["username"]);
 
@@ -45,7 +45,7 @@
                 catch(Exception $e){
                     $this->error = "USER_UNIQUE";
                 }
-                
+
             }
 
             if(!empty($_POST["deleteuser"])){
@@ -58,7 +58,7 @@
                 catch(Exception $e){
                     $this->error = "DELETE_PROBLEM";
                 }
-                
+
             }
         }
 	}

@@ -43,6 +43,10 @@ p{
     font-family: "above";
 }
 
+#contentValue{
+    display: none;
+}
+
 /* Pour le caroussel de la page d'accueuil */
 
 #carousel{

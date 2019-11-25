@@ -5,13 +5,14 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/global.css" />
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
     <script src="js/jquery.js"></script>
     <script src="js/header.js"></script>
+    <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <?php
         if($action->isLoggedIn() && $_SESSION["editable"] == true){
             ?>
-            <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
-            <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+
             <script src="js/editor.js"></script>
             <?php
             if($action->isAdmin()){
@@ -26,6 +27,12 @@
             }
         }
         else{
+
+            if($_SESSION["editable"] == true){
+                ?>
+                <script src="js/contentViewer.js"></script>
+                <?php
+            }
             ?>
             <title>DKoncept</title>
             <?php
@@ -81,5 +88,14 @@
     }
 ?>
 
-<div id="content">
+<div id="contentValue">
+<?php
+    //Fetching current page content
+	if($_SESSION["editable"] == true){
+		$pageContent = UserDAO::getPageContent($_SESSION["page"]);
+        echo $pageContent;
+    }
+?>
+</div>
 
+<div id="content">

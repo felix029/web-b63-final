@@ -4,7 +4,6 @@ let pos = 0;
 let elements;
 
 document.onkeydown = event =>{
-    console.log(event.which);
     if(event.which == 18) altKey = true;
     if(event.which == 49) oneKey = true;
 

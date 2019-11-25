@@ -1,6 +1,5 @@
 <?php
 	require_once("action/CommonAction.php");
-	require_once("action/DAO/UserDAO.php");
 
 	class AdminLoginAction extends CommonAction {
 		public $wrongLogin = false;
@@ -11,7 +10,8 @@
 
 		protected function executeAction() {
 			$_SESSION["editable"] = false;
-			
+			$_SESSION["page"] = "admin-login.php";
+
 			if(isset($_POST["username"]) && isset($_POST["pwd"])){
 				$user = UserDAO::authenticate($_POST["username"], $_POST["pwd"]);
 

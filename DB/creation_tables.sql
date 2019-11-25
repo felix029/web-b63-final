@@ -1,4 +1,5 @@
 DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS pages;
 
 CREATE TABLE users (
 	id INT NOT NULL AUTO_INCREMENT,
@@ -12,3 +13,20 @@ CREATE TABLE users (
 ) engine = innoDB character set utf8 collate utf8_general_ci;
 
 INSERT INTO users(username, pwd, visibility) VALUES ('dkadmin', '3c4506cbcf214e37faea109715d14d9959666b87defe50061b85e2daaaec7616', 3);
+
+CREATE TABLE pages (
+	id INT NOT NULL AUTO_INCREMENT,
+	title VARCHAR(16) NOT NULL,
+	content TEXT,
+	
+	PRIMARY KEY pk_pages(id),
+	CONSTRAINT uc_pages_title UNIQUE (title)
+
+) engine = innoDB character set utf8 collate utf8_general_ci;
+
+INSERT INTO pages(title, content) VALUES ('index.php', "null"),
+('resto.php', "null"),
+('carrieres.php', "null"),
+('galerie.php', "null"),
+('services.php', "null"),
+('contact.php', "null");

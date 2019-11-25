@@ -13,9 +13,9 @@
 			$statement->setFetchMode(PDO::FETCH_ASSOC); // row["USERNAME"]
 			$statement->execute();
 
-			if ($row = $statement->fetch()) {				
+			if ($row = $statement->fetch()) {
 				$hash = hash('sha256', $password);
-				
+
 				if ($hash === $row["pwd"]) {
 					$user = [];
 					$user["USERNAME"] = $row["username"];
@@ -64,7 +64,32 @@
 			foreach($connection->query($sql) as $row){
 				array_push($users, $row["username"]);
 			}
-			
+
 			return $users;
+		}
+
+		public static function setPageContent($page, $content){
+			$connection = Connection::getConnection();
+
+			$statement = $connection->prepare("UPDATE pages SET content = ? where title = ?");
+			$statement->bindParam(1, $content);
+			$statement->bindParam(2, $page);
+			$statement->execute();
+		}
+
+		public static function getPageContent($page){
+			$connection = Connection::getConnection();
+			$statement = $connection->prepare("SELECT content FROM pages WHERE title = ?");
+			$statement->bindParam(1, $page);
+			$statement->setFetchMode(PDO::FETCH_ASSOC);
+			$statement->execute();
+
+			$result = "ERROR";
+
+			if($row = $statement->fetch()){
+				$result = $row["content"];
+			}
+
+			return $result;
 		}
 	}

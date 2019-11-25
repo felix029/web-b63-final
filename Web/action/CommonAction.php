@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	require_once("action/constants.php");
+	require_once("action/DAO/UserDAO.php");
 
 	abstract class CommonAction {
 		protected static $VISIBILITY_PUBLIC = 0;
@@ -33,6 +34,13 @@
 
 			// Template method
 			$this->executeAction();
+
+			//Updating editable pages
+			if (isset($_POST["content"]) && $_SESSION["editable"] == true){
+
+				UserDAO::setPageContent($_SESSION["page"], $_POST["content"]);
+				unset($_POST["content"]);
+			}
 		}
 
 		protected abstract function executeAction();

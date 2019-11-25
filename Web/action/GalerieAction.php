@@ -9,5 +9,6 @@
 
 		protected function executeAction() {
 			$_SESSION["editable"] = true;
+			$_SESSION["page"] = "galerie.php";
 		}
 	}
