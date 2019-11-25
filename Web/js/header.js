@@ -1,17 +1,18 @@
-let ctrlKey = false;
+let altKey = false;
 let oneKey = false;
 let pos = 0;
 let elements;
 
 document.onkeydown = event =>{
-    if(event.which == 17) ctrlKey = true;
+    console.log(event.which);
+    if(event.which == 18) altKey = true;
     if(event.which == 49) oneKey = true;
 
-    if(ctrlKey && oneKey) window.location.href = "admin-login.php"
+    if(altKey && oneKey) window.location.href = "admin-login.php"
 }
 
 document.onkeyup = event =>{
-    if(event.which == 17) ctrlKey = false;
+    if(event.which == 18) altKey = false;
     if(event.which == 49) oneKey = false;
 }
 
@@ -22,11 +23,11 @@ window.addEventListener('resize', () => {
 
 window.addEventListener("load", () =>{
     let done = true;
-    
+
     resize();
 
     $('#hamburger').click( () => {
-        
+
         if($('#list:hidden') && done == true){
             done = false;
             $('#hamburger').css("background-color", "#f8c291");
@@ -35,7 +36,7 @@ window.addEventListener("load", () =>{
                 done = true;
             });
         }
-        
+
         if($('#list:visible') && done == true){
             done = false;
             $('#list').slideUp(1000, () => {
@@ -43,7 +44,7 @@ window.addEventListener("load", () =>{
                 $('#hamburger').css("background-color", "transparent");
                 done = true;
             });
-        }        
+        }
     });
 
     elements = document.getElementById("carousel").children;
@@ -53,15 +54,15 @@ window.addEventListener("load", () =>{
 })
 
 const carousel = () => {
-  
-    if(pos == elements.length-1){ 
+
+    if(pos == elements.length-1){
       $(elements[pos]).fadeOut(2000, () => {
         $(elements[0]).fadeIn(1000, () => {
           pos = 0;
         });
       });
-        
-    } 
+
+    }
     else{
       $(elements[pos]).fadeOut(2000, () => {
         $(elements[pos+1]).fadeIn(1000, () => {
