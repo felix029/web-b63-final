@@ -88,6 +88,7 @@ p{
 
 /* Editeur de texte quill */
 
+/* Code pris à: https://stackoverflow.com/a/53487445 */
 /* Set droplist names - -item is the currently selected font, -label is the font's appearance in the droplist*/
 .ql-snow .ql-picker.ql-font .ql-picker-label[data-value='']::before,
 .ql-snow .ql-picker.ql-font .ql-picker-item[data-value='']::before
