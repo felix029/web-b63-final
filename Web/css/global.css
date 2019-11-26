@@ -165,6 +165,22 @@ Set the font-family content used for the HTML content.
   font-family: 'arial';
 }
 
+/* Custom color quill */
+/* Source: https://stackoverflow.com/a/48156458 */
+.ql-color .ql-picker-options [data-value=custom-color], .ql-background .ql-picker-options [data-value=custom-color] {
+    background: none !important;
+    width: 100% !important;
+    height: 20px !important;
+    text-align: center;
+}
+.ql-color .ql-picker-options [data-value=custom-color]:before, .ql-background .ql-picker-options [data-value=custom-color]:before  {
+    content: 'Custom Color';
+}
+
+.ql-color .ql-picker-options [data-value=custom-color]:hover, .ql-background .ql-picker-options [data-value=custom-color]:hover {
+    border-color: transparent;
+}
+
 #content{
     position: absolute;
     height: 75vh;
