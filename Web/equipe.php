@@ -7,29 +7,20 @@
 	require_once("partial/header.php");
 
 
+?>
+	<div id=container-team>
+<?php
     $team = UserDAO::getTeam();
     foreach($team as $key => $value){
         ?>
-            <div class="team-container" id="team<?= $key; ?>">
-				<div class="team-photo"><img src=<?= $value[3] ?> alt=<?= $value[3] ?>></div>
+            <div class="team-member" id="team<?= $key; ?>">
+				<div class="team-photo" style="background-image: url(<?= $value[3] ?>)"></div>
 				<div class="team-name"><?= $value[0] ?></div>
 				<div class="team-job"><?= $value[1] ?></div>
 				<div class="team-bio"><?= $value[2] ?></div>
             </div>
         <?php
     }
-?>
-
-<template id="team">
-<div class="team-container">
-	<div class="team-photo"></div>
-	<div class="team-name"></div>
-	<div class="team-job"></div>
-	<div class="team-bio"></div>
-</div>
-</template>
-
-<?php
 	if($action->isLoggedIn()){
 		?>
 			<form action="equipe.php" method="POST">
@@ -46,10 +37,8 @@
 			</form>
 		<?php
 	}
-	else{
-		?>
-
-		<?php
-	}
+?>
+	</div>
+<?php
 
 	require_once("partial/footer.php");
