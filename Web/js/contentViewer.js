@@ -12,4 +12,6 @@ window.addEventListener("load", () => {
 
     quill.enable(false);
 
+    $(".ql-toolbar").hide();
+    $(".ql-container").css("border", "none");
 })
