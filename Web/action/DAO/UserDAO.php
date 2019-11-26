@@ -14,9 +14,8 @@
 			$statement->execute();
 
 			if ($row = $statement->fetch()) {
-				$hash = hash('sha256', $password);
-
-				if ($hash === $row["pwd"]) {
+	
+				if (password_verify($password, $row["pwd"])) {
 					$user = [];
 					$user["USERNAME"] = $row["username"];
 					$user["VISIBILITY"] = $row["visibility"];
@@ -28,7 +27,8 @@
 
 		public static function updatePassword($username, $newPassword) {
 			$connection = Connection::getConnection();
-			$hash = hash('sha256', $newPassword);
+			$options = [ 'cost' => 12 ];
+			$hash = password_hash($newPassword, PASSWORD_BCRYPT, $options);
 
 			$statement = $connection->prepare("UPDATE users SET pwd = ? where username = ?");
 			$statement->bindParam(1, $hash);
@@ -38,7 +38,8 @@
 
 		public static function addUser($username, $password, $visibility) {
 			$connection = Connection::getConnection();
-			$hash = hash('sha256', $password);
+			$options = [ 'cost' => 12 ];
+			$hash = password_hash($password, PASSWORD_BCRYPT, $options);
 
 			$statement = $connection->prepare("INSERT INTO users(username, pwd, visibility) VALUES (?, ?, ?)");
 			$statement->bindParam(1, $username);

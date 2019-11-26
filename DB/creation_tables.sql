@@ -12,7 +12,7 @@ CREATE TABLE users (
 
 ) engine = innoDB character set utf8 collate utf8_general_ci;
 
-INSERT INTO users(username, pwd, visibility) VALUES ('dkadmin', '3c4506cbcf214e37faea109715d14d9959666b87defe50061b85e2daaaec7616', 3);
+INSERT INTO users(username, pwd, visibility) VALUES ('dkadmin', '$2y$12$Js858VNNiWx/EAAcYh4JQeOsAGDvawDY4z8llqQXBHsqWNLhk/wKG', 3);
 
 CREATE TABLE pages (
 	id INT NOT NULL AUTO_INCREMENT,
