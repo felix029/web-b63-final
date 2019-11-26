@@ -12,8 +12,6 @@ CREATE TABLE users (
 
 ) engine = innoDB character set utf8 collate utf8_general_ci;
 
-INSERT INTO users(username, pwd, visibility) VALUES ('dkadmin', '$2y$12$Js858VNNiWx/EAAcYh4JQeOsAGDvawDY4z8llqQXBHsqWNLhk/wKG', 3);
-
 CREATE TABLE pages (
 	id INT NOT NULL AUTO_INCREMENT,
 	title VARCHAR(16) NOT NULL,
@@ -23,10 +21,3 @@ CREATE TABLE pages (
 	CONSTRAINT uc_pages_title UNIQUE (title)
 
 ) engine = innoDB character set utf8 collate utf8_general_ci;
-
-INSERT INTO pages(title, content) VALUES ('index.php', "null"),
-('resto.php', "null"),
-('carrieres.php', "null"),
-('galerie.php', "null"),
-('services.php', "null"),
-('contact.php', "null");
