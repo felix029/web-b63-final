@@ -66,6 +66,7 @@
         <ul id="list">
             <li><a href="index.php">Accueil</a></li>
             <li><a href="resto.php">Le restaurant</a></li>
+            <li><a href="equipe.php">L'équipe</a></li>
             <li><a href="carrieres.php">Carrières</a></li>
             <li><a href="galerie.php">Galerie Photos</a></li>
             <li><a href="services.php">Services</a></li>
