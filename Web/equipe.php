@@ -5,6 +5,19 @@
 	$action->execute();
 
 	require_once("partial/header.php");
+
+
+    $team = UserDAO::getTeam();
+    foreach($team as $key => $value){
+        ?>
+            <div class="team-container" id="team<?= $key; ?>">
+				<div class="team-photo"><img src=<?= $value[3] ?> alt=<?= $value[3] ?>></div>
+				<div class="team-name"><?= $value[0] ?></div>
+				<div class="team-job"><?= $value[1] ?></div>
+				<div class="team-bio"><?= $value[2] ?></div>
+            </div>
+        <?php
+    }
 ?>
 
 <template id="team">
@@ -21,7 +34,7 @@
 		?>
 			<form action="equipe.php" method="POST">
 				<div id="new-team-member">
-
+					
 				</div>
 			</form>
 

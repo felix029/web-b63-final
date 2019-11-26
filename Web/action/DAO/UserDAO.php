@@ -93,4 +93,16 @@
 
 			return $result;
 		}
+
+		public static function getTeam(){
+			$connection = Connection::getConnection();
+			$sql = "SELECT team.id, team.fullname, jobs.title, team.bio, team.image_url FROM team JOIN jobs ON team.id_job = jobs.id";
+			$team = [];
+			foreach($connection->query($sql) as $row){
+				$team[$row["id"]] = [ $row["fullname"], $row["title"], $row["bio"], $row["image_url"] ];
+			}
+
+			return $team;
+
+		}
 	}
