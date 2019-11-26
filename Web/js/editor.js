@@ -4,10 +4,13 @@ window.addEventListener("load", () => {
 
     let pageContent = document.getElementById("contentValue").innerHTML;
 
+    let Font = Quill.import('formats/font');
+    Font.whitelist = ['above', 'hasta', 'inconsolata', 'roboto', 'mirza', 'arial'];
+    Quill.register(Font, true);
 
     let toolbarOptions = [
         ['bold', 'italic', 'underline', 'strike'],
-        [{'font' : []}],
+        [{'font' : ['', 'above', 'hasta', 'inconsolata', 'roboto', 'mirza', 'arial']}],
         [{'align' : []}],
         [{'color' : [] }, { 'background' : [] }],
         ['blockquote', 'code-block'],
@@ -28,6 +31,7 @@ window.addEventListener("load", () => {
         modules: {
             toolbar: toolbarOptions
         },
+        placeholder: "Cette page est vide... écrivez quelque chose!",
         theme: 'snow'
     })
 

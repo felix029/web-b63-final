@@ -86,6 +86,84 @@ p{
     display: none;
 }
 
+/* Editeur de texte quill */
+
+/* Set droplist names - -item is the currently selected font, -label is the font's appearance in the droplist*/
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='']::before
+{
+  content: 'Default';
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='above']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='above']::before
+{
+  content: 'Above';
+  font-family: 'above';
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='hasta']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='hasta']::before
+{
+  content: 'Hasta';
+  font-family: 'hasta';
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='inconsolata']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='inconsolata']::before
+{
+  content: 'Inconsolata';
+  font-family: 'inconsolata';
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='roboto']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='roboto']::before
+{
+  content: 'Roboto';
+  font-family: 'roboto';
+}
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='mirza']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='mirza']::before
+{
+  content: 'Mirza';
+  font-family: 'mirza';
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-label[data-value='arial']::before,
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value='arial']::before
+{
+  content: 'Arial';
+  font-family: 'arial';
+}
+
+/****************************************************
+Set the font-family content used for the HTML content.
+*****************************************************/
+
+.ql-font-above {
+    font-family: 'above';
+}
+
+.ql-font-hasta {
+    font-family: 'hasta';
+}
+
+.ql-font-inconsolata {
+    font-family: 'inconsolata';
+}
+
+.ql-font-roboto {
+    font-family: 'roboto';
+}
+
+.ql-font-mirza {
+    font-family: 'mirza';
+}
+
+.ql-font-arial {
+  font-family: 'arial';
+}
+
 #content{
     position: absolute;
     height: 75vh;
