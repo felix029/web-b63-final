@@ -688,4 +688,72 @@ Set the font-family content used for the HTML content.
         text-align: right;
     }
 
+    /* administration page équipe */
+    #admin-team-container{
+        display: grid;
+        grid-template-columns: 50%;
+        grid-template-rows: 2fr 2fr 1fr;
+        justify-content: center;
+        text-align: center;
+        row-gap: 25px;
+    }
+
+    [id$=-team-member]{
+        background-color: #0c2461;
+        color: #f8c291;
+        border: solid #a82103 5px;
+        border-radius: 5px;
+
+        width: 100%;
+        height: 100%;
+        margin-bottom: 10px;
+        align-self: center;
+        justify-self: center;
+        display: grid;
+        column-gap: 5%;
+        grid-template-columns: 25% 70%;
+    }
+
+    #new-team-member{
+        grid-template-rows: 20% 10% 10% 25% 10% 25%;
+    }
+
+    #edit-team-member{
+        grid-template-rows: 20% 10% 10% 10% 20% 10% 20%;
+    }
+
+    #delete-team-member{
+        grid-template-rows: 35% 25% 40%;
+    }
+
+    [id$=-team-member] h1, [id$=-team-member] button{
+        grid-column: span 2;
+        align-self: center;
+        justify-self: center;
+    }
+
+    [id$=-team-member] label{
+        justify-self: right;
+        font-family: "above";
+    }
+
+    [id$=-team-member] input, [id$=-team-member] textarea, [id$=-team-member] select{
+        justify-self: left;
+    }
+
+    [id$=-team-member] textarea{
+        width: 90%;
+    }
+
+    #new-team-member input, #new-team-member select, #edit-team-member input, #edit-team-member select{
+        height: 60%;
+        width: 40%;
+    }
+
+    #delete-team-member select{
+        width: 60%;
+        height: 60%;
+    }
+
+
 }
