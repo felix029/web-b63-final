@@ -12,7 +12,7 @@
     
 	if($action->isLoggedIn()){
 		?>
-			
+			<script src="js/teamEdit.js"></script>
 			<div id="admin-team-container">
 				<!-- Add team member -->
 				<form action="equipe.php" method="POST" enctype="multipart/form-data">
@@ -22,8 +22,9 @@
 						<label>Nom complet:</label>
 						<input type="text" name="newfullname" />
 						
-						<label>Emploi:</label>
+						<label>Poste:</label>
 						<select name="newjob">
+							<option value="none" selected>Sélectionnez un poste...</option>
 							<?php
 								foreach($action->jobs as $j){
 									?>
@@ -48,7 +49,8 @@
 					<div id="edit-team-member">
 						<h1>modifier un membre de l'équipe</h1>
 						<label>Nom complet:</label>
-						<select name="editname">
+						<select name="editname" id="editname">
+							<option value="none" selected>Sélectionnez quelqu'un...</option>
 							<?php
 								foreach($action->members as $m){
 									?>
@@ -58,9 +60,10 @@
 							?>
 						</select>
 						<label>Nouveau nom complet:</label>
-						<input type="text" name="neweditname" />			
-						<label>Emploi:</label>
+						<input type="text" name="neweditname" placeholder="Laissez vide pour ne pas changer..."/>			
+						<label>Nouveau poste:</label>
 						<select name="editjob">
+							<option value="none" selected>Ne pas changer...</option>
 							<?php
 								foreach($action->jobs as $j){
 									?>
@@ -69,9 +72,9 @@
 								}
 							?>
 						</select>
-						<label>Biographie:</label>
-						<textarea name="editbio" cols="80" rows="8"></textarea>
-						<label>Image:</label>
+						<label>Nouvelle biographie:</label>
+						<textarea name="editbio" cols="80" rows="8" id="editbio"></textarea>
+						<label>Nouvelle image:</label>
 						<input type="file" name="editphoto">
 						<button class="button">confirmer</button>
 					</div>
@@ -83,6 +86,7 @@
 							<h1>supprimer un membre de l'équipe</h1>
 							<label>Nom:</label>
 							<select name="deleteteam">
+								<option value="none" selected>Sélectionnez quelqu'un...</option>
 							<?php
 								foreach($action->members as $m){
 									?>

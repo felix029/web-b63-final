@@ -10,7 +10,7 @@
 
 			$statement = $connection->prepare("SELECT * from users where username = ?");
 			$statement->bindParam(1, $username);
-			$statement->setFetchMode(PDO::FETCH_ASSOC); // row["USERNAME"]
+			$statement->setFetchMode(PDO::FETCH_ASSOC);
 			$statement->execute();
 
 			if ($row = $statement->fetch()) {
@@ -128,6 +128,22 @@
 			return $members;
 		}
 
+		public static function getBio($fullname){
+			$connection = Connection::getConnection();
+			$statement = $connection->prepare("SELECT bio FROM team WHERE fullname = ?");
+			$statement->bindParam(1, $fullname);
+			$statement->setFetchMode(PDO::FETCH_ASSOC);
+			$statement->execute();
+
+			$bio = "";
+			if($row = $statement->fetch()){
+				$bio = $row["bio"];
+			}
+
+			return $bio;
+
+		}
+
 		public static function newTeamMember($fullname, $job, $bio, $image_url){
 			$connection = Connection::getConnection();
 			$statement = $connection->prepare("INSERT INTO team(fullname, id_job, bio, image_url) VALUES(?, (SELECT id FROM jobs WHERE title = ?), ?, ?)");
@@ -138,18 +154,49 @@
 			$statement->execute();
 		}
 
-		public static function editTeamMember($newfullname, $job, $bio, $image_url, $fullname){
+		public static function editMemberName($fullname, $newfullname){
 			$connection = Connection::getConnection();
-			$statement = $connection->prepare("UPDATE team SET fullname = ?, id_job = ?, bio = ?, image_url = ? WHERE fullname = ?");
+			$statement = $connection->prepare("UPDATE team SET fullname = ? WHERE fullname = ?");
 			$statement->bindParam(1, $newfullname);
-			$statement->bindParam(2, $job);
-			$statement->bindParam(3, $bio);
-			$statement->bindParam(4, $image_url);
-			$statement->bindParam(5, $fullname);
+			$statement->bindParam(2, $fullname);
+			$statement->execute();
+		}
+
+		public static function editMemberJob($fullname, $newjob){
+			$connection = Connection::getConnection();
+			$statement = $connection->prepare("UPDATE team SET id_job = (SELECT id FROM jobs WHERE title = ?) WHERE fullname = ?");
+			$statement->bindParam(1, $newjob);
+			$statement->bindParam(2, $fullname);
+			$statement->execute();
+		}
+
+		public static function editMemberBio($fullname, $newbio){
+			$connection = Connection::getConnection();
+			$statement = $connection->prepare("UPDATE team SET bio = ? WHERE fullname = ?");
+			$statement->bindParam(1, $newbio);
+			$statement->bindParam(2, $fullname);
+			$statement->execute();
+		}
+
+		public static function editMemberPhoto($fullname, $newimage){
+			UserDAO::deletePhoto($fullname);
+			$connection = Connection::getConnection();
+			$statement = $connection->prepare("UPDATE team SET image_url = ? WHERE fullname = ?");
+			$statement->bindParam(1, $newimage);
+			$statement->bindParam(2, $fullname);
 			$statement->execute();
 		}
 
 		public static function deleteTeamMember($fullname){
+			UserDAO::deletePhoto($fullname);
+			$connection = Connection::getConnection();
+
+			$statement_delete = $connection->prepare("DELETE FROM team WHERE fullname = ?");
+			$statement_delete->bindParam(1, $fullname);
+			$statement_delete->execute();
+		}
+
+		private static function deletePhoto($fullname){
 			$connection = Connection::getConnection();
 			$statement_file = $connection->prepare("SELECT image_url FROM team WHERE fullname = ?");
 			$statement_file->bindParam(1, $fullname);
@@ -164,9 +211,5 @@
 			if($target_file !== ""){
 				unlink($target_file);
 			}
-
-			$statement_delete = $connection->prepare("DELETE FROM team WHERE fullname = ?");
-			$statement_delete->bindParam(1, $fullname);
-			$statement_delete->execute();
 		}
 	}
