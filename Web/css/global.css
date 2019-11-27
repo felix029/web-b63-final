@@ -192,6 +192,7 @@ Set the font-family content used for the HTML content.
     overflow-y: scroll;
     overflow-x: hidden;
     -ms-overflow-style: none;
+    scrollbar-width: none;
     z-index: 100;
 }
 
