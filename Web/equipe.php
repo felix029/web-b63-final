@@ -11,7 +11,6 @@
 <?php
     
 	if($action->isLoggedIn()){
-		echo $action->error;
 		?>
 			
 			<div id="admin-team-container">
