@@ -12,12 +12,12 @@
 		<?php
 			if($action->error === "PWD_DIFFERENT"){
 				?>
-					<h1 class="error">Les MDP entrés sont différents.</h1>
+					<h2 class="error">Les MDP entrés sont différents.</h2>
 				<?php
 			}
 			else{
 				?>
-					<h1>changer votre mot de passe</h1>
+					<h2>changer votre mot de passe</h2>
 				<?php
 			}
 		?>
@@ -37,12 +37,12 @@ if($action->isAdmin()){
 				<?php
 					if($action->error === "USER_UNIQUE"){
 					?>
-						<h1 class="error">Cet utilisateur existe déjà.</h1>
+						<h2 class="error">Cet utilisateur existe déjà.</h2>
 					<?php
 					}
 					else{
 						?>
-							<h1>ajouter un utilisateur</h1>
+							<h2>ajouter un utilisateur</h2>
 						<?php
 					}
 				?>
@@ -66,12 +66,12 @@ if($action->isAdmin()){
 				<?php
 					if($action->error === "DELETE_PROBLEM"){
 					?>
-						<h1 class="error">Une erreur est survenue</h1>
+						<h2 class="error">Une erreur est survenue</h2>
 					<?php
 					}
 					else{
 					?>
-						<h1>supprimer un utilisateur</h1>
+						<h2>supprimer un utilisateur</h2>
 					<?php
 					}
 				?>

@@ -16,4 +16,32 @@ $(document).ready(function () {
             $("#editbio").val("");
         }
     });
+
+    $("#newmemberbtn").click( e =>{
+        
+        let check = true;
+
+        if($("#newfullname").val() == ""){
+            $("#newfullname").css("border", "solid red 2px");
+            check = false;
+        }
+        if($("#newjob").val() == "none"){
+            $("#newjob").css("border", "solid red 2px");
+            check = false;
+        }
+        if($("#newbio").val() == ""){
+            $("#newbio").css("border", "solid red 2px");
+            check = false;
+        }
+
+        if(document.getElementById("newphoto").files.length == 0){
+            $("#newphoto").css("border", "solid red 2px");
+            check = false;
+        }
+
+        if(!check){
+            e.preventDefault();
+        }
+    });
+
 })

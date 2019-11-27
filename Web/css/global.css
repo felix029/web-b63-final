@@ -34,8 +34,8 @@ a{
 }
 
 h1, h2{
-    font-family: "hasta";
-    font-size: 2em;
+    font-family: "above";
+    font-size: 1.6em;
 }
 
 p{
@@ -402,8 +402,8 @@ Set the font-family content used for the HTML content.
         background-color: #eb2f06;
         border-radius: 10px;
         padding-top: 8px;
-        font-family: "above";
-        width: 100%;
+        font-family: "arial";
+        width: 90%;
         text-align: center;
     }
 
@@ -455,7 +455,7 @@ Set the font-family content used for the HTML content.
         padding: 10px;
     }
 
-    #change-pwd form h1, #change-pwd form button{
+    #change-pwd form h2, #change-pwd form button{
         grid-column: span 2;
     }
 
@@ -494,11 +494,11 @@ Set the font-family content used for the HTML content.
         padding: 10px;
     }
 
-    #add-user form h1, #add-user form button{
+    #add-user form h2, #add-user form button{
         grid-column: span 3;
     }
 
-    #add-user form input, #delete-user form h1, #delete-user form button{
+    #add-user form input, #delete-user form h2, #delete-user form button{
         grid-column: span 2;
     }
 
