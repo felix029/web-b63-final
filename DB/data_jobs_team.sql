@@ -1,3 +1,17 @@
+INSERT INTO 
+	jobs(title)
+VALUES
+	('Propriétaire'),
+	('Gestionnaire'),
+	('Gérant(e)'),
+	('Chef'),
+	('Sous-chef'),
+	('Aboyeur'),
+	('Commis'),
+	('Aide cuisinier'),
+	('Serveur/Serveuse'),
+	('Réceptionniste');
+
 INSERT INTO
 	team(fullname, id_job, bio, image_url)
 VALUES

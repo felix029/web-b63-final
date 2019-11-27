@@ -7,7 +7,7 @@ Félix-Olivier Landry
 
 Site web de gestion d'un faux restaurant codé en PHP et avec une BD MySql.
 
-Avant toute chose, executer le script `creation_tables.sql` pour créer les tables de la BD et créer l'utilisateur administrateur par défaut (détails plus bas). Les mots de passes des utilisateurs seront stockés dans la BD sous forme de hash sha256.
+Avant toute chose, executer le script `Structure.sql` pour créer les tables de la BD. créer l'utilisateur administrateur par défaut (détails plus bas). Les mots de passes des utilisateurs seront stockés dans la BD sous forme de hash bcrypt (12 rounds).
 
 ## Administration
 
@@ -30,7 +30,8 @@ Pour accéder à la console d'administration, appuyez, à partir de n'importe qu
     </tr>
 </table>
 
-La connexion avec un compte administrateur vous permettra de modifier le contenu du site avec l'éditeur de texte *Quill*.
+La connexion avec un compte administrateur vous permettra de modifier le contenu de certaines pages du site avec l'éditeur de texte *Quill*.
+L'utilisateur connecté pourra aussi gérer la page "L'équipe" en y ajoutant, modifiant ou supprimant des membres.
 
 Vous pourrez aussi ajouter d'autres utilisateurs à partir de ce compte.
 
