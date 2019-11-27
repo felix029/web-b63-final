@@ -6,17 +6,17 @@
 
 	require_once("partial/header.php");
 
-
 ?>
 	
 <?php
     
 	if($action->isLoggedIn()){
+		echo $action->error;
 		?>
 			
 			<div id="admin-team-container">
 				<!-- Add team member -->
-				<form action="equipe.php" method="POST">
+				<form action="equipe.php" method="POST" enctype="multipart/form-data">
 					<div id="new-team-member">
 						<h1>ajouter un membre à l'équipe</h1>
 						
@@ -45,7 +45,7 @@
 				</form>
 
 				<!-- Edit team member -->
-				<form action="equipe.php" method="POST">
+				<form action="equipe.php" method="POST" enctype="multipart/form-data">
 					<div id="edit-team-member">
 						<h1>modifier un membre de l'équipe</h1>
 						<label>Nom complet:</label>
