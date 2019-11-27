@@ -41,6 +41,7 @@ CREATE TABLE team (
 	image_url VARCHAR(64),
 	
 	PRIMARY KEY pk_team(id),
-	FOREIGN KEY (id_job) REFERENCES jobs(id)
+	FOREIGN KEY (id_job) REFERENCES jobs(id),
+	CONSTRAINT uc_team_fullname UNIQUE (fullname)
 
 ) engine = innoDB character set utf8 collate utf8_general_ci;

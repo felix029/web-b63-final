@@ -105,4 +105,43 @@
 			return $team;
 
 		}
+
+		public static function getJobs(){
+			$connection = Connection::getConnection();
+			$sql = "SELECT title FROM jobs";
+			$jobs = [];
+			foreach($connection->query($sql) as $row){
+				array_push($jobs, $row["title"]);
+			}
+
+			return $jobs;
+		}
+
+		public static function getTeamMembers(){
+			$connection = Connection::getConnection();
+			$sql = "SELECT fullname FROM team";
+			$members = [];
+			foreach($connection->query($sql) as $row){
+				array_push($members, $row["fullname"]);
+			}
+			
+			return $members;
+		}
+
+		public static function newTeamMember($fullname, $job, $bio, $image_url){
+			$connection = Connection::getConnection();
+			$statement = $connection->prepare("INSERT INTO team(fullname, id_job, bio, image_url) VALUES(?, (SELECT id FROM jobs WHERE title = ?), ?, ?)");
+			$statement->bindParam(1, $fullname);
+			$statement->bindParam(2, $job);
+			$statement->bindParam(3, $bio);
+			$statement->bindParam(4, $image_url);
+			$statement->execute();
+		}
+
+		public static function deleteTeamMember($fullname){
+			$connection = Connection::getConnection();
+			$statement = $connection->prepare("DELETE FROM team WHERE fullname = ?");
+			$statement->bindParam(1, $fullname);
+			$statement->execute();
+		}
 	}
