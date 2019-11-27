@@ -18,8 +18,7 @@
 			$this->members = UserDAO::getTeamMembers();
 
 
-			if(isset($_POST["newfullname"]) && isset($_POST["newjob"]) && isset($_POST["newbio"]) && isset($_POST["newphoto"])){
-				$this->error = "here bitch";
+			if(isset($_POST["newfullname"]) && isset($_POST["newjob"]) && isset($_POST["newbio"]) && isset($_FILES["newphoto"])){
 				try{
 					$target_dir = "images/equipe/";
 					$target_file = $target_dir . basename($_FILES["newphoto"]["name"]);
@@ -29,7 +28,7 @@
 						if(!file_exists($target_file)){
 							if($_FILES["newphoto"]["size"] < 500000){
 								if($imageFileType == "jpg" || $imageFileType == "png" || $imageFileType == "jpeg" || $imageFileType == "gif" ){
-									if(move_uploaded_file($_FILES["newphoto"], $target_file)){
+									if(move_uploaded_file($_FILES["newphoto"]["tmp_name"], $target_file)){
 										UserDAO::newTeamMember($_POST["newfullname"], $_POST["newjob"], $_POST["newbio"], $target_file);
 									}
 									else{
@@ -54,8 +53,14 @@
 					}
 				}
 				catch(Exception $e){
-					$this->error = "WTF";
+					$this->error = "ERROR_EXCETION";
 				}
+
+			unset($_POST["newfullname"]);
+			unset($_POST["newjob"]);
+			unset($_POST["newbio"]);
+			unset($_FILES["newphoto"]);
+
 			}
 		}
 	}
