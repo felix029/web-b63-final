@@ -138,10 +138,35 @@
 			$statement->execute();
 		}
 
+		public static function editTeamMember($newfullname, $job, $bio, $image_url, $fullname){
+			$connection = Connection::getConnection();
+			$statement = $connection->prepare("UPDATE team SET fullname = ?, id_job = ?, bio = ?, image_url = ? WHERE fullname = ?");
+			$statement->bindParam(1, $newfullname);
+			$statement->bindParam(2, $job);
+			$statement->bindParam(3, $bio);
+			$statement->bindParam(4, $image_url);
+			$statement->bindParam(5, $fullname);
+			$statement->execute();
+		}
+
 		public static function deleteTeamMember($fullname){
 			$connection = Connection::getConnection();
-			$statement = $connection->prepare("DELETE FROM team WHERE fullname = ?");
-			$statement->bindParam(1, $fullname);
-			$statement->execute();
+			$statement_file = $connection->prepare("SELECT image_url FROM team WHERE fullname = ?");
+			$statement_file->bindParam(1, $fullname);
+			$statement_file->setFetchMode(PDO::FETCH_ASSOC);
+			$statement_file->execute();
+
+			$target_file = "";
+			if($row = $statement_file->fetch()){
+				$target_file = $row["image_url"];
+			}
+
+			if($target_file !== ""){
+				unlink($target_file);
+			}
+
+			$statement_delete = $connection->prepare("DELETE FROM team WHERE fullname = ?");
+			$statement_delete->bindParam(1, $fullname);
+			$statement_delete->execute();
 		}
 	}

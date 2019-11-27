@@ -53,7 +53,7 @@
 					}
 				}
 				catch(Exception $e){
-					$this->error = "ERROR_EXCETION";
+					$this->error = "EXCEPTION_NEW_MEMBER";
 				}
 
 			unset($_POST["newfullname"]);
@@ -61,6 +61,17 @@
 			unset($_POST["newbio"]);
 			unset($_FILES["newphoto"]);
 
+			}
+
+			if(isset($_POST["deleteteam"])){
+				try{
+					UserDAO::deleteTeamMember($_POST["deleteteam"]);
+				}
+				catch(Exception $e){
+					$this->error = "EXCEPTION_DELETE";
+				}
+				
+				unset($_POST["deleteteam"]);
 			}
 		}
 	}
