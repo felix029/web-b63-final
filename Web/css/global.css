@@ -295,6 +295,67 @@ Set the font-family content used for the HTML content.
     }
 
     /* PAGE ÉQUIPE */
+    /* general */
+    #container-team{
+        display: grid;
+        grid-template-columns: 100%;
+        row-gap: 20px;
+        position: relative;
+        margin-bottom: 100px;
+    }
+
+    .team-member{
+        width: 90%;
+        height: 50vh;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 10% 10% 40%;
+        padding: 20px 5px 20px 5px;
+        border: solid #a82103 5px;
+        border-radius: 10px;
+        font-family: "above";
+    }
+    
+    .team-photo{
+        width: 100%;
+        height: 100%;
+        background-size: 65%;
+        background-repeat: no-repeat;
+        background-position: center;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .team-name{
+        font-weight: bolder;
+        justify-self: center;
+        align-self: flex-end;
+    }
+
+    .team-job{
+        font-weight: bold;
+        align-self: flex-start;
+        justify-self: center;
+    }
+
+    .team-bio{
+        justify-self: center;
+        width: 95%;
+        height: 85%;
+        overflow-y: scroll;
+    }
+
+    /* odd div */
+    [id^=team]:nth-child(odd){
+        background-color: #0c2461;
+        color: #f8c291;
+    }
+
+    /* even div */
+    [id^=team]:nth-child(even){
+        background-color: #f8c291;
+        color: #0c2461;
+    }
 
 }
 
