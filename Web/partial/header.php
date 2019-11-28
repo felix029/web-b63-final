@@ -55,15 +55,17 @@
                         if(CommonAction::inPreview()){
                             ?>
                             <li><a href="?preview=false">Fin de l'apperçu</a></li>
+                            <li><a href="home.php?preview=false">Paramètres</a></li>
                             <?php
                         }
                         else{
                             ?>
                             <li><a href="?preview=true">Apperçu du contenu</a></li>
+                            <li><a href="home.php">Paramètres</a></li>
                             <?php
                         }
                     ?>
-                    <li><a href="home.php?preview=false">Paramètres</a></li>
+                    
                     <li><a href="?logout=true">Déconnexion</a></li>
                 </ul>
             </div>
