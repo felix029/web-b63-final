@@ -52,7 +52,7 @@
                 <ul>
                     <li>Bonjour, <?= $_SESSION["username"] ?>!</li>
                     <?php
-                        if(CommonAction::inPreview()){
+                        if($action->inPreview()){
                             ?>
                             <li><a href="?preview=false">Fin de l'apperçu</a></li>
                             <li><a href="home.php?preview=false">Paramètres</a></li>
@@ -65,7 +65,7 @@
                             <?php
                         }
                     ?>
-                    
+
                     <li><a href="?logout=true">Déconnexion</a></li>
                 </ul>
             </div>

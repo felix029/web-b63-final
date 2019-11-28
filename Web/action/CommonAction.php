@@ -60,9 +60,8 @@
 			return $_SESSION["visibility"] > CommonAction::$VISIBILITY_PUBLIC;
 		}
 
-		public function inPreview(){
-			return $_SESSION["visibility"] == CommonAction::$VISIBILITY_PREVIEW;
-			
+		public function inPreview() {
+			return $_SESSION["visibility"] === CommonAction::$VISIBILITY_PREVIEW;
 		}
 
 		public function isAdmin() {
