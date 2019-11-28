@@ -5,7 +5,7 @@
 
 	abstract class CommonAction {
 		protected static $VISIBILITY_PUBLIC = 0;
-		protected static $VISIBILITY_MEMBER = 1;
+		protected static $VISIBILITY_PREVIEW = 1;
 		protected static $VISIBILITY_MODERATOR = 2;
 		protected static $VISIBILITY_ADMIN = 3;
 
@@ -21,6 +21,17 @@
 				session_unset();
 				session_destroy();
 				session_start();
+			}
+
+			if(isset($_GET["preview"])){
+				if($_GET["preview"] == "true"){
+					$_SESSION["temp_vis"] = $_SESSION["visibility"];
+					$_SESSION["visibility"] = CommonAction::$VISIBILITY_PREVIEW;
+				}
+				if($_GET["preview"] == "false"){
+					$_SESSION["visibility"] = $_SESSION["temp_vis"];
+					unset($_SESSION["temp_vis"]);
+				}
 			}
 
 			if (empty($_SESSION["visibility"])) {
@@ -47,6 +58,11 @@
 
 		public function isLoggedIn() {
 			return $_SESSION["visibility"] > CommonAction::$VISIBILITY_PUBLIC;
+		}
+
+		public function inPreview(){
+			return $_SESSION["visibility"] == CommonAction::$VISIBILITY_PREVIEW;
+			
 		}
 
 		public function isAdmin() {

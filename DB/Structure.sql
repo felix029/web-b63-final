@@ -39,9 +39,12 @@ CREATE TABLE team (
 	id_job INT NOT NULL,
 	bio TEXT,
 	image_url VARCHAR(64),
+	pos INT,
 	
 	PRIMARY KEY pk_team(id),
 	FOREIGN KEY (id_job) REFERENCES jobs(id),
 	CONSTRAINT uc_team_fullname UNIQUE (fullname)
 
 ) engine = innoDB character set utf8 collate utf8_general_ci;
+
+CREATE INDEX idx_team_pos ON team(pos);

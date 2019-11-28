@@ -9,7 +9,7 @@
 ?>
 	
 <?php
-	if($action->isLoggedIn()){
+	if($action->isLoggedIn() && !$action->inPreview()){
 		?>
 			<script src="js/teamEdit.js"></script>
 			<div id="admin-team-container">
@@ -173,6 +173,37 @@
 							?>
 							</select>
 							<button class="button">confirmer</button>
+					</div>
+				</form>
+
+				<form action="equipe.php" method="POST">
+					<div id="pos-team-member">
+							<?php
+								if($action->error == "ERROR_CHANGING_POS"){
+									?>
+									<h1 class="error">Erreur lors du changement de position</h1>
+									<?php
+								}
+								else{
+									?>
+									<h1>Changez la position d'une fiche</h1>
+									<h2>(En ordre croissant)</h2>
+									<?php
+								}
+							?>
+							<select name="fullnamepos" id="fullnamepos">
+								<option value="none" selected>Sélectionnez quelqu'un...</option>
+								<?php
+									foreach($action->members as $m){
+										?>
+											<option value="<?= $m ?>"><?= $m ?></option>
+										<?php
+									}
+								?>
+							</select>
+							<select name="memberpos" id="memberpos">
+
+							</select>
 					</div>
 				</form>
 			</div>

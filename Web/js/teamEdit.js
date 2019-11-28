@@ -8,8 +8,9 @@ $(document).ready(function () {
                 data:{
                     value: val
                 }
-            }).done( bio => {
-               $("#editbio").val(bio);
+            }).done( rep => {
+                let bio = JSON.parse(rep);
+                $("#editbio").val(bio);
             })
         }
         else{
@@ -43,5 +44,65 @@ $(document).ready(function () {
             e.preventDefault();
         }
     });
+
+    $("#fullnamepos").change( () => {
+        let val = $("#fullnamepos").val();
+        if(val != "none"){
+            $.ajax({
+                url: "ajax-equipe.php",
+                type: "POST",
+                data:{
+                    memberpos: val
+                }
+            }).done( rep => {
+
+                let pos = JSON.parse(rep);
+                let option = document.createElement('option');
+                option.setAttribute("value", pos);
+                option.setAttribute("selected", "");
+                option.innerHTML = pos;
+               
+                document.getElementById("memberpos").innerHTML = "";
+                document.getElementById("memberpos").appendChild(option);
+
+                $.ajax({
+                    url: "ajax-equipe.php",
+                    type: "POST",
+                    data:{
+                        allpos: pos
+                    }
+               }).done( rep => {
+                    let positions = JSON.parse(rep);
+                    
+                    positions.forEach(e => {
+                        let option = document.createElement('option');
+                        option.setAttribute("value", e);
+                        option.innerHTML = e;
+                        document.getElementById("memberpos").appendChild(option);
+                    });
+               });
+            });
+        }
+        else{
+            document.getElementById("memberpos").innerHTML = "";
+        }
+    });
+
+    $("#memberpos").change( () => {
+        let name = $("#fullnamepos").val();
+        let newpos = $("#memberpos").val();
+        if(name != "none"){
+            $.ajax({
+                url: "ajax-equipe.php",
+                type: "POST",
+                data:{
+                    membereditpos: name,
+                    membernewpos: newpos
+                }
+            }).done( () => {
+                window.location.href = "equipe.php";
+            });
+        }
+    })
 
 })

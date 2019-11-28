@@ -96,7 +96,7 @@
 
 		public static function getTeam(){
 			$connection = Connection::getConnection();
-			$sql = "SELECT team.id, team.fullname, jobs.title, team.bio, team.image_url FROM team JOIN jobs ON team.id_job = jobs.id";
+			$sql = "SELECT team.id, team.fullname, jobs.title, team.bio, team.image_url FROM team JOIN jobs ON team.id_job = jobs.id ORDER BY team.pos";
 			$team = [];
 			foreach($connection->query($sql) as $row){
 				$team[$row["id"]] = [ $row["fullname"], $row["title"], $row["bio"], $row["image_url"] ];
@@ -144,13 +144,41 @@
 
 		}
 
+		public static function getPos($fullname){
+			$connection = Connection::getConnection();
+			$statement = $connection->prepare("SELECT pos FROM team WHERE fullname = ?");
+			$statement->bindParam(1, $fullname);
+			$statement->setFetchMode(PDO::FETCH_ASSOC);
+			$statement->execute();
+
+			$pos = "";
+			if($row = $statement->fetch()){
+				$pos = $row["pos"];
+			}
+
+			return $pos;
+
+		}
+
+		public static function getAllPos($selectedpos){
+			$connection = Connection::getConnection();
+			$sql = "SELECT pos FROM team WHERE pos <>" . $selectedpos;
+			$positions = [];
+			foreach($connection->query($sql) as $row){
+				array_push($positions, $row["pos"]);
+			}
+			
+			return $positions;
+		}
+
 		public static function newTeamMember($fullname, $job, $bio, $image_url){
 			$connection = Connection::getConnection();
-			$statement = $connection->prepare("INSERT INTO team(fullname, id_job, bio, image_url) VALUES(?, (SELECT id FROM jobs WHERE title = ?), ?, ?)");
+			$statement = $connection->prepare("INSERT INTO team(fullname, id_job, bio, image_url, pos) VALUES(?, (SELECT id FROM jobs WHERE title = ?), ?, ?, ?)");
 			$statement->bindParam(1, $fullname);
 			$statement->bindParam(2, $job);
 			$statement->bindParam(3, $bio);
 			$statement->bindParam(4, $image_url);
+			$statement->bindParam(5, UserDAO::getMaxPos());
 			$statement->execute();
 		}
 
@@ -187,6 +215,30 @@
 			$statement->execute();
 		}
 
+		public static function editMemberPos($fullname, $newpos){
+			$connection = Connection::getConnection();
+			
+			$statement1 = $connection->prepare("SELECT pos FROM team WHERE fullname = ?");
+			$statement1->bindParam(1, $fullname);
+			$statement1->setFetchMode(PDO::FETCH_ASSOC);
+			$statement1->execute();
+
+			$oldpos = 0;
+			if($row = $statement1->fetch()){
+				$oldpos = $row["pos"];
+			}
+
+			$statement2 = $connection->prepare("UPDATE team SET pos = ? WHERE pos = ?");
+			$statement2->bindParam(1, $oldpos);
+			$statement2->bindParam(2, $newpos);
+			$statement2->execute();
+
+			$statement3 = $connection->prepare("UPDATE team SET pos = ? WHERE fullname = ?");
+			$statement3->bindParam(1, $newpos);
+			$statement3->bindParam(2, $fullname);
+			$statement3->execute();
+		}
+
 		public static function deleteTeamMember($fullname){
 			UserDAO::deletePhoto($fullname);
 			$connection = Connection::getConnection();
@@ -211,5 +263,20 @@
 			if($target_file !== ""){
 				unlink($target_file);
 			}
+		}
+
+		private static function getMaxPos(){
+			$connection = Connection::getConnection();
+			$statement = $connection->prepare("SELECT MAX(pos) FROM team");
+			$statement->setFetchMode(PDO::FETCH_ASSOC);
+			$statement->execute();
+
+			$maxpos = 0;
+			
+			if($row = $statement->fetch()){
+				$maxpos = $row["MAX(pos)"] + 1;
+			}
+
+			return $maxpos;
 		}
 	}

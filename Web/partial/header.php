@@ -11,7 +11,7 @@
     <script src="js/header.js"></script>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <?php
-        if($action->isLoggedIn() && $_SESSION["editable"] == true){
+        if(($action->isLoggedIn() && $_SESSION["editable"] == true) && !$action->inPreview()){
             ?>
 
             <script src="js/editor.js"></script>
@@ -51,8 +51,19 @@
             <div id="admin-bar">
                 <ul>
                     <li>Bonjour, <?= $_SESSION["username"] ?>!</li>
-                    <li><a href="administration.php">Administration</a></li>
-                    <li><a href="home.php">Paramètres</a></li>
+                    <?php
+                        if(CommonAction::inPreview()){
+                            ?>
+                            <li><a href="?preview=false">Fin de l'apperçu</a></li>
+                            <?php
+                        }
+                        else{
+                            ?>
+                            <li><a href="?preview=true">Apperçu du contenu</a></li>
+                            <?php
+                        }
+                    ?>
+                    <li><a href="home.php?preview=false">Paramètres</a></li>
                     <li><a href="?logout=true">Déconnexion</a></li>
                 </ul>
             </div>
@@ -83,7 +94,7 @@
 </div>
 
 <?php
-    if($action->isLoggedIn() && $_SESSION["editable"] == true){
+    if(($action->isLoggedIn() && $_SESSION["editable"] == true) && !$action->inPreview()){
         ?>
             <button id="save-btn">sauvegarder</button>
         <?php

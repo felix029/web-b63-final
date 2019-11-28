@@ -754,7 +754,7 @@ Set the font-family content used for the HTML content.
     #admin-team-container{
         display: grid;
         grid-template-columns: 50%;
-        grid-template-rows: 2fr 2fr 1fr;
+        grid-template-rows: 2fr 2fr 1fr 2fr;
         justify-content: center;
         text-align: center;
         row-gap: 25px;
@@ -788,7 +788,30 @@ Set the font-family content used for the HTML content.
         grid-template-rows: 35% 25% 40%;
     }
 
-    [id$=-team-member] h1, [id$=-team-member] button{
+    #pos-team-member{
+        column-gap: initial;
+        height: 60%;
+        grid-template-rows: 50% 30% 20%;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+        justify-items: center;
+    }
+
+    #fullnamepos{
+        width: 70%;
+        height: 60%;
+        justify-self: right;
+        margin-right: 15px;
+    }
+
+    #memberpos{
+        width: 50%;
+        height: 60%;
+        justify-self: left;
+        margin-left: 15px;
+    }
+
+    [id$=-team-member] h1, [id$=-team-member] h2, [id$=-team-member] button{
         grid-column: span 2;
         align-self: center;
         justify-self: center;
@@ -816,6 +839,5 @@ Set the font-family content used for the HTML content.
         width: 60%;
         height: 60%;
     }
-
 
 }

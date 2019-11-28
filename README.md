@@ -31,9 +31,12 @@ Pour accéder à la console d'administration, appuyez, à partir de n'importe qu
 </table>
 
 La connexion avec un compte administrateur vous permettra de modifier le contenu de certaines pages du site avec l'éditeur de texte *Quill*.
-L'utilisateur connecté pourra aussi gérer la page "L'équipe" en y ajoutant, modifiant ou supprimant des membres.
+L'utilisateur connecté pourra aussi gérer la page "L'équipe" en y ajoutant, modifiant ou supprimant des membres. 
+Il pourra aussi modifier l'ordre dans lequel apparaissent les fiches d'employés.
 
-Vous pourrez aussi ajouter d'autres utilisateurs à partir de ce compte.
+Vous pourrez aussi ajouter et supprimer d'autres utilisateurs à partir de ce compte si vous avez les droits d'administrateur.
+
+Chaque utilisateur aura aussi la possibilité de modifier son mot de passe.
 
 ## Sources
 
