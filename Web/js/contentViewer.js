@@ -10,7 +10,6 @@ window.addEventListener("load", () => {
         theme: 'snow'
     })
 
-
     if(pageContent != "null"){
         let deltaobj = JSON.parse(pageContent);
         quill.setContents(deltaobj);
@@ -20,4 +19,14 @@ window.addEventListener("load", () => {
 
     $(".ql-toolbar").hide();
     $(".ql-container").css("border", "none");
+    
+    $.ajax({
+      url: hello.php,
+      method: post,
+      data: {
+        data_name : data
+      }
+    }).done( rep => {
+        let data = JSON.parse(rep);
+    });
 })
