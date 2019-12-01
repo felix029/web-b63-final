@@ -1,8 +1,9 @@
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS pages;
 DROP TABLE IF EXISTS team;
-DROP TABLE IF EXISTS jobs;
 DROP TABLE IF EXISTS offers;
+DROP TABLE IF EXISTS jobs;
+
 
 CREATE TABLE users (
 	id INT NOT NULL AUTO_INCREMENT,
@@ -43,7 +44,7 @@ CREATE TABLE team (
 	pos INT,
 	
 	PRIMARY KEY pk_team(id),
-	FOREIGN KEY (id_job) REFERENCES jobs(id),
+	FOREIGN KEY (id_job) REFERENCES jobs(id) ON DELETE RESTRICT,
 	CONSTRAINT uc_team_fullname UNIQUE (fullname)
 
 ) engine = innoDB character set utf8 collate utf8_general_ci;
@@ -57,6 +58,6 @@ CREATE TABLE offers (
 	description TEXT,
 	
 	PRIMARY KEY pk_offers(id),
-	FOREIGN KEY (id_job) REFERENCES jobs(id)
+	FOREIGN KEY (id_job) REFERENCES jobs(id) ON DELETE RESTRICT
 
 ) engine = innoDB character set utf8 collate utf8_general_ci;

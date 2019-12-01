@@ -895,4 +895,66 @@ Set the font-family content used for the HTML content.
         align-self: center;
     }
 
+    /* PAGE CARRIERES */
+
+    #admin-jobs-container{
+        display: grid;
+        grid-template-columns: 50%;
+        grid-template-rows: 1fr 1fr 2fr 2fr 1fr;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #admin-jobs-container > div{
+        color: #f8c291;
+        font-family: 'above';
+        background-color: #0c2461e0;
+        border: solid #a82103e0 3px;
+        margin-bottom: 15px;
+    }
+
+    #add-job-title form{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+        justify-items: center;
+    }
+
+    #add-job-title form label{
+        justify-self: right;
+        padding-right: 30px;
+    }
+
+    #add-job-title form input{
+        justify-self: left;
+        padding-left: 30px;
+    }
+
+    #add-job-title form h1, #add-job-title form button{
+        grid-column: span 2;
+    }
+
+    #delete-job-title form, #delete-job-offer form{
+        display: grid;
+        align-items: center;
+        justify-items: center;
+    }
+
+    #add-job-offer form, #edit-job-offer form{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 30% 10% 10% 30% 20%;
+    }
+
+    #add-job-offer form h1, #add-job-offer form button, #add-job-offer form textarea, #edit-job-offer form h1, #edit-job-offer form button, #edit-job-offer form textarea{
+        grid-column: span 2;
+        align-self: center;
+        justify-self: center;
+    }
+
+    #admin-jobs-container textarea{
+        width: 80%;
+        height: 100%;
+    }
+
 }

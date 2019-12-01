@@ -86,7 +86,6 @@
 				</select>
 				<label>Salaire horraire offert</label>
 				<input type="text" name="new-offer-salary">
-				<label>Description de l'emploi</label>
 				<textarea name="new-offer-desc" id="" cols="30" rows="10" placeholder="Décrivez brièvements les responsabilités/taches du poste..."></textarea>
 				<button class="button">confirmer</button>	
 			</form>
@@ -119,7 +118,6 @@
 				</select>
 				<label>Salaire horraire offert</label>
 				<input type="text" name="edit-offer-salary">
-				<label>Description de l'emploi</label>
 				<textarea name="edit-offer-desc" id="" cols="30" rows="10" placeholder="Décrivez brièvements les responsabilités/taches du poste..."></textarea>
 				<button class="button">confirmer</button>
 				</form>
