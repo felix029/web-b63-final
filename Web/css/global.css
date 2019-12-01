@@ -958,7 +958,7 @@ Set the font-family content used for the HTML content.
 
     #add-job-offer input, #add-job-offer select, #edit-job-offer input, #edit-job-offer select{
         width: 50%;
-        height: 60%;
+        height: 70%;
         margin-bottom: 10px;
     }
 
