@@ -50,7 +50,6 @@
 							}
 							else{
 								?>
-								<?= $action->error ?>
 								<h1>ajouter un membre à l'équipe</h1>
 								<?php
 							}
