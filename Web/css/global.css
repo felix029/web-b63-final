@@ -365,7 +365,7 @@ Set the font-family content used for the HTML content.
     /* HEADER */
     header{
         display: grid;
-        grid-template-columns: 10% 90%;
+        grid-template-columns: 20% 80%;
         grid-template-rows: 100%;
     }
 
@@ -394,9 +394,8 @@ Set the font-family content used for the HTML content.
 
     li{
         display: inline;
-        font-size: larger;
-        font-weight: bold;
-        padding: 0 8px 0 4px;
+        font-size: 1.8em;
+        padding: 0 14px 0 10px;
         border-right: #f8c291 solid 2px;
     }
 
@@ -671,7 +670,7 @@ Set the font-family content used for the HTML content.
         width: 75%;
         height: 35vh;
         display: grid;
-        grid-template-rows: 20% 10% 70%;
+        grid-template-rows: 30% 10% 60%;
         padding: 20px 5px 20px 5px;
         border: solid #a82103 3px;
         /* border-radius: 10px; */
@@ -690,17 +689,17 @@ Set the font-family content used for the HTML content.
 
     .team-name{
         font-weight: bolder;
-        font-size: x-large;
+        font-size: 3em;
     }
 
     .team-job{
         font-weight: bold;
-        font-size: larger;
+        font-size: 1.5em;
         align-self: flex-start;
     }
 
     .team-bio{
-        font-size: medium;
+        font-size: 1.4em;
         width: 95%;
     }
 
