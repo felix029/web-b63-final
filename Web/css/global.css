@@ -856,7 +856,7 @@ Set the font-family content used for the HTML content.
     }
 
     #location div, #contact div, #contact label{
-        margin: 2vh 0 3vh 0;
+        margin: 1vh 0 2vh 0;
         font-family: 'above';
         font-size: larger;
     }
