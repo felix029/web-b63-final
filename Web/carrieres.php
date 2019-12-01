@@ -36,7 +36,7 @@
 					<?php
 						if($action->error == "ERROR_DELETING_JOB"){
 							?>
-								<h1 class="error">Erreur lors de la supression de l'emploi</h1>
+								<h1 class="error">Erreur (l'emploi est probablement associé à une offre/membre de l'équipe)</h1>
 							<?php
 						}
 						else{

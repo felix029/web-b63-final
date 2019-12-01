@@ -905,6 +905,10 @@ Set the font-family content used for the HTML content.
         text-align: center;
     }
 
+    #admin-jobs-container label{
+        font-size: large;
+    }
+
     #admin-jobs-container > div{
         color: #f8c291;
         font-family: 'above';
@@ -926,12 +930,13 @@ Set the font-family content used for the HTML content.
 
     #add-job-title form label{
         justify-self: right;
-        padding-right: 30px;
+        margin-right: 30px;
     }
 
     #add-job-title form input{
         justify-self: left;
-        padding-left: 30px;
+        margin-left: 30px;
+        width: 50%;
     }
 
     #add-job-title form h1, #add-job-title form button{

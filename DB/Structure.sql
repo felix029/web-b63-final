@@ -54,8 +54,8 @@ CREATE INDEX idx_team_pos ON team(pos);
 CREATE TABLE offers (
 	id INT NOT NULL AUTO_INCREMENT,
 	id_job INT NOT NULL,
-	salary FLOAT NOT NULL,
-	description TEXT,
+	salary VARCHAR(16),
+	job_desc TEXT,
 	
 	PRIMARY KEY pk_offers(id),
 	FOREIGN KEY (id_job) REFERENCES jobs(id) ON DELETE RESTRICT

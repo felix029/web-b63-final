@@ -250,23 +250,37 @@
 
 		public static function addJob($jobtitle){
 			$connection = Connection::getConnection();
-			$statement = $connection->preapre("INSERT INTO jobs(title) VALUES (?)");
+			$statement = $connection->prepare("INSERT INTO jobs(title) VALUES (?)");
 			$statement->bindParam(1, $jobtitle);
+			$statement->execute();
+		}
+
+		public static function deleteJob($jobtitle){
+			$connection = Connection::getConnection();
+			$statement = $connection->prepare("DELETE FROM jobs WHERE title = ?");
+			$statement->bindParam(1, $jobtitle);
+			$statement->execute();
+		}
+
+		public static function addJobOffer($title, $salary, $desc){
+			$connection = Connection::getConnection();
+			$statement = $connection->prepare("INSERT INTO offers(id_job, salary, job_desc) VALUES (SELECT id FROM jobs WHERE title = ?), ?, ?)");
+			$statement->bindParam(1, $title);
+			$statement->bindParam(2, $salary);
+			$statement->bindParam(3, $desc);
 			$statement->execute();
 		}
 
 		public static function getOffers(){
 			$connection = Connection::getConnection();
-			$sql = "SELECT offers.id, jobs.title, offers.salary, offers.description FROM offers JOIN jobs ON offers.id_job = jobs.id";
+			$sql = "SELECT offers.id, jobs.title, offers.salary, offers.job_desc FROM offers JOIN jobs ON offers.id_job = jobs.id";
 
 			$offers = [];
 			foreach($connection->query($sql) as $row){
-				$offers[$row["id"]] = [ $row["title"], $row["salary"], $row["description"] ];
+				$offers[$row["id"]] = [ $row["title"], $row["salary"], $row["job_desc"] ];
 			}
 
 			return $offers;
-
-
 		}
 
 		private static function getMaxPos(){
