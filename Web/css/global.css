@@ -846,7 +846,6 @@ Set the font-family content used for the HTML content.
         display: grid;
         grid-template-columns: 1fr 1fr;
         column-gap: 20px;
-        height: 50vh;
     }
 
     #location{
