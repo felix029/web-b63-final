@@ -15,7 +15,7 @@
 			$_SESSION["page"] = "carrieres.php";
 
 			$this->jobs = UserDAO::getJobs();
-			//$this->offers = UserDAO::getOffers();
+			$this->offers = UserDAO::getOffers();
 
 		}
 	}

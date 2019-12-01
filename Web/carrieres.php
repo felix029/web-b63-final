@@ -84,8 +84,8 @@
 						}
 					?>
 				</select>
-				<label>Salaire offert</label>
-				<input type="number" name="new-offer-salary">
+				<label>Salaire horraire offert</label>
+				<input type="text" name="new-offer-salary">
 				<label>Description de l'emploi</label>
 				<textarea name="new-offer-desc" id="" cols="30" rows="10" placeholder="Décrivez brièvements les responsabilités/taches du poste..."></textarea>
 				<button class="button">confirmer</button>	
@@ -105,8 +105,23 @@
 								<h1>Modifier une offre d'emploi</h1>
 							<?php
 						}
-
 					?>
+				<label>Offre à modifier</label>
+				<select name="edit-offer-title">
+					<option value="none" selected>Sélectionnez une offre...</option>
+					<?php
+						foreach($action->offers as $key => $offer){
+							?>
+								<option value="<?= $key ?>"><?= $key . " - " . $offer["title"] ?></option>
+							<?php
+						}
+					?>
+				</select>
+				<label>Salaire horraire offert</label>
+				<input type="text" name="edit-offer-salary">
+				<label>Description de l'emploi</label>
+				<textarea name="edit-offer-desc" id="" cols="30" rows="10" placeholder="Décrivez brièvements les responsabilités/taches du poste..."></textarea>
+				<button class="button">confirmer</button>
 				</form>
 			</div>
 
@@ -124,8 +139,17 @@
 							<?php
 						}
 					?>
-
-				
+				<select name="delete-offer-title">
+					<option value="none" selected>Sélectionnez une offre...</option>
+					<?php
+						foreach($action->offers as $key => $offer){
+							?>
+								<option value="<?= $key ?>"><?= $key . " - " . $offer["title"] ?></option>
+							<?php
+						}
+					?>
+				</select>
+				<button class="button">confirmer</button>
 				</form>
 			</div>
 

@@ -286,4 +286,18 @@
 			$statement->bindParam(1, $jobtitle);
 			$statement->execute();
 		}
+
+		private static function getOffers(){
+			$connection = Connection::getConnection();
+			$sql = "SELECT offers.id, jobs.title, offers.salary, offers.description FROM offers JOIN jobs ON offers.id_jobs = jobs.id";
+
+			$offers = [];
+			foreach($connection->query($sql) as $row){
+				$offers[$row["id"]] = [ $row["title"], $row["salary"], $row["description"] ];
+			}
+
+			return $offers;
+
+
+		}
 	}
