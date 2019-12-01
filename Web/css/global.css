@@ -913,6 +913,10 @@ Set the font-family content used for the HTML content.
         margin-bottom: 15px;
     }
 
+    #admin-jobs-container h1, #admin-jobs-container button{
+        margin-bottom: 20px;
+    }
+
     #add-job-title form{
         display: grid;
         grid-template-columns: 50% 50%;
@@ -952,9 +956,20 @@ Set the font-family content used for the HTML content.
         justify-self: center;
     }
 
+    #add-job-offer input, #add-job-offer select, #edit-job-offer input, #edit-job-offer select{
+        width: 50%;
+        height: 60%;
+        margin-bottom: 10px;
+    }
+
     #admin-jobs-container textarea{
         width: 80%;
         height: 100%;
+    }
+
+    #delete-job-title select, #delete-job-offer select{
+        width: 30%;
+        height: 110%;
     }
 
 }
