@@ -111,7 +111,7 @@
 					<?php
 						foreach($action->offers as $key => $offer){
 							?>
-								<option value="<?= $key ?>"><?= $key . " - " . $offer["title"] ?></option>
+								<option value="<?= $key ?>"><?= $key . " - " . $offer[0] ?></option>
 							<?php
 						}
 					?>
