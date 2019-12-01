@@ -22,7 +22,7 @@
 
 			if((isset($_POST["newfullname"]) && $_POST["newfullname"] != "") && (isset($_POST["newjob"]) && $_POST["newjob"] != "none") && (isset($_POST["newbio"])  && $_POST["newbio"] != "")&& $_FILES["newphoto"]["size"] != 0){
 				try{
-					$target_dir = "images/equipe/";
+					$target_dir = "/images/equipe/";
 					$target_file = $target_dir . basename($_FILES["newphoto"]["name"]);
 					$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 					$check = getimagesize($_FILES["newphoto"]["tmp_name"]);
