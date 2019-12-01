@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS pages;
 DROP TABLE IF EXISTS team;
 DROP TABLE IF EXISTS jobs;
+DROP TABLE IF EXISTS offers;
 
 CREATE TABLE users (
 	id INT NOT NULL AUTO_INCREMENT,
@@ -48,3 +49,14 @@ CREATE TABLE team (
 ) engine = innoDB character set utf8 collate utf8_general_ci;
 
 CREATE INDEX idx_team_pos ON team(pos);
+
+CREATE TABLE offers (
+	id INT NOT NULL AUTO_INCREMENT,
+	id_job INT NOT NULL,
+	salary FLOAT NOT NULL,
+	description TEXT,
+	
+	PRIMARY KEY pk_offers(id),
+	FOREIGN KEY (id_job) REFERENCES jobs(id)
+
+) engine = innoDB character set utf8 collate utf8_general_ci;

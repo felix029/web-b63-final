@@ -6,11 +6,8 @@
 
 	require_once("partial/header.php");
 
-?>
-	
-<?php
 	if($action->isLoggedIn() && !$action->inPreview()){
-		?>
+	?>
 			<script src="js/teamEdit.js"></script>
 			<div id="admin-team-container">
 				<!-- Add team member -->

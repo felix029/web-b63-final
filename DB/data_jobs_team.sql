@@ -38,12 +38,5 @@ VALUES
 		salaire minimum pis aucun avantage, le boss c'est un méchant crosseur mais bon, au moins j'ai plus à dormir au parc Émilie-Gamelin avec les autres pauvres pétés sur la peanut!",
 		"images/equipe/seb.jpg",
 		3
-	),
-	(
-		'Alex Chiasse',
-		(SELECT id FROM jobs WHERE title = 'Gérant(e)'),
-		"Strappez moi la strap! Manger c'est plaisant.",
-		"images/equipe/alex.jpg",
-		4
 	);
 	
