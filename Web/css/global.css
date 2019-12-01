@@ -394,9 +394,9 @@ Set the font-family content used for the HTML content.
 
     li{
         display: inline;
-        font-size: large;
+        font-size: larger;
         font-weight: bold;
-        padding: 0 14px 0 10px;
+        padding: 0 8px 0 4px;
         border-right: #f8c291 solid 2px;
     }
 
