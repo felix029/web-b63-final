@@ -248,21 +248,25 @@
 			$statement_delete->execute();
 		}
 
-		private static function deletePhoto($fullname){
+		public static function addJob($jobtitle){
 			$connection = Connection::getConnection();
-			$statement_file = $connection->prepare("SELECT image_url FROM team WHERE fullname = ?");
-			$statement_file->bindParam(1, $fullname);
-			$statement_file->setFetchMode(PDO::FETCH_ASSOC);
-			$statement_file->execute();
+			$statement = $connection->preapre("INSERT INTO jobs(title) VALUES (?)");
+			$statement->bindParam(1, $jobtitle);
+			$statement->execute();
+		}
 
-			$target_file = "";
-			if($row = $statement_file->fetch()){
-				$target_file = $row["image_url"];
+		public static function getOffers(){
+			$connection = Connection::getConnection();
+			$sql = "SELECT offers.id, jobs.title, offers.salary, offers.description FROM offers JOIN jobs ON offers.id_job = jobs.id";
+
+			$offers = [];
+			foreach($connection->query($sql) as $row){
+				$offers[$row["id"]] = [ $row["title"], $row["salary"], $row["description"] ];
 			}
 
-			if($target_file !== ""){
-				unlink($target_file);
-			}
+			return $offers;
+
+
 		}
 
 		private static function getMaxPos(){
@@ -280,24 +284,21 @@
 			return $maxpos;
 		}
 
-		private static function addJob($jobtitle){
+		private static function deletePhoto($fullname){
 			$connection = Connection::getConnection();
-			$statement = $connection->preapre("INSERT INTO jobs(title) VALUES (?)");
-			$statement->bindParam(1, $jobtitle);
-			$statement->execute();
-		}
+			$statement_file = $connection->prepare("SELECT image_url FROM team WHERE fullname = ?");
+			$statement_file->bindParam(1, $fullname);
+			$statement_file->setFetchMode(PDO::FETCH_ASSOC);
+			$statement_file->execute();
 
-		private static function getOffers(){
-			$connection = Connection::getConnection();
-			$sql = "SELECT offers.id, jobs.title, offers.salary, offers.description FROM offers JOIN jobs ON offers.id_jobs = jobs.id";
-
-			$offers = [];
-			foreach($connection->query($sql) as $row){
-				$offers[$row["id"]] = [ $row["title"], $row["salary"], $row["description"] ];
+			$target_file = "";
+			if($row = $statement_file->fetch()){
+				$target_file = $row["image_url"];
 			}
 
-			return $offers;
-
-
+			if($target_file !== ""){
+				unlink($target_file);
+			}
 		}
+
 	}
