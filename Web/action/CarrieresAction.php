@@ -58,5 +58,10 @@
 				}
 			}
 
+			//edit job offer
+			if(isset($_POST['edit-offer-title']) && $_POST['edit-job-title'] != "none" && isset($_POST['edit-offer-salary']) && isset($_POST['edit-offer-desc'])){
+				echo "test";
+			}
+
 		}
 	}
