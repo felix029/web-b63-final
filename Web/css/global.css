@@ -700,7 +700,7 @@ Set the font-family content used for the HTML content.
     }
 
     .team-bio{
-        font-size: large;
+        font-size: medium;
         width: 95%;
     }
 
