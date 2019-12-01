@@ -279,4 +279,11 @@
 
 			return $maxpos;
 		}
+
+		private static function addJob($jobtitle){
+			$connection = Connection::getConnection();
+			$statement = $connection->preapre("INSERT INTO jobs(title) VALUES (?);")
+			$statement->bindParam(1, $jobtitle);
+			$statement->execute();
+		}
 	}

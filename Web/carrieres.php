@@ -25,13 +25,16 @@
 							<?php
 						}
 					?>
+					<label>Titre de l'emploi</label>
+					<input type="text" name="newjob">
+					<button class="button">confirmer</button>
 				</form>
 			</div>
 
 			<div id="delete-job-title">
 				<form action="carrieres.php" method="POST">
 					<?php
-						if($action->error == "ERROR_DELTING_JOB"){
+						if($action->error == "ERROR_DELETING_JOB"){
 							?>
 								<h1 class="error">Erreur lors de la supression de l'emploi</h1>
 							<?php
@@ -42,6 +45,17 @@
 							<?php
 						}
 					?>
+					<select name="delete-job">
+						<option value="none" selected>Sélectionnez un titre...</option>
+						<?php
+							foreach($action->jobs as $j){
+								?>
+									<option value="<?= $j ?>"><?= $j ?></option>
+								<?php
+							}
+						?>
+					</select>
+					<button class="button">confirmer</button>
 				</form>
 			</div>
 
@@ -59,7 +73,23 @@
 						<?php
 					}
 				?>
-				</form>
+				<label>Titre de l'emploi</label>
+				<select name="new-offer-title">
+					<option value="none" selected>Selectionnez un titre...</option>
+					<?php
+						foreach($action->jobs as $j){
+							?>
+								<option value="<?= $j ?>"><?= $j ?></option>
+							<?php
+						}
+					?>
+				</select>
+				<label>Salaire offert</label>
+				<input type="number" name="new-offer-salary">
+				<label>Description de l'emploi</label>
+				<textarea name="new-offer-desc" id="" cols="30" rows="10" placeholder="Décrivez brièvements les responsabilités/taches du poste..."></textarea>
+				<button class="button">confirmer</button>	
+			</form>
 			</div>
 
 			<div id="edit-job-offer">
@@ -75,6 +105,7 @@
 								<h1>Modifier une offre d'emploi</h1>
 							<?php
 						}
+
 					?>
 				</form>
 			</div>
