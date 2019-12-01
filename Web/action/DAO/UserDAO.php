@@ -264,7 +264,7 @@
 
 		public static function addJobOffer($title, $salary, $desc){
 			$connection = Connection::getConnection();
-			$statement = $connection->prepare("INSERT INTO offers(id_job, salary, job_desc) VALUES (SELECT id FROM jobs WHERE title = ?), ?, ?)");
+			$statement = $connection->prepare("INSERT INTO offers(id_job, salary, job_desc) VALUES ((SELECT id FROM jobs WHERE title = ?), ?, ?)");
 			$statement->bindParam(1, $title);
 			$statement->bindParam(2, $salary);
 			$statement->bindParam(3, $desc);
