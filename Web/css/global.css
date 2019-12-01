@@ -690,17 +690,17 @@ Set the font-family content used for the HTML content.
 
     .team-name{
         font-weight: bolder;
-        font-size: 3em;
+        font-size: x-large;
     }
 
     .team-job{
         font-weight: bold;
-        font-size: 1.5em;
+        font-size: larger;
         align-self: flex-start;
     }
 
     .team-bio{
-        font-size: 1.4em;
+        font-size: large;
         width: 95%;
     }
 
