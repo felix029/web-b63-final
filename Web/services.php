@@ -9,7 +9,18 @@
 </div>
 
 <div id="reservation">
-	<h1>Réservations</h1>
+		<?php
+		if($action->error == "MAIL_ERROR"){
+			?>
+			<h1 class="error">Erreur lors de la réservation</h1>
+			<?php
+		}
+		else{
+			?>
+			<h1>Réservations</h1>
+			<?php
+		}
+		?>
 	<div>
 		Pour faire une réservation, contactez nous par téléphone au 007-373-5963 ou en faisant une demande en remplissant le formulaire ci-dessous. 
 	</div>

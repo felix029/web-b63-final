@@ -2,6 +2,7 @@
 	require_once("action/CommonAction.php");
 
 	class ServicesAction extends CommonAction {
+		public $error = "ok";
 
 		public function __construct() {
 			parent::__construct(CommonAction::$VISIBILITY_PUBLIC);
@@ -12,8 +13,24 @@
 			$_SESSION["page"] = "services.php";
 
 			if(isset($_POST['reservation'])){
+				$subject = "Reservation on DKoncept.com";
+				$headers = "From: " . $_POST['fullname'] . " <" . DK_MAIL .">\r\n";
+				$headers .= "Reply-To: " . $_POST['email'] . "\r\n";
+				$message = "Reservation request from " . $_POST['fullname'] . "\n\n";
+				$message .= "Email: " . $_POST['email'] . "\n";
+				$message .= "Phone number: " . $_POST['tel'] . "\n";
+				$message .= "Table for: " . $_POST['nb'] . " persons\n";
+				$message .= "Date: ". $_POST['date'] . "\n";
+				$message .= "Time: " . $_POST['time'] . "\n";
 
-				
+				$this->error = @mail(DK_MAIL, $subject, $message, $headers)?"ok":"MAIL_ERROR";
+
+				unset($_POST['fullname']);
+				unset($_POST['tel']);
+				unset($_POST['email']);
+				unset($_POST['number']);
+				unset($_POST['date']);
+				unset($_POST['time']);
 			}
 		}
 	}
