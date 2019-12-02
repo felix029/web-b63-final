@@ -140,10 +140,10 @@
 
 					$mail = @mail($to, $subject, $message, $headers, $returnpath);
 
-					// $this->error = $mail?"ok":"MAIL_ERROR";
+					$this->error = $mail?"ok":"MAIL_ERROR";
 				}
 				else{
-					$this->error = "MAIL_ERROR";
+					$this->error = "WRONG_FILE_TYPE";
 				}	
 				
 				unset($_POST['apply']);

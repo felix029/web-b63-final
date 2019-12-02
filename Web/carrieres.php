@@ -164,6 +164,11 @@
 				<h1 class="error">Erreur lors de l'application</h1>
 				<?php
 			}
+			else if($action->error == "WRONG_FILE_TYPE"){
+				?>
+				<h1 class="error">Type de fichier invalide</h1>
+				<?php
+			}
 			else{
 				?>
 				<h1>Appliquez ici!</h1>
