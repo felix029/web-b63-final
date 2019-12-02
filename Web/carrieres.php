@@ -158,7 +158,18 @@
 	else{
 		?>
 		<aside id="apply-job">
-			<h1>Appliquez ici!</h1>
+			<?php
+			if($action->error == "MAIL_ERROR"){
+				?>
+				<h1 class="error">Erreur lors de l'application</h1>
+				<?php
+			}
+			else{
+				?>
+				<h1>Appliquez ici!</h1>
+				<?php
+			}
+			?>
 			<form action="carrieres.php" method="post">
 				<label>Prénom</label>
 				<input type="text" name="apply-prenom">

@@ -140,7 +140,10 @@
 
 					$mail = @mail($to, $subject, $message, $headers, $returnpath);
 
-					$this->error = $mail?"ok":"MAIL_ERROR";
+					// $this->error = $mail?"ok":"MAIL_ERROR";
+				}
+				else{
+					$this->error = "MAIL_ERROR";
 				}	
 				
 				unset($_POST['apply']);
