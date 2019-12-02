@@ -163,9 +163,9 @@
 		?>
 			<div id="offer<?= $key ?>">
 				<h1 class="title-offer"><?= $offer[0]; ?></h1>
-				<h2 class="salary-offer"><?= $offer[1]; ?></h2>
+				<h2 class="salary-offer">Salaire horraire: <?= $offer[1]; ?></h2>
 				<div class="desc-offer"><?= $offer[2]; ?></div>
-				<div class="id-offer"><?= $key ?></div>
+				<div class="id-offer">ID de l'offre d'emploi: <?= $key ?></div>
 			</div>
 		<?php
 		}

@@ -987,21 +987,48 @@ Set the font-family content used for the HTML content.
         align-items: center;
     }
 
+    [id^=offer]{
+        margin-bottom: 30px;
+        width: 75%;
+        padding: 10px 15px 10px 15px;
+        display: grid;
+        grid-template-columns: 75% 25%;
+        grid-template-rows: 30% 70%;
+    }
+
     [id^=offer]:nth-child(odd){
         background-color: #0c2461e0;
         border:solid #a82103e0 3px;
         color: #f8c291;
-        margin-bottom: 30px;
-        width: 75%;
-        padding: 10px 15px 10px 15px;
+       
     }
 
     [id^=offer]:nth-child(even){
         background-color: #f8c291e0;
         border: solid #a82103e0 3px;
         color: #0c2461;
-        margin-bottom: 30px;
-        width: 75%;
-        padding: 10px 15px 10px 15px;
+    }
+
+    .title-offer{
+        margin-bottom: 15px;
+        justify-self: left;
+        align-self: center;
+    }
+
+    .salary-offer{
+        font-family: 'Arial';
+        justify-self: right;
+        align-self: center;
+    }
+
+    .desc-offer{
+        justify-self: left;
+        align-self: center;
+    }
+
+    .id-offer{
+        font-family: 'Arial';
+        justify-self: flex-end;
+        align-self: flex-end;
     }
 }
