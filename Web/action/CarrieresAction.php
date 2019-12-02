@@ -121,7 +121,7 @@
 					"Content-Transfer-Encoding: 7bit\n\n" . $htmlContent . "\n\n";
 
 					
-					$mesage .= "--{$mime_boundary}\n";
+					$message .= "--{$mime_boundary}\n";
 					$fp = @fopen($file,"rb");
 					$data = @fread($fp, filesize($file));
 					@fclose($fp);
