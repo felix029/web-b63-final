@@ -283,6 +283,21 @@
 			return $offers;
 		}
 
+		public static function getOneOffer($id) {
+			$connection = Connection::getConnection();
+			$statement = $connection->prepare("SELECT salary, job_desc FROM offers WHERE id = ?");
+			$statement->bindParam(1, $id);
+			$statement->setFetchMode(PDO::FETCH_ASSOC);
+			$statement->execute();
+
+			$offer = [];
+			if($row = $statement->fetch()){
+				$offer = [$row["salary"], $row["job_desc"]];
+			}
+
+			return $offer;
+		}
+
 		private static function getMaxPos(){
 			$connection = Connection::getConnection();
 			$statement = $connection->prepare("SELECT MAX(pos) FROM team");
