@@ -87,5 +87,64 @@
 				}
 			}
 
+			//apply to job offer
+			if(isset($_POST['apply'])){
+
+				//How to send a mail attachment via PHP found here: https://www.codexworld.com/send-email-with-attachment-php/
+				$file = $_FILES["apply-cv"]["name"];
+				$fileType = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+				
+				if($fileType == "doc" || $fileType == "docx" || $fileType == "pdf"){
+					$to = "felixo2997@gmail.com";
+				
+					$from = $_POST['apply-email'];
+					$fromName = $_POST['apply-prenom'] . " " . $_POST['apply-nom'];
+
+					$subject = "Quelqu'un vous a envoyer une application";
+
+
+					$htmlContent = "<h1>Application d'emploir pour DKoncept</h1>
+									<p>Cette application a été envoyé à partir du site de DKoncept.</p>
+									<p>" . $fromName ." </p>
+									<p> Courriel: " . $_POST['apply-email'] . "</p>
+									<p> Téléphone: " . $_POST['apply-tel'] . "</p>
+									<p> ID de l'offre d'emploi: " . $_POST['apply-id'] . "</p>";
+
+					$headers = "From: $fromName"." <".$from.">";
+
+					$semi_rand = md5(time());
+					$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
+
+					$headers .= "\nMIME-Version: 1.0\n" . "Content-Type: multipart/mixed;\n" . " boundary=\"{$mime_boundary}\"";
+
+					$message = "--{$mime_boundary}\n" . "Content-Type: text/html; charset=\"UTF-8\"\n" . 
+					"Content-Transfer-Encoding: 7bit\n\n" . $htmlContent . "\n\n";
+
+					if(!empy($file) > 0){
+						if(is_file($file)){
+							$mesage .= "--{$mime_boundary}\n";
+							$fp = @fopen($file,"rb");
+							$data = @fread($fp, filesize($file));
+
+							@fclose($fp);
+							$data = chunk_split(base64_encode($data));
+							$message .= "Content-Type: application/octet-stream; name=\"".basename($file)."\"\n" . 
+							"Content-Description: ".basename($file)."\n" .
+							"Content-Disposition: attachment;\n" . " filename=\"".basename($file)."\"; size=".filesize($file).";\n" . 
+							"Content-Transfer-Encoding: base64\n\n" . $data . "\n\n";
+						}
+					}
+
+					$message .= "--{$mime_boundary}--";
+					$returnpath = "-f" . $from;
+
+					$mail = @mail($to, $subject, $message, $headers, $returnpath);
+
+					$this->error = $mail?"ok":"MAIL_ERROR";
+				}	
+				
+				unset($_POST['apply']);
+			}
+
 		}
 	}

@@ -981,6 +981,39 @@ Set the font-family content used for the HTML content.
 
     /* user ******************************************************/
 
+    #apply-job{
+        position: fixed;
+        left: 75%;
+
+        background-color: #f8c291e0;
+        
+        width: 20%;
+        height: 60vh;
+        margin: 0 40px 0 40px;
+        padding: 10px 15px 10px 15px;
+
+        border: solid #a82103e0 3px;
+    }
+
+    #apply-job h1{
+        margin-bottom: 30px;
+    }
+
+    #apply-job form{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        row-gap: 5%;
+    }
+
+    #apply-job textarea, #apply-button{
+        grid-column: span 2;
+    }
+
+    #apply-button{
+        align-self: center;
+        justify-self: center;
+    }
+
     #offers-container{
         display: grid;
         grid-template-columns: 100%;
@@ -993,7 +1026,7 @@ Set the font-family content used for the HTML content.
         padding: 10px 15px 10px 15px;
         display: grid;
         grid-template-columns: 75% 25%;
-        grid-template-rows: 30% 70%;
+        grid-template-rows: 30% 15% 55%;
     }
 
     [id^=offer]:nth-child(odd){
@@ -1019,7 +1052,8 @@ Set the font-family content used for the HTML content.
         font-family: 'Arial';
         font-size: medium;
         justify-self: right;
-        align-self: center;
+        align-self: flex-start;
+        grid-row: span 3;
     }
 
     .desc-offer{
@@ -1030,7 +1064,7 @@ Set the font-family content used for the HTML content.
 
     .id-offer{
         font-family: 'Arial';
-        justify-self: flex-end;
+        justify-self: flex-start;
         align-self: flex-end;
     }
 }

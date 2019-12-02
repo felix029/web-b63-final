@@ -157,6 +157,32 @@
 	}
 	else{
 		?>
+		<aside id="apply-job">
+			<h1>Appliquez ici!</h1>
+			<form action="carrieres.php" method="post">
+				<label>Prénom</label>
+				<input type="text" name="apply-prenom">
+				
+				<label>Nom</label>
+				<input type="text" name="apply-nom">
+				
+				<label>Numéro de téléphone</label>
+				<input type="tel" name="apply-tel">
+				
+				<label>Courriel</label>
+				<input type="email" name="apply-email">
+				
+				<label>ID de l'offre</label>
+				<input type="text" name="apply-id">
+				
+				<label>CV (doc, docx ou PDF)</label>
+				<input type="file" name="apply-cv">
+				
+				<textarea name="apply-supp" id="" cols="40" rows="10" placeholder="Inscrivez ici toutes données supplémentaires..."></textarea>
+				
+				<input type="submit" value="appliquer" name="apply" class="button" id="apply-button">
+			</form>		
+		</aside>
 		<div id="container-offers">
 		<?php
 		foreach($action->offers as $key => $offer){
@@ -165,12 +191,13 @@
 				<h1 class="title-offer"><?= $offer[0]; ?></h1>
 				<h2 class="salary-offer">Salaire horraire: <?= $offer[1]; ?></h2>
 				<div class="desc-offer"><?= $offer[2]; ?></div>
-				<div class="id-offer">ID de l'offre d'emploi: <?= $key ?></div>
+				<div class="id-offer">ID de l'offre d'emploi: <strong><?= $key ?></strong></div>
 			</div>
 		<?php
 		}
 		?>
 		</div>
+		
 	<?php
 	}
 
