@@ -1017,6 +1017,7 @@ Set the font-family content used for the HTML content.
 
     .salary-offer{
         font-family: 'Arial';
+        font-size: medium;
         justify-self: right;
         align-self: center;
     }
@@ -1024,6 +1025,7 @@ Set the font-family content used for the HTML content.
     .desc-offer{
         justify-self: left;
         align-self: center;
+        margin-bottom: 30px;
     }
 
     .id-offer{
