@@ -156,6 +156,9 @@
 	<?php
 	}
 	else{
+		?>
+		<div id="offers-container">
+		<?php
 		foreach($action->offers as $key => $offer){
 		?>
 			<div id="offer<?= $key ?>">
@@ -166,6 +169,9 @@
 			</div>
 		<?php
 		}
+		?>
+		</div>
+	<?php
 	}
 
 	require_once("partial/footer.php");
