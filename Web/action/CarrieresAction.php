@@ -108,7 +108,8 @@
 									<p>" . $fromName ." </p>
 									<p> Courriel: " . $_POST['apply-email'] . "</p>
 									<p> Téléphone: " . $_POST['apply-tel'] . "</p>
-									<p> ID de l'offre d'emploi: " . $_POST['apply-id'] . "</p>";
+									<p> ID de l'offre d'emploi: " . $_POST['apply-id'] . "</p>
+									<p> Message supplémentaire: " . $_POST['apply-supp'] . "</p>";
 
 					$headers = "From: $fromName"." <".$from.">";
 
@@ -121,15 +122,20 @@
 					"Content-Transfer-Encoding: 7bit\n\n" . $htmlContent . "\n\n";
 
 					
-					$message .= "--{$mime_boundary}\n";
-					$fp = @fopen($file,"rb");
-					$data = @fread($fp, filesize($file));
-					@fclose($fp);
-					$data = chunk_split(base64_encode($data));
-					$message .= "Content-Type: application/octet-stream; name=\"".basename($file)."\"\n" . 
-					"Content-Description: ".basename($file)."\n" .
-					"Content-Disposition: attachment;\n" . " filename=\"".basename($file)."\"; size=".filesize($file).";\n" . 
-					"Content-Transfer-Encoding: base64\n\n" . $data . "\n\n";
+					if(!empty($file) > 0){
+						if(is_file($file)){
+							$message .= "--{$mime_boundary}\n";
+							$fp =    @fopen($file,"rb");
+							$data =  @fread($fp,filesize($file));
+					
+							@fclose($fp);
+							$data = chunk_split(base64_encode($data));
+							$message .= "Content-Type: application/octet-stream; name=\"".basename($file)."\"\n" . 
+							"Content-Description: ".basename($file)."\n" .
+							"Content-Disposition: attachment;\n" . " filename=\"".basename($file)."\"; size=".filesize($file).";\n" . 
+							"Content-Transfer-Encoding: base64\n\n" . $data . "\n\n";
+						}
+					}
 					
 					$message .= "--{$mime_boundary}--";
 					$returnpath = "-f" . $from;
