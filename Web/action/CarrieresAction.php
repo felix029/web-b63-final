@@ -113,7 +113,7 @@
 									<p> ID de l'offre d'emploi: " . $_POST['apply-id'] . "</p>
 									<p> Message supplémentaire: " . $_POST['apply-supp'] . "</p>";
 
-					$headers = "From: $fromName"." <"$to">\r\n";
+					$headers = "From: $fromName"." <$to>\r\n";
 					$headers .= "Reply-To: " . $_POST['apply-mail'] . "\r";
 
 					$semi_rand = md5(time()); 
