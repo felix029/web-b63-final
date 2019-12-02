@@ -47,7 +47,7 @@ p{
     display: none;
 }
 
-/* Pour le caroussel de la page d'accueuil */
+/* Pour le caroussel de la page d'accueuil ============================================================================================ */
 
 #carousel{
     width: 100%;
@@ -86,7 +86,7 @@ p{
     display: none;
 }
 
-/* Editeur de texte quill */
+/* Editeur de texte quill ============================================================================================ */
 
 /* Code pris à: https://stackoverflow.com/a/53487445 */
 /* Set droplist names - -item is the currently selected font, -label is the font's appearance in the droplist*/
@@ -165,7 +165,7 @@ Set the font-family content used for the HTML content.
   font-family: 'arial';
 }
 
-/* Custom color quill */
+/* Custom color quill ============================================================================================ */
 /* Source: https://stackoverflow.com/a/48156458 */
 .ql-color .ql-picker-options [data-value=custom-color], .ql-background .ql-picker-options [data-value=custom-color] {
     background: none !important;
@@ -211,7 +211,7 @@ Set the font-family content used for the HTML content.
     display: none;
 }
 
-/* ==================== VERSION MOBILE ==================== */
+/* =============================== VERSION MOBILE ============================== */
 
 @media screen and (max-width:999px){
 
@@ -274,7 +274,7 @@ Set the font-family content used for the HTML content.
     }
 
 
-    /* ADMIN PAGE */
+    /* ADMIN PAGE ============================================================================================ */
     #loginDiv{
         display: none;
     }
@@ -294,7 +294,7 @@ Set the font-family content used for the HTML content.
         font-family: "above";
     }
 
-    /* PAGE ÉQUIPE */
+    /* PAGE ÉQUIPE ============================================================================================ */
     /* general */
     #container-team{
         display: grid;
@@ -359,7 +359,7 @@ Set the font-family content used for the HTML content.
 
 }
 
-/* ==================== VERSION BUREAU ==================== */
+/* ============================= VERSION BUREAU ================================ */
 
 @media screen and (min-width:1000px){
     /* HEADER */
@@ -422,12 +422,12 @@ Set the font-family content used for the HTML content.
 
     }
 
-    /* GLOBAL CONTENT */
+    /* GLOBAL CONTENT ============================================================================================ */
     h1{
         font-size: 2.5em;
     }
 
-    /* ADMIN LOGIN PAGE */
+    /* ADMIN LOGIN PAGE ============================================================================================ */
     #loginDiv{
         width: 30%;
         margin: auto;
@@ -496,7 +496,7 @@ Set the font-family content used for the HTML content.
         display: none;
     }
 
-    /* ADMIN HOME PAGE */
+    /* ADMIN HOME PAGE ============================================================================================ */
 
     #change-pwd form{
         width: 30vw;
@@ -626,7 +626,7 @@ Set the font-family content used for the HTML content.
         margin-left: 15px;
     }
 
-    /* ADMINISTRATION (EDITEUR) */
+    /* ADMINISTRATION (EDITEUR) ============================================================================================ */
 
     .ql-toolbar{
         position: absolute;
@@ -655,7 +655,7 @@ Set the font-family content used for the HTML content.
         font-size: 1.3em;
     }
 
-    /* PAGE ÉQUIPE */
+    /* PAGE ÉQUIPE ============================================================================================ */
 
     /* general */
     #container-team{
@@ -840,7 +840,7 @@ Set the font-family content used for the HTML content.
         height: 60%;
     }
 
-    /* PAGE CONTACT */
+    /* PAGE CONTACT ============================================================================================ */
 
     #container-contact{
         display: grid;
@@ -895,7 +895,9 @@ Set the font-family content used for the HTML content.
         align-self: center;
     }
 
-    /* PAGE CARRIERES */
+    /* PAGE CARRIERES ============================================================================================ */
+
+    /* admin *******************************************************/
 
     #admin-jobs-container{
         display: grid;
@@ -977,4 +979,11 @@ Set the font-family content used for the HTML content.
         height: 110%;
     }
 
+    /* user ******************************************************/
+
+    #offers-container{
+        display: grid;
+        grid-template-columns: 75%;
+        align-items: center;
+    }
 }
