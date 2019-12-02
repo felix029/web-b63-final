@@ -120,9 +120,10 @@
 					$message = "--{$mime_boundary}\n" . "Content-Type: text/html; charset=\"UTF-8\"\n" . 
 					"Content-Transfer-Encoding: 7bit\n\n" . $htmlContent . "\n\n";
 
+					
 					$mesage .= "--{$mime_boundary}\n";
 					$fp = @fopen($file,"rb");
-					$data = @fread($fp, filesize($file))
+					$data = @fread($fp, filesize($file));
 					@fclose($fp);
 					$data = chunk_split(base64_encode($data));
 					$message .= "Content-Type: application/octet-stream; name=\"".basename($file)."\"\n" . 
