@@ -77,7 +77,7 @@
 				</form>
 
 				<!-- Edit team member -->
-				<form action="equipe.php" method="POST" enctype="multipart/form-data">
+				<form action="equipe.php" method="POST" enctype="multipart/mixed">
 					<div id="edit-team-member">
 						<?php
 						if($action->error == "FILE_NOT_IMAGE_EDIT"){
