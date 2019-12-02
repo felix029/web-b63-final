@@ -113,13 +113,13 @@
 
 					$headers = "From: $fromName"." <".$from.">";
 
-					$semi_rand = md5(time());
-					$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x";
+					$semi_rand = md5(time()); 
+					$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x"; 
 
 					$headers .= "\nMIME-Version: 1.0\n" . "Content-Type: multipart/mixed;\n" . " boundary=\"{$mime_boundary}\"";
 
-					$message = "--{$mime_boundary}\n" . "Content-Type: text/html; charset=\"UTF-8\"\n" . 
-					"Content-Transfer-Encoding: 7bit\n\n" . $htmlContent . "\n\n";
+					$message = "--{$mime_boundary}\n" . "Content-Type: text/html; charset=\"UTF-8\"\n" .
+					"Content-Transfer-Encoding: 7bit\n\n" . $htmlContent . "\n\n"; 
 
 					
 					if(!empty($file) > 0){
