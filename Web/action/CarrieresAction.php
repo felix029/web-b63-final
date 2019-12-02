@@ -114,7 +114,7 @@
 									<p> Message supplémentaire: " . $_POST['apply-supp'] . "</p>";
 
 					$headers = "From: $fromName"." <$to>\r\n";
-					$headers .= "Reply-To: " . $_POST['apply-mail'] . "\r";
+					$headers .= "Reply-To: " . $_POST['apply-mail'] . "\r\n";
 
 					$semi_rand = md5(time()); 
 					$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x"; 
