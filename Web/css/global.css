@@ -993,6 +993,7 @@ Set the font-family content used for the HTML content.
         color: #f8c291;
         margin-bottom: 30px;
         width: 75%;
+        padding: 10px 15px 10px 15px;
     }
 
     [id^=offer]:nth-child(even){
@@ -1001,5 +1002,6 @@ Set the font-family content used for the HTML content.
         color: #0c2461;
         margin-bottom: 30px;
         width: 75%;
+        padding: 10px 15px 10px 15px;
     }
 }
