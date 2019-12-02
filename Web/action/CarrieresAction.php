@@ -91,7 +91,7 @@
 			if(isset($_POST['apply'])){
 
 				//How to send a mail attachment via PHP found here: https://www.codexworld.com/send-email-with-attachment-php/
-				$file = $_FILES["apply-cv"]["name"];
+				$file = basename($_FILES["apply-cv"]["name"]);
 				$fileType = strtolower(pathinfo($file,PATHINFO_EXTENSION));
 				
 				if($fileType == "doc" || $fileType == "docx" || $fileType == "pdf"){
