@@ -59,8 +59,19 @@
 			}
 
 			//edit job offer
-			if(isset($_POST['edit-offer-title']) && $_POST['edit-job-title'] != "none" && isset($_POST['edit-offer-salary']) && isset($_POST['edit-offer-desc'])){
-				echo "test";
+			if(isset($_POST['edit-offer-title']) && $_POST['edit-offer-title'] != "none" && isset($_POST['edit-offer-salary']) && isset($_POST['edit-offer-desc'])){
+				try{
+
+					UserDAO::editJobOffer(intval($_POST['edit-offer-title']), $_POST['edit-offer-salary'], $_POST['edit-offer-desc']);
+					unset($_POST['edit-offer-title']);
+					unset($_POST['edit-offer-salary']);
+					unset($_POST['edit-offer-desc']);
+					header("location:carrieres.php");
+					exit;
+				}
+				catch(Exception $e){
+					$this->error = "ERROR_EDIT_OFFER";
+				}
 			}
 
 		}

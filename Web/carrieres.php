@@ -94,7 +94,7 @@
 			<div id="edit-job-offer">
 				<form action="carrieres.php" method="POST">
 				<?php
-						if($action->error == "ERROR_DELTING_JOB"){
+						if($action->error == "ERROR_EDIT_OFFER"){
 							?>
 								<h1 class="error">Erreur lors de la modification de l'offre</h1>
 							<?php
@@ -126,7 +126,7 @@
 			<div id="delete-job-offer">
 				<form action="carrieres.php" method="POST">
 				<?php
-						if($action->error == "ERROR_DELTING_JOB"){
+						if($action->error == "ERROR_DELETING_OFFER"){
 							?>
 								<h1 class="error">Erreur lors de la supression de l'offre</h1>
 							<?php

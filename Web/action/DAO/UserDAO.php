@@ -298,6 +298,15 @@
 			return $offer;
 		}
 
+		public static function editJobOffer($id, $salary, $job_desc){
+			$connection = Connection::getConnection();
+			$statement = $connection->prepare("UPDATE offers SET salary = ?, job_desc = ? WHERE id = ?");
+			$statement->bindParam(1, $salary);
+			$statement->bindParam(2, $job_desc);
+			$statement->bindParam(3, $id);
+			$statement->execute();
+		}
+
 		private static function getMaxPos(){
 			$connection = Connection::getConnection();
 			$statement = $connection->prepare("SELECT MAX(pos) FROM team");
