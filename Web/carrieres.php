@@ -106,7 +106,7 @@
 						}
 					?>
 				<label>Offre à modifier</label>
-				<select name="edit-offer-title">
+				<select name="edit-offer-title" id="edit-offer-title">
 					<option value="none" selected>Sélectionnez une offre...</option>
 					<?php
 						foreach($action->offers as $key => $offer){
@@ -117,8 +117,8 @@
 					?>
 				</select>
 				<label>Salaire horraire offert</label>
-				<input type="text" name="edit-offer-salary">
-				<textarea name="edit-offer-desc" id="" cols="30" rows="10" placeholder="Décrivez brièvements les responsabilités/taches du poste..."></textarea>
+				<input type="text" name="edit-offer-salary" id="edit-offer-salary">
+				<textarea name="edit-offer-desc" id="edit-offer-desc" cols="30" rows="10" placeholder="Décrivez brièvements les responsabilités/taches du poste..."></textarea>
 				<button class="button">confirmer</button>
 				</form>
 			</div>
