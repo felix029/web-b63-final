@@ -205,7 +205,7 @@
 			?>
 			<div id="offer">
 				<h1 class="title-offer">Rien pour l'instant...</h1>
-				<div></div>
+				<div class="salary-offer"></div>
 				<div class="desc-offer">Il y a présentement aucun poste de disponible malheureusement. Revenez voir ultérieurement, il y a beaucoup de roulement dans le domaine de la restauration!</div>
 				<div class="id-offer">-L'équipe DKoncept</div>
 			</div>
@@ -222,8 +222,8 @@
 					</div>
 				<?php
 				}
-				?>
-		}
+			}
+		?>
 		</div>
 		
 	<?php
