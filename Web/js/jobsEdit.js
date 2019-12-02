@@ -19,7 +19,8 @@ $(document).ready(function () {
             })
         }
         else{
-            $("#editbio").val("");
+            $("#edit-offer-salary").val("");
+            $("#edit-offer-desc").val("");
         }
     });
 
