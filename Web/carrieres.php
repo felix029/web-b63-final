@@ -171,6 +171,7 @@
 			}
 			else{
 				?>
+				<?= $action->error ?>
 				<h1>Appliquez ici!</h1>
 				<?php
 			}

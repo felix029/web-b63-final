@@ -143,7 +143,7 @@
 					$this->error = $mail?"ok":"MAIL_ERROR";
 				}
 				else{
-					$this->error = "WRONG_FILE_TYPE";
+					$this->error = $fileType;
 				}	
 				
 				unset($_POST['apply']);
