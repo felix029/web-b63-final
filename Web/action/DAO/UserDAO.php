@@ -307,6 +307,13 @@
 			$statement->execute();
 		}
 
+		public static function deleteJobOffer($id){
+			$connection = Connection::getConnection();
+			$statement = $connection->prepare("DELETE FROM offers WHERE id = ?");
+			$statement->bindParam(1, $id);
+			$statement->execute();
+		}
+
 		private static function getMaxPos(){
 			$connection = Connection::getConnection();
 			$statement = $connection->prepare("SELECT MAX(pos) FROM team");

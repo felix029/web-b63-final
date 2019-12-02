@@ -74,5 +74,18 @@
 				}
 			}
 
+			//delete job offer
+			if(isset($_POST['delete-offer-title']) && $_POST['delete-offer-title'] != "none"){
+				try{
+					UserDAO::deleteJobOffer(intval($_POST['delete-offer-title']));
+					unset($_POST['delete-offer-title']);
+					header("location:carrieres.php");
+					exit;
+				}
+				catch(Exception $e){
+					$this->error = "ERROR_DELETING_OFFER";
+				}
+			}
+
 		}
 	}
