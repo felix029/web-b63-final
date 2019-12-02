@@ -13,9 +13,8 @@ $(document).ready(function () {
             }).done( rep => {
                 let infos = JSON.parse(rep);
 
-                console.log(infos[0]);
-                console.log(infos[1]);
-                $("#edit-offer-salary").val();
+                $("#edit-offer-salary").val(infos[0]);
+                $("#edit-offer-desc").val(infos[1]);
             })
         }
         else{
