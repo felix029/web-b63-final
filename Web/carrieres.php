@@ -157,15 +157,15 @@
 	}
 	else{
 		?>
-		<div id="offers-container">
+		<div id="container-offers">
 		<?php
 		foreach($action->offers as $key => $offer){
 		?>
 			<div id="offer<?= $key ?>">
-				<h1 class="offer-title"><?= $offer[0]; ?></h1>
-				<h2 class="offer-salary"><?= $offer[1]; ?></h2>
-				<div class="offer-desc"><?= $offer[2]; ?></div>
-				<div class="offer-id"><?= $key ?></div>
+				<h1 class="title-offer"><?= $offer[0]; ?></h1>
+				<h2 class="salary-offer"><?= $offer[1]; ?></h2>
+				<div class="desc-offer"><?= $offer[2]; ?></div>
+				<div class="id-offer"><?= $key ?></div>
 			</div>
 		<?php
 		}
