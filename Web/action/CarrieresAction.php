@@ -120,7 +120,7 @@
 					$message = "--{$mime_boundary}\n" . "Content-Type: text/html; charset=\"UTF-8\"\n" . 
 					"Content-Transfer-Encoding: 7bit\n\n" . $htmlContent . "\n\n";
 
-					if(!empy($file) > 0){
+					if(!empty($file) > 0){
 						if(is_file($file)){
 							$mesage .= "--{$mime_boundary}\n";
 							$fp = @fopen($file,"rb");
