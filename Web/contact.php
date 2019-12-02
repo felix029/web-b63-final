@@ -18,7 +18,18 @@
 	</div>
 
 	<div id="contact">
-		<h1>Contactez-nous</h1>
+		<?php
+		if($action->error == "MAIL_ERROR"){
+			?>
+			<h1 class="error">Erreur lors de l'envoi</h1>
+			<?php
+		}
+		else{
+			?>
+			<h1>Contactez-nous</h1>
+			<?php
+		}
+		?>
 		<div>
 			Pour toute informations ou commentaire, n'hésitez pas à nous contacter. Il nous fera plaisir de vous répondre dans les plus brefs délais.
 		</div>

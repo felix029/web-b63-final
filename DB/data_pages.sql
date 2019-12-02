@@ -3,7 +3,5 @@ INSERT INTO
 VALUES 
 	('index.php', "null"),
 	('resto.php', "null"),
-	('carrieres.php', "null"),
 	('galerie.php', "null"),
-	('services.php', "null"),
-	('contact.php', "null");
+	('services.php', "null");

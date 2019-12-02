@@ -2,7 +2,7 @@
 	require_once("action/CommonAction.php");
 
 	class ContactAction extends CommonAction {
-
+		public $error = "ok";
 		public function __construct() {
 			parent::__construct(CommonAction::$VISIBILITY_PUBLIC);
 		}
@@ -18,8 +18,8 @@
 				$message = "Message from " . $_POST['prenom'] . " " . $_POST['nom'] . " (" . $_POST['courriel'] . ")\n\n";
 				$message .= $_POST['message'];
 
-				mail(DK_MAIL, $subject, $message, $headers);
-
+				
+				$this->error = @mail(DK_MAIL, $subject, $message, $headers)?"ok":"MAIL_ERROR";
 				unset($_POST['prenom']);
 				unset($_POST['nom']);
 				unset($_POST['courriel']);

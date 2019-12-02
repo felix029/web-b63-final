@@ -183,8 +183,7 @@ Set the font-family content used for the HTML content.
 
 #content{
     position: absolute;
-    height: 75vh;
-    height: calc(var(--vh, 1vh) * 75);
+    height: calc(var(--vh, 1vh) * var(--contentVh));
     width: calc(100% - 100px);
     top: 20vh;
     margin: 5vh 50px 0 50px;
@@ -196,7 +195,7 @@ Set the font-family content used for the HTML content.
     z-index: 100;
 }
 
-#content::-webkit-scrollbar{
+.content-normal::-webkit-scrollbar, .content-services::-webkit-scrollbar{
     display: none;
 }
 
@@ -1067,4 +1066,50 @@ Set the font-family content used for the HTML content.
         justify-self: flex-start;
         align-self: flex-end;
     }
+
+    /* PAGE SERVICES ============================================================================================ */
+
+    #reservation{
+        position: fixed;
+        top: 65vh;
+
+        height: calc(calc(var(--vh, 1vh) * 25) - 40px);
+        width: calc(100% - 140px);
+
+        margin: 5vh 50px 0 50px;
+        color: #0c2461;
+
+        background-color: #f8c291;
+        border: solid #a82103 3px;
+
+        padding: 20px;
+
+        z-index: 200;
+    }
+
+    #reservation h1{
+        margin-bottom: 20px;
+        font-weight: bolder;
+    }
+
+    #reservation div{
+        font-size: larger;
+    }
+
+    #reservation form{
+        margin-top: 30px;
+        font-size: large;
+        font-weight: bold;
+    }
+
+    #btn-res{
+        font-family: 'above';
+        color: #f8c291;
+        background-color: #0c2461;
+        width: 90px;
+        height: 30px;
+        font-weight: bold;
+        border: solid #a82103 3px;
+    }
+
 }

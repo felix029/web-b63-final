@@ -76,4 +76,14 @@ const resize = () => {
     //source: https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    let path = window.location.pathname;
+    let page = path.split("/").pop();
+    
+    if(page == "services.php"){
+      document.documentElement.style.setProperty('--contentVh', 45);
+    }
+    else{
+      document.documentElement.style.setProperty('--contentVh', 75)
+    }
 }
