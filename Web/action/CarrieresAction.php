@@ -105,7 +105,7 @@
 					$subject = "Quelqu'un vous a envoyer une application";
 
 
-					$htmlContent = "<h1>Application d'emploir pour DKoncept</h1>
+					$htmlContent = "<h1>Application d'emploi pour DKoncept</h1>
 									<p>Cette application a été envoyé à partir du site de DKoncept.</p>
 									<p>" . $fromName ." </p>
 									<p> Courriel: " . $_POST['apply-email'] . "</p>

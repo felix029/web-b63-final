@@ -213,7 +213,7 @@ Set the font-family content used for the HTML content.
 
 /* =============================== VERSION MOBILE ============================== */
 
-@media screen and (max-width:999px){
+@media screen and (max-width:1199px){
 
     /* HEADER */
     #admin-bar{
@@ -361,7 +361,7 @@ Set the font-family content used for the HTML content.
 
 /* ============================= VERSION BUREAU ================================ */
 
-@media screen and (min-width:1000px){
+@media screen and (min-width:1200px){
     /* HEADER */
     header{
         display: grid;
@@ -988,7 +988,7 @@ Set the font-family content used for the HTML content.
         background-color: #f8c291e0;
         
         width: 20%;
-        height: 60vh;
+        height: 65vh;
         margin: 0 40px 0 40px;
         padding: 10px 15px 10px 15px;
 
