@@ -201,17 +201,29 @@
 		</aside>
 		<div id="container-offers">
 		<?php
-		foreach($action->offers as $key => $offer){
-		?>
-			<div id="offer<?= $key ?>">
-				<h1 class="title-offer"><?= $offer[0]; ?></h1>
-				<h2 class="salary-offer">Salaire horraire: <?= $offer[1]; ?></h2>
-				<div class="desc-offer"><?= $offer[2]; ?></div>
-				<div class="id-offer">ID de l'offre d'emploi: <strong><?= $key ?></strong></div>
+		if(empty($action->offers)){
+			?>
+			<div id="offer">
+				<h1 class="title-offer">Rien pour l'instant...</h1>
+				<div></div>
+				<div class="desc-offer">Il y a présentement aucun poste de disponible malheureusement. Revenez voir ultérieurement, il y a beaucoup de roulement dans le domaine de la restauration!</div>
+				<div class="id-offer">-L'équipe DKoncept</div>
 			</div>
-		<?php
+			<?php
 		}
-		?>
+		else{
+			foreach($action->offers as $key => $offer){
+				?>
+					<div id="offer<?= $key ?>">
+						<h1 class="title-offer"><?= $offer[0]; ?></h1>
+						<h2 class="salary-offer">Salaire horraire: <?= $offer[1]; ?></h2>
+						<div class="desc-offer"><?= $offer[2]; ?></div>
+						<div class="id-offer">ID de l'offre d'emploi: <strong><?= $key ?></strong></div>
+					</div>
+				<?php
+				}
+				?>
+		}
 		</div>
 		
 	<?php
