@@ -113,8 +113,8 @@
 									<p> ID de l'offre d'emploi: " . $_POST['apply-id'] . "</p>
 									<p> Message supplémentaire: " . $_POST['apply-supp'] . "</p>";
 
-					$headers = "From: $fromName"." <". DK_MAIL .">\r\n";
-					$headers .= "Reply-To: " . $_POST['apply-mail'] . "\r\n";
+					$headers = "From: $fromName"." <"$to">\r\n";
+					$headers .= "Reply-To: " . $_POST['apply-mail'] . "\r";
 
 					$semi_rand = md5(time()); 
 					$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x"; 
