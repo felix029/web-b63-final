@@ -176,7 +176,7 @@
 				<?php
 			}
 			?>
-			<form action="carrieres.php" method="post">
+			<form action="carrieres.php" method="post" enctype="multipart/form-data">
 				<label>Prénom</label>
 				<input type="text" name="apply-prenom">
 				
