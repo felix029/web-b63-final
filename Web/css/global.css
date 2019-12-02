@@ -1098,7 +1098,7 @@ Set the font-family content used for the HTML content.
 
     #reservation form{
         margin-top: 30px;
-        font-size: large;
+        font-size: medium;
         font-weight: bold;
     }
 

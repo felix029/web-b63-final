@@ -13,10 +13,10 @@
 			$_SESSION["page"] = "services.php";
 
 			if(isset($_POST['reservation'])){
-				$subject = "Reservation on DKoncept.com";
+				$subject = $_POST['type'] . " reservation on DKoncept.com";
 				$headers = "From: " . $_POST['fullname'] . " <" . DK_MAIL .">\r\n";
 				$headers .= "Reply-To: " . $_POST['email'] . "\r\n";
-				$message = "Reservation request from " . $_POST['fullname'] . "\n\n";
+				$message =  $_POST['type'] . " reservation request from " . $_POST['fullname'] . "\n\n";
 				$message .= "Email: " . $_POST['email'] . "\n";
 				$message .= "Phone number: " . $_POST['tel'] . "\n";
 				$message .= "Table for: " . $_POST['nb'] . " persons\n";
@@ -25,6 +25,7 @@
 
 				$this->error = @mail(DK_MAIL, $subject, $message, $headers)?"ok":"MAIL_ERROR";
 
+				unset($_POST['type'])
 				unset($_POST['fullname']);
 				unset($_POST['tel']);
 				unset($_POST['email']);

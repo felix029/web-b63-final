@@ -28,13 +28,20 @@
 		Nous vous répondrons dans les plus brefs délais afin de confirmer la réservation.
 	</div>
 	<form action="services.php" method="POST">
-		<label>Nom complet</label>
+		<label>Type</label>
+		<select name="type">
+			<option value="none" selected>Sélectionnez...</option>
+			<option value="Table">Table</option>
+			<option value="Salle">Salle</option>
+			<option value="Traiteur">Traiteur</option>
+		</select>
+		<label>| Nom complet</label>
 		<input type="text" name="fullname">
 		<label>| Téléphone</label>
 		<input type="tel" name="tel">
 		<label>| Courriel</label>
 		<input type="email" name="email">
-		<label>| Nombres de personnes</label>
+		<label>| Nombre de personnes</label>
 		<input type="number" name="nb">
 		<label>| Date</label>
 		<input type="date" name="date">
