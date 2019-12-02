@@ -1,6 +1,5 @@
 $(document).ready(function () {
     $("#edit-offer-title").change( () => {
-        console.log("change");
         
         let val = $("#edit-offer-title").val();
         if(val != 'none'){
@@ -14,7 +13,8 @@ $(document).ready(function () {
             }).done( rep => {
                 let infos = JSON.parse(rep);
 
-                console.log(infos);
+                console.log(infos[0]);
+                console.log(infos[1]);
                 $("#edit-offer-salary").val();
             })
         }
