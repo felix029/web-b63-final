@@ -92,7 +92,7 @@
 
 				//How to send a mail attachment via PHP found here: https://www.codexworld.com/send-email-with-attachment-php/
 				$file = basename($_FILES["apply-cv"]["name"]);
-				$fileType = strtolower(pathinfo($file, PATHINFO_EXTENSION));
+				$fileType = strtolower(pathinfo($file,PATHINFO_EXTENSION));
 				
 				if($fileType == "doc" || $fileType == "docx" || $fileType == "pdf"){
 					$to = "felixo2997@gmail.com";
@@ -143,7 +143,7 @@
 					$this->error = $mail?"ok":"MAIL_ERROR";
 				}
 				else{
-					$this->error = $fileType;
+					$this->error = "FILE: " . $file . " FILETYPE: " . $fileType;
 				}	
 				
 				unset($_POST['apply']);
