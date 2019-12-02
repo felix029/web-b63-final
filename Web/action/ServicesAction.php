@@ -25,7 +25,7 @@
 
 				$this->error = @mail(DK_MAIL, $subject, $message, $headers)?"ok":"MAIL_ERROR";
 
-				unset($_POST['type'])
+				unset($_POST['type']);
 				unset($_POST['fullname']);
 				unset($_POST['tel']);
 				unset($_POST['email']);
