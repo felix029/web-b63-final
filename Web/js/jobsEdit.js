@@ -1,5 +1,7 @@
 $(document).ready(function () {
     $("#edit-offer-title").change( () => {
+        console.log("change");
+        
         let val = $("#edit-offer-title").val();
         if(val != 'none'){
             let valInt = parseInt(val);
