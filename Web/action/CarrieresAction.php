@@ -132,9 +132,9 @@
 					
 							@fclose($fp);
 							$data = chunk_split(base64_encode($data));
-							$message .= "Content-Type: application/octet-stream; name=\"".basename($file)."\"\n" . 
-							"Content-Description: ".basename($file)."\n" .
-							"Content-Disposition: attachment;\n" . " filename=\"".basename($file)."\"; size=".filesize($file).";\n" . 
+							$message .= "Content-Type: application/octet-stream; name=\"".basename($filename)."\"\n" . 
+							"Content-Description: ".basename($filename)."\n" .
+							"Content-Disposition: attachment;\n" . " filename=\"".basename($filename)."\"; size=".filesize($file).";\n" . 
 							"Content-Transfer-Encoding: base64\n\n" . $data . "\n\n";
 						}
 					}
