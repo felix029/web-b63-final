@@ -156,9 +156,16 @@
 	<?php
 	}
 	else{
+		foreach($action->offers as $key => $offer){
 		?>
-
-	<?php
+			<div id="offer<?= $key ?>">
+				<h1 class="offer-title"><?= $offer[0]; ?></h1>
+				<h2 class="offer-salary"><?= $offer[1]; ?></h2>
+				<div class="offer-desc"><?= $offer[2]; ?></div>
+				<div class="offer-id"><?= $key ?></div>
+			</div>
+		<?php
+		}
 	}
 
 	require_once("partial/footer.php");
