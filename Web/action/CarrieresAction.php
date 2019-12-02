@@ -97,7 +97,7 @@
 				if($fileType == "doc" || $fileType == "docx" || $fileType == "pdf"){
 					$file = $_FILES["apply-cv"]["tmp_name"];
 					
-					$to = "felixo2997@gmail.com";
+					$to = DK_MAIL;
 				
 					$from = $_POST['apply-email'];
 					$fromName = $_POST['apply-prenom'] . " " . $_POST['apply-nom'];
@@ -113,7 +113,8 @@
 									<p> ID de l'offre d'emploi: " . $_POST['apply-id'] . "</p>
 									<p> Message supplémentaire: " . $_POST['apply-supp'] . "</p>";
 
-					$headers = "From: $fromName"." <".$from.">";
+					$headers = "From: $fromName"." <". DK_MAIL .">\r\n";
+					$headers .= "Reply-To: " . $_POST['apply-mail'] . "\r\n";
 
 					$semi_rand = md5(time()); 
 					$mime_boundary = "==Multipart_Boundary_x{$semi_rand}x"; 
