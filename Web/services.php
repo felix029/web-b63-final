@@ -30,7 +30,7 @@
 	<form action="services.php" method="POST">
 		<label>Type</label>
 		<select name="type">
-			<option value="none" selected>Sélectionnez...</option>
+			<option value="none" selected>Choisir</option>
 			<option value="Table">Table</option>
 			<option value="Salle">Salle</option>
 			<option value="Traiteur">Traiteur</option>

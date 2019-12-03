@@ -19,7 +19,7 @@
 				$message =  $_POST['type'] . " reservation request from " . $_POST['fullname'] . "\n\n";
 				$message .= "Email: " . $_POST['email'] . "\n";
 				$message .= "Phone number: " . $_POST['tel'] . "\n";
-				$message .= "Table for: " . $_POST['nb'] . " persons\n";
+				$message .= "For: " . $_POST['nb'] . " persons\n";
 				$message .= "Date: ". $_POST['date'] . "\n";
 				$message .= "Time: " . $_POST['time'] . "\n";
 
