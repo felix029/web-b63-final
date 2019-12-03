@@ -182,7 +182,7 @@
 				<label>Nom</label>
 				<input type="text" name="apply-nom">
 				
-				<label>Numéro de téléphone</label>
+				<label>Téléphone</label>
 				<input type="tel" name="apply-tel">
 				
 				<label>Courriel</label>
@@ -191,7 +191,7 @@
 				<label>ID de l'offre</label>
 				<input type="text" name="apply-id">
 				
-				<label>CV (doc, docx ou PDF)</label>
+				<label class="mobile">CV</label>
 				<input type="file" name="apply-cv">
 				
 				<textarea name="apply-supp" id="" cols="40" rows="10" placeholder="Inscrivez ici toutes données supplémentaires..."></textarea>

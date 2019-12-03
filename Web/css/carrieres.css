@@ -1,5 +1,200 @@
-@media screen and (max-width:1199px){
+@media screen and (max-width:1199px) and (orientation: portrait){
+    #apply-job{
+        background-color: #f8c291e0;
+        
+        width: 94%;
+        height: 65vh;
+        padding: 5px;
+        margin-bottom: 30px;
+        text-align: center;
 
+        border: solid #a82103e0 3px;
+    }
+
+    #apply-job h1{
+        margin-bottom: 15px;
+    }
+
+    #apply-job form{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        row-gap: 5%;
+    }
+
+    #apply-job textarea, #apply-button{
+        grid-column: span 2;
+    }
+
+    #apply-button{
+        align-self: center;
+        justify-self: center;
+    }
+
+    #offers-container{
+        display: grid;
+        grid-template-columns: 100%;
+        align-items: center;
+    }
+
+    [id^=offer]{
+        margin-bottom: 30px;
+        width: 94%;
+        padding: 5px;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 5vh 2vh 30vh 2vh;
+    }
+
+    [id^=offer]:nth-child(odd){
+        background-color: #0c2461e0;
+        border:solid #a82103e0 3px;
+        color: #f8c291;
+       
+    }
+
+    [id^=offer]:nth-child(even){
+        background-color: #f8c291e0;
+        border: solid #a82103e0 3px;
+        color: #0c2461;
+    }
+
+    .title-offer{
+        margin-bottom: 15px;
+        justify-self: center;
+        align-self: center;
+        font-size: 1.5em;
+    }
+
+    .salary-offer{
+        font-family: 'Arial';
+        font-size: medium;
+        justify-self: center;
+        align-self: flex-start;
+    }
+
+    .desc-offer{
+        justify-self: center;
+        align-self: center;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+
+    .id-offer{
+        font-family: 'Arial';
+        justify-self: flex-start;
+        align-self: flex-end;
+    }
+
+    .button{
+        margin-top: 10px;
+        width: 75%;
+        height: 30px;
+        font-family: "above";
+        font-size: larger;
+        background-color: #0c2461;
+        color: #f8c291;
+        border: solid #a82103 3px;
+    }
+}
+
+@media screen and (max-width:1199px) and (orientation: landscape){
+    /* user */
+    #apply-job{
+
+        background-color: #f8c291e0;
+        
+        width: 96%;
+        height: 425px;
+        padding: 5px;
+
+        border: solid #a82103e0 3px;
+
+        margin-bottom: 30px;
+    }
+
+    #apply-job h1{
+        margin-bottom: 15px;
+    }
+
+    #apply-job form{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        row-gap: 3%;
+    }
+
+    #apply-job textarea, #apply-button{
+        grid-column: span 2;
+    }
+
+    #apply-button{
+        align-self: center;
+        justify-self: center;
+    }
+
+    #offers-container{
+        display: grid;
+        grid-template-columns: 100%;
+        align-items: center;
+    }
+
+    [id^=offer]{
+        margin-bottom: 30px;
+        width: 94%;
+        padding: 15px;
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 5vh 3vh 40vh 2vh;
+        text-align: center;
+    }
+
+    [id^=offer]:nth-child(odd){
+        background-color: #0c2461e0;
+        border:solid #a82103e0 3px;
+        color: #f8c291;
+       
+    }
+
+    [id^=offer]:nth-child(even){
+        background-color: #f8c291e0;
+        border: solid #a82103e0 3px;
+        color: #0c2461;
+    }
+
+    .title-offer{
+        margin-bottom: 15px;
+        justify-self: center;
+        align-self: center;
+    }
+
+    .salary-offer{
+        font-family: 'Arial';
+        font-size: medium;
+        justify-self: center;
+        align-self: flex-start;
+    }
+
+    .desc-offer{
+        justify-self: center;
+        align-self: center;
+        margin-bottom: 30px;
+    }
+
+    .id-offer{
+        font-family: 'Arial';
+        justify-self: flex-start;
+        align-self: flex-end;
+    }
+
+    .button{
+        margin-top: 10px;
+        width: 75%;
+        height: 30px;
+        font-family: "above";
+        font-size: larger;
+        background-color: #0c2461;
+        color: #f8c291;
+        border: solid #a82103 3px;
+    }
 }
 
 @media screen and (min-width:1200px){

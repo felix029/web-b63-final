@@ -1,7 +1,11 @@
-@media screen and (max-width:1199px){
+@media screen and (max-width:1199px) and (orientation: portrait){
 
 }
 
+@media screen and (max-width:1199px) and (orientation: landscape){
+    /* user */
+
+}
 @media screen and (min-width:1200px){
     #reservation{
         position: fixed;

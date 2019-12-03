@@ -1,4 +1,4 @@
-@media screen and (max-width:1199px){
+@media screen and (max-width:1199px) and (orientation: portrait){
     /* general */
     #container-team{
         display: grid;
@@ -60,6 +60,11 @@
         background-color: #f8c291;
         color: #0c2461;
     }
+
+}
+
+@media screen and (max-width:1199px) and (orientation: landscape){
+    /* user */
 
 }
 
