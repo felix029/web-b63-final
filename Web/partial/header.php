@@ -11,8 +11,19 @@
     <script src="js/header.js"></script>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <?php
+        if($_SESSION["page"] == "equipe.php"){
+            ?>
+                <link rel="stylesheet" href="css/equipe.css">
+            <?php
+        }
+        if($_SESSION["page"] == "carrieres.php"){
+            ?>
+                <link rel="stylesheet" href="css/carrieres.css">
+            <?php
+        }
         if($_SESSION["page"] == "galerie.php"){
             ?>
+            <link rel="stylesheet" href="galerie.css">
             <link rel="stylesheet" href="css/lightgallery.css">
             <script src="js/lightgallery.min.js"></script>
             <script>
@@ -22,11 +33,7 @@
             </script>
             <?php
         }
-        if($_SESSION["page"] == "equipe.php"){
-            ?>
-                <link rel="stylesheet" href="css/equipe.css">
-            <?php
-        }
+        
         if($_SESSION["page"] == "services.php"){
             ?>
                 <link rel="stylesheet" href="css/services.css">
@@ -37,11 +44,7 @@
                 <link rel="stylesheet" href="css/contact.css">
             <?php
         }
-        if($_SESSION["page"] == "carrieres.php"){
-            ?>
-                <link rel="stylesheet" href="css/carrieres.css">
-            <?php
-        }
+       
         if(($action->isLoggedIn() && $_SESSION["editable"] == true) && !$action->inPreview()){
             ?>
 

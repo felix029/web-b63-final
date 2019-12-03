@@ -65,7 +65,7 @@ CREATE TABLE offers (
 
 CREATE TABLE gallery (
 	id INT NOT NULL AUTO_INCREMENT,
-	image_url VARCHAR(64),
+	img_url VARCHAR(64),
 	img_desc TEXT,
 
 	PRIMARY KEY pk_gallery(id)
