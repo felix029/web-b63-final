@@ -69,7 +69,9 @@ CREATE TABLE gallery (
 	img_title VARCHAR (32),
 	img_desc TEXT,
 
-	PRIMARY KEY pk_gallery(id)
+	PRIMARY KEY pk_gallery(id),
+	CONSTRAINT uc_gallery_url UNIQUE (img_url)
+	
 ) engine = innoDB character set utf8 collate utf8_general_ci;
 
 -- THESE INSERTIONS ARE MANDATORY FOR THE GOOD FONCTIONNING OF THE WEBSITE

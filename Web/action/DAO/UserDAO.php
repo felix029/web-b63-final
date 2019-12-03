@@ -311,17 +311,24 @@
 		}
 
 
-		public static function addGalleryImg($img_url, $img_desc){
+		public static function addGalleryImg($img_url, $img_title, $img_desc){
 			$connection = Connection::getConnection();
-			$statement = $connection->prepare("INSERT INTO gallery(img_url, img_desc) VALUES (?, ?)");
+			$statement = $connection->prepare("INSERT INTO gallery(img_url, img_title, img_desc) VALUES (?, ?, ?)");
 			$statement->bindParam(1, $img_url);
-			$statement->bindParam(2, $img_desc);
+			$statement->bindParam(2, $img_title);
+			$statement->bindParam(3, $img_desc);
 			$statement->execute();
 		}
 
 		public static function deleteGalleryImg($img_url){
 			$connection = Connection::getConnection();
+			$statement = $connection->prepare("DELETE FROM gallery WHERE img_url = ?");
+			$statement->bindParam(1, $img_url);
+			$statement->execute();
 
+			if($img_url !== ""){
+				unlink($img_url);
+			}
 		}
 
 		public static function editJobOffer($id, $salary, $job_desc){

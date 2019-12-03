@@ -24,12 +24,15 @@
         if($_SESSION["page"] == "galerie.php"){
             ?>
             <link rel="stylesheet" href="css/galerie.css">
-            <link rel="stylesheet" href="css/lightgallery.css">
-            <script src="js/lightgallery.min.js"></script>
-            <script src="js/gallerie.js"></script>
             <?php
-        }
-        
+            if(($action->isLoggedIn() && $action->inPreview()) || !$action->isLoggedIn()){
+                ?>
+                <link rel="stylesheet" href="css/lightgallery.css">
+                <script src="js/lightgallery.min.js"></script>
+                <script src="js/gallerie.js"></script>
+                <?php 
+            }
+        }        
         if($_SESSION["page"] == "services.php"){
             ?>
                 <link rel="stylesheet" href="css/services.css">

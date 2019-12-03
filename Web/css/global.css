@@ -288,7 +288,6 @@ Set the font-family content used for the HTML content.
         background-color: #0c2461;
         color: #f8c291;
         border: solid #eb2f06 5px;
-        border-radius: 10px;
         padding: 10px;
         font-family: "above";
     }
@@ -374,7 +373,6 @@ Set the font-family content used for the HTML content.
         background-color: #0c2461;
         color: #f8c291;
         border: solid #eb2f06 5px;
-        border-radius: 10px;
         padding: 10px;
         font-family: "above";
 
@@ -438,8 +436,8 @@ Set the font-family content used for the HTML content.
         width: 30vw;
         height: 20vh;
         margin: auto;
-        background-color: #0c2461;
-        opacity: 0.9;
+        background-color: #0c2461e0;
+        border: solid #a82103e0 3px;
         color: #f8c291;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -447,7 +445,6 @@ Set the font-family content used for the HTML content.
         align-items: center;
         justify-items: center;
 
-        border-radius: 10px;
 
         margin-bottom: 3vh;
         padding: 10px;
@@ -476,16 +473,14 @@ Set the font-family content used for the HTML content.
         width: 30vw;
         height: 20vh;
         margin: auto;
-        background-color: #0c2461;
-        opacity: 0.9;
+        background-color: #0c2461e0;
+        border: solid #a82103e0 3px;
         color: #f8c291;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
         align-items: center;
         justify-items: center;
-
-        border-radius: 10px;
 
         margin-bottom: 3vh;
 
@@ -515,16 +510,14 @@ Set the font-family content used for the HTML content.
         width: 30vw;
         height: 20vh;
         margin: auto;
-        background-color: #0c2461;
-        opacity: 0.9;
+        background-color: #0c2461e0;
+        border: solid #a82103e0 3px;
         color: #f8c291;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr 1fr;
         align-items: center;
         justify-items: center;
-
-        border-radius: 10px;
 
         margin-bottom: 3vh;
 

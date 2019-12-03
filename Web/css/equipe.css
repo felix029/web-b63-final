@@ -168,7 +168,8 @@
     }
 
     [id$=-team-member]{
-        background-color: #0c2461;
+        background-color: #0c2461e0;
+        border: solid #a82103e0 3px;
         color: #f8c291;
         /* border: solid #a82103 5px; */
         /* border-radius: 5px; */
