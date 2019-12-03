@@ -27,7 +27,7 @@
 								if($imageFileType == "jpg" || $imageFileType == "png" || $imageFileType == "jpeg" || $imageFileType == "gif" ){
 									if(move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file)){
 										UserDAO::addGalleryImg($target_file, $_POST['title'], $_POST['description']);
-										header("location:contact.php");
+										header("location:galerie.php");
 										exit;
 									}
 									else{
@@ -60,7 +60,7 @@
 				unset($_POST["description"]);
 			}
 
-			if(isset($_POST['delete-photo']) && $_POST['delete-photo'] != "none" && isset($_POST['delete'])){
+			if(isset($_POST['delete-photo']) && $_POST['delete-photo'] != "none"){
 				try{
 					UserDAO::deleteGalleryImg($_POST['delete-photo']);
 					header("location:galerie.php");

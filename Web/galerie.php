@@ -47,7 +47,7 @@
 				<label>Titre</label>
 				<input type="text" name="title">
 				<textarea name="description"cols="30" rows="10" placeholder="Ajoutez une description à la photo..."></textarea>
-				<input type="submit" value="confirmer" name="add" class="button">
+				<button class="button">confirmer</button>
 			</form>
 		</div>
 
@@ -75,7 +75,7 @@
 					}
 					?>
 				</select>
-				<input type="submit" value="confirmer" name="delete" class="button">
+				<button class="button">confirmer</button>
 			</form>
 		</div>
 		<?php
