@@ -1024,8 +1024,8 @@ Set the font-family content used for the HTML content.
         width: 75%;
         padding: 10px 15px 10px 15px;
         display: grid;
-        grid-template-columns: 85% 15%;
-        grid-template-rows: 30% 55% 15%;
+        grid-template-columns: 75vw 15vw;
+        grid-template-rows: 10vh 15vh 5vh;
     }
 
     [id^=offer]:nth-child(odd){
