@@ -47,7 +47,7 @@ p{
     display: none;
 }
 
-/* Pour le caroussel de la page d'accueuil ============================================================================================ */
+/* Pour le caroussel ============================================================================================ */
 
 #carousel{
     width: 100%;
@@ -68,21 +68,21 @@ p{
 }
 
 .page1{
-    background-image: url("../images/resto1.jpg");
+    background-image: url("../img/resto1.jpg");
 }
 
 .page2{
-    background-image: url("../images/bouffe1.jpg");
+    background-image: url("../img/bouffe1.jpg");
     display: none;
 }
 
 .page3{
-    background-image: url("../images/resto2.jpg");
+    background-image: url("../img/resto2.jpg");
     display: none;
 }
 
 .page4{
-    background-image: url("../images/bouffe2.jpg");
+    background-image: url("../img/bouffe2.jpg");
     display: none;
 }
 
@@ -225,7 +225,7 @@ Set the font-family content used for the HTML content.
         width: 100%;
         height: 100%;
 
-        background: url("../images/logo.png");
+        background: url("../img/logo.png");
         background-repeat: no-repeat;
         background-size: 19vh;
 
@@ -241,7 +241,7 @@ Set the font-family content used for the HTML content.
         width: 100%;
         height: 5vh;
 
-        background: url("../images/hamburger.png");
+        background: url("../img/hamburger.png");
         background-repeat: no-repeat;
         background-size: 5vh;
 
@@ -292,70 +292,7 @@ Set the font-family content used for the HTML content.
         padding: 10px;
         font-family: "above";
     }
-
-    /* PAGE ÉQUIPE ============================================================================================ */
-    /* general */
-    #container-team{
-        display: grid;
-        grid-template-columns: 100%;
-        row-gap: 20px;
-        position: relative;
-        margin-bottom: 100px;
-    }
-
-    .team-member{
-        width: 90%;
-        height: 50vh;
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 50% 10% 10% 40%;
-        padding: 20px 5px 20px 5px;
-        border: solid #a82103 5px;
-        border-radius: 10px;
-        font-family: "above";
-    }
-
-    .team-photo{
-        width: 100%;
-        height: 100%;
-        background-size: 65%;
-        background-repeat: no-repeat;
-        background-position: center;
-        justify-self: center;
-        align-self: center;
-    }
-
-    .team-name{
-        font-weight: bolder;
-        justify-self: center;
-        align-self: flex-end;
-    }
-
-    .team-job{
-        font-weight: bold;
-        align-self: flex-start;
-        justify-self: center;
-    }
-
-    .team-bio{
-        justify-self: center;
-        width: 95%;
-        height: 85%;
-        overflow-y: scroll;
-    }
-
-    /* odd div */
-    [id^=team]:nth-child(odd){
-        background-color: #0c2461;
-        color: #f8c291;
-    }
-
-    /* even div */
-    [id^=team]:nth-child(even){
-        background-color: #f8c291;
-        color: #0c2461;
-    }
-
+   
 }
 
 /* ============================= VERSION BUREAU ================================ */
@@ -373,7 +310,7 @@ Set the font-family content used for the HTML content.
         width: 100%;
         height: 100%;
 
-        background: url("../images/logo.png");
+        background: url("../img/logo.png");
         background-repeat: no-repeat;
         background-size: 19vh;
 
@@ -652,466 +589,5 @@ Set the font-family content used for the HTML content.
         color: #f8c291;
         font-weight: bolder;
         font-size: 1.3em;
-    }
-
-    /* PAGE ÉQUIPE ============================================================================================ */
-
-    /* general */
-    #container-team{
-        display: grid;
-        grid-template-columns: 100%;
-        row-gap: 20px;
-        position: relative;
-        margin-bottom: 100px;
-    }
-
-    .team-member{
-        width: 75%;
-        height: 35vh;
-        display: grid;
-        grid-template-rows: 30% 10% 60%;
-        padding: 20px 5px 20px 5px;
-        border: solid #a82103 3px;
-        /* border-radius: 10px; */
-        font-family: "above";
-    }
-
-    .team-photo{
-        width: 100%;
-        height: 100%;
-        background-size: 65%;
-        background-repeat: no-repeat;
-        background-position: center;
-        justify-self: center;
-        align-self: center;
-    }
-
-    .team-name{
-        font-weight: bolder;
-        font-size: 3em;
-    }
-
-    .team-job{
-        font-weight: bold;
-        font-size: 1.5em;
-        align-self: flex-start;
-    }
-
-    .team-bio{
-        font-size: 1.4em;
-        width: 95%;
-    }
-
-    /* odd div */
-    [id^=team]:nth-child(odd){
-        background-color: #0c2461;
-        color: #f8c291;
-        grid-template-columns: 40% 60%;
-    }
-
-    [id^=team]:nth-child(odd) .team-photo{
-        grid-column: 1;
-        grid-row: span 3;
-    }
-
-    [id^=team]:nth-child(odd) .team-name, [id^=team]:nth-child(odd) .team-job{
-        align-self: flex-end;
-        justify-self: left;
-    }
-
-    [id^=team]:nth-child(odd) .team-bio{
-        align-self: center;
-        justify-self: left;
-    }
-
-    /* even div */
-    [id^=team]:nth-child(even){
-        background-color: #f8c291;
-        color: #0c2461;
-        grid-template-columns: 60% 40%;
-        align-self: center;
-        justify-self: right;
-    }
-
-    [id^=team]:nth-child(even) .team-photo{
-        grid-column: 2;
-        grid-row: 1/span 3;
-    }
-
-    [id^=team]:nth-child(even) .team-name, [id^=team]:nth-child(even) .team-job{
-        align-self: flex-end;
-        justify-self: right;
-    }
-
-    [id^=team]:nth-child(even) .team-bio{
-        align-self: center;
-        justify-self: right;
-        text-align: right;
-    }
-
-    /* administration page équipe */
-    #admin-team-container{
-        display: grid;
-        grid-template-columns: 50%;
-        grid-template-rows: 2fr 2fr 1fr 2fr;
-        justify-content: center;
-        text-align: center;
-        row-gap: 25px;
-    }
-
-    [id$=-team-member]{
-        background-color: #0c2461;
-        color: #f8c291;
-        /* border: solid #a82103 5px; */
-        /* border-radius: 5px; */
-
-        width: 100%;
-        height: 100%;
-        margin-bottom: 10px;
-        align-self: center;
-        justify-self: center;
-        display: grid;
-        column-gap: 5%;
-        grid-template-columns: 25% 70%;
-    }
-
-    #new-team-member{
-        grid-template-rows: 20% 10% 10% 25% 10% 25%;
-    }
-
-    #edit-team-member{
-        grid-template-rows: 20% 10% 10% 10% 20% 10% 20%;
-    }
-
-    #delete-team-member{
-        grid-template-rows: 35% 25% 40%;
-    }
-
-    #pos-team-member{
-        column-gap: initial;
-        height: 60%;
-        grid-template-rows: 50% 30% 20%;
-        grid-template-columns: 50% 50%;
-        align-items: center;
-        justify-items: center;
-    }
-
-    #fullnamepos{
-        width: 70%;
-        height: 60%;
-        justify-self: right;
-        margin-right: 15px;
-    }
-
-    #memberpos{
-        width: 50%;
-        height: 60%;
-        justify-self: left;
-        margin-left: 15px;
-    }
-
-    [id$=-team-member] h1, [id$=-team-member] h2, [id$=-team-member] button{
-        grid-column: span 2;
-        align-self: center;
-        justify-self: center;
-    }
-
-    [id$=-team-member] label{
-        justify-self: right;
-        font-family: "above";
-    }
-
-    [id$=-team-member] input, [id$=-team-member] textarea, [id$=-team-member] select{
-        justify-self: left;
-    }
-
-    [id$=-team-member] textarea{
-        width: 90%;
-    }
-
-    #new-team-member input, #new-team-member select, #edit-team-member input, #edit-team-member select{
-        height: 60%;
-        width: 40%;
-    }
-
-    #delete-team-member select{
-        width: 60%;
-        height: 60%;
-    }
-
-    /* PAGE CONTACT ============================================================================================ */
-
-    #container-contact{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        column-gap: 20px;
-    }
-
-    #location{
-        background-color: #0c2461e0;
-        border: solid #a82103e0 3px;
-        color: #f8c291;
-        padding: 15px;
-    }
-
-    #location div, #contact div, #contact label{
-        margin: 1vh 0 2vh 0;
-        font-family: 'above';
-        font-size: larger;
-    }
-
-    #contact{
-        background-color: #f8c291e0;
-        border: solid #a82103e0 3px;
-        padding: 15px;
-    }
-
-    #contact form{
-        display: grid;
-        grid-template-columns: 15% 85%;
-        grid-template-rows: 0.5fr 0.5fr 0.5fr 4fr 0.5fr;
-    }
-
-    #contact input{
-        justify-self: left;
-        align-self: center;
-        width: 300px;
-        height: 30px;
-    }
-
-    #contact label{
-        align-self: center;
-    }
-
-    #contact textarea{
-        grid-column: span 2;
-        padding: 10px;
-    }
-
-    #contact button{
-        grid-column: span 2;
-        justify-self: center;
-        align-self: center;
-    }
-
-    /* PAGE CARRIERES ============================================================================================ */
-
-    /* admin *******************************************************/
-
-    #admin-jobs-container{
-        display: grid;
-        grid-template-columns: 50%;
-        grid-template-rows: 1fr 1fr 2fr 2fr 1fr;
-        justify-content: center;
-        text-align: center;
-    }
-
-    #admin-jobs-container label{
-        font-size: large;
-    }
-
-    #admin-jobs-container > div{
-        color: #f8c291;
-        font-family: 'above';
-        background-color: #0c2461e0;
-        border: solid #a82103e0 3px;
-        margin-bottom: 15px;
-    }
-
-    #admin-jobs-container h1, #admin-jobs-container button{
-        margin-bottom: 20px;
-    }
-
-    #add-job-title form{
-        display: grid;
-        grid-template-columns: 50% 50%;
-        align-items: center;
-        justify-items: center;
-    }
-
-    #add-job-title form label{
-        justify-self: right;
-        margin-right: 30px;
-    }
-
-    #add-job-title form input{
-        justify-self: left;
-        margin-left: 30px;
-        width: 50%;
-    }
-
-    #add-job-title form h1, #add-job-title form button{
-        grid-column: span 2;
-    }
-
-    #delete-job-title form, #delete-job-offer form{
-        display: grid;
-        align-items: center;
-        justify-items: center;
-    }
-
-    #add-job-offer form, #edit-job-offer form{
-        display: grid;
-        grid-template-columns: 50% 50%;
-        grid-template-rows: 30% 10% 10% 30% 20%;
-    }
-
-    #add-job-offer form h1, #add-job-offer form button, #add-job-offer form textarea, #edit-job-offer form h1, #edit-job-offer form button, #edit-job-offer form textarea{
-        grid-column: span 2;
-        align-self: center;
-        justify-self: center;
-    }
-
-    #add-job-offer input, #add-job-offer select, #edit-job-offer input, #edit-job-offer select{
-        width: 50%;
-        height: 70%;
-        margin-bottom: 10px;
-    }
-
-    #admin-jobs-container textarea{
-        width: 80%;
-        height: 100%;
-    }
-
-    #delete-job-title select, #delete-job-offer select{
-        width: 30%;
-        height: 110%;
-    }
-
-    /* user ******************************************************/
-
-    #apply-job{
-        position: fixed;
-        left: 75%;
-
-        background-color: #f8c291e0;
-        
-        width: 20%;
-        height: 65vh;
-        margin: 0 40px 0 40px;
-        padding: 10px 15px 10px 15px;
-
-        border: solid #a82103e0 3px;
-    }
-
-    #apply-job h1{
-        margin-bottom: 30px;
-    }
-
-    #apply-job form{
-        display: grid;
-        grid-template-columns: 50% 50%;
-        row-gap: 5%;
-    }
-
-    #apply-job textarea, #apply-button{
-        grid-column: span 2;
-    }
-
-    #apply-button{
-        align-self: center;
-        justify-self: center;
-    }
-
-    #offers-container{
-        display: grid;
-        grid-template-columns: 100%;
-        align-items: center;
-    }
-
-    [id^=offer]{
-        margin-bottom: 30px;
-        width: 75%;
-        padding: 10px 15px 10px 15px;
-        display: grid;
-        grid-template-columns: 55vw 15vw;
-        grid-template-rows: 5vh 10vh 2vh;
-    }
-
-    [id^=offer]:nth-child(odd){
-        background-color: #0c2461e0;
-        border:solid #a82103e0 3px;
-        color: #f8c291;
-       
-    }
-
-    [id^=offer]:nth-child(even){
-        background-color: #f8c291e0;
-        border: solid #a82103e0 3px;
-        color: #0c2461;
-    }
-
-    .title-offer{
-        margin-bottom: 15px;
-        justify-self: left;
-        align-self: center;
-    }
-
-    .salary-offer{
-        font-family: 'Arial';
-        font-size: medium;
-        justify-self: right;
-        align-self: flex-start;
-        grid-row: span 3;
-    }
-
-    .desc-offer{
-        justify-self: left;
-        align-self: center;
-        margin-bottom: 30px;
-    }
-
-    .id-offer{
-        font-family: 'Arial';
-        justify-self: flex-start;
-        align-self: flex-end;
-    }
-
-    /* PAGE SERVICES ============================================================================================ */
-
-    #reservation{
-        position: fixed;
-        top: 65vh;
-
-        height: calc(calc(var(--vh, 1vh) * 25) - 40px);
-        width: calc(100% - 140px);
-
-        margin: 5vh 50px 0 50px;
-        color: #0c2461;
-
-        background-color: #f8c291;
-        border: solid #a82103 3px;
-
-        padding: 20px;
-
-        z-index: 200;
-    }
-
-    #reservation h1{
-        margin-bottom: 20px;
-        font-weight: bolder;
-    }
-
-    #reservation > div{
-        font-size: larger;
-    }
-
-    #reservation form{
-        margin-top: 30px;
-        font-size: medium;
-        font-weight: bold;
-    }
-
-    #btn-res{
-        font-family: 'above';
-        color: #f8c291;
-        background-color: #0c2461;
-        width: 90px;
-        height: 30px;
-        font-weight: bold;
-        border: solid #a82103 3px;
-    }
-
-    /* PAGE GALERIE ============================================================================================ */
-
+    }      
 }

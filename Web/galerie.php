@@ -8,14 +8,14 @@
 ?>
 
 
-<a href="images/galerie/lievre.jpg">
-        <img src="images/galerie/lievre.jpg">
+<a href="img/galerie/lievre.jpg">
+        <img src="img/galerie/lievre.jpg">
 </a>
-<a href="images/galerie/poutine.jpg">
-        <img src="images/galerie/poutine.jpg">
+<a href="img/galerie/poutine.jpg">
+        <img src="img/galerie/poutine.jpg">
 </a>
-<a href="images/galerie/porc.jpg">
-        <img src="images/galerie/porc.jpg">
+<a href="img/galerie/porc.jpg">
+        <img src="img/galerie/porc.jpg">
 </a>
 
 <?php

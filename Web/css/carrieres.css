@@ -1,0 +1,176 @@
+@media screen and (max-width:1199px){
+
+}
+
+@media screen and (min-width:1200px){
+     /* admin *******************************************************/
+
+     #admin-jobs-container{
+        display: grid;
+        grid-template-columns: 50%;
+        grid-template-rows: 1fr 1fr 2fr 2fr 1fr;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #admin-jobs-container label{
+        font-size: large;
+    }
+
+    #admin-jobs-container > div{
+        color: #f8c291;
+        font-family: 'above';
+        background-color: #0c2461e0;
+        border: solid #a82103e0 3px;
+        margin-bottom: 15px;
+    }
+
+    #admin-jobs-container h1, #admin-jobs-container button{
+        margin-bottom: 20px;
+    }
+
+    #add-job-title form{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        align-items: center;
+        justify-items: center;
+    }
+
+    #add-job-title form label{
+        justify-self: right;
+        margin-right: 30px;
+    }
+
+    #add-job-title form input{
+        justify-self: left;
+        margin-left: 30px;
+        width: 50%;
+    }
+
+    #add-job-title form h1, #add-job-title form button{
+        grid-column: span 2;
+    }
+
+    #delete-job-title form, #delete-job-offer form{
+        display: grid;
+        align-items: center;
+        justify-items: center;
+    }
+
+    #add-job-offer form, #edit-job-offer form{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: 30% 10% 10% 30% 20%;
+    }
+
+    #add-job-offer form h1, #add-job-offer form button, #add-job-offer form textarea, #edit-job-offer form h1, #edit-job-offer form button, #edit-job-offer form textarea{
+        grid-column: span 2;
+        align-self: center;
+        justify-self: center;
+    }
+
+    #add-job-offer input, #add-job-offer select, #edit-job-offer input, #edit-job-offer select{
+        width: 50%;
+        height: 70%;
+        margin-bottom: 10px;
+    }
+
+    #admin-jobs-container textarea{
+        width: 80%;
+        height: 100%;
+    }
+
+    #delete-job-title select, #delete-job-offer select{
+        width: 30%;
+        height: 110%;
+    }
+
+    /* user ******************************************************/
+
+    #apply-job{
+        position: fixed;
+        left: 75%;
+
+        background-color: #f8c291e0;
+        
+        width: 20%;
+        height: 65vh;
+        margin: 0 40px 0 40px;
+        padding: 10px 15px 10px 15px;
+
+        border: solid #a82103e0 3px;
+    }
+
+    #apply-job h1{
+        margin-bottom: 30px;
+    }
+
+    #apply-job form{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        row-gap: 5%;
+    }
+
+    #apply-job textarea, #apply-button{
+        grid-column: span 2;
+    }
+
+    #apply-button{
+        align-self: center;
+        justify-self: center;
+    }
+
+    #offers-container{
+        display: grid;
+        grid-template-columns: 100%;
+        align-items: center;
+    }
+
+    [id^=offer]{
+        margin-bottom: 30px;
+        width: 75%;
+        padding: 10px 15px 10px 15px;
+        display: grid;
+        grid-template-columns: 55vw 15vw;
+        grid-template-rows: 5vh 10vh 2vh;
+    }
+
+    [id^=offer]:nth-child(odd){
+        background-color: #0c2461e0;
+        border:solid #a82103e0 3px;
+        color: #f8c291;
+       
+    }
+
+    [id^=offer]:nth-child(even){
+        background-color: #f8c291e0;
+        border: solid #a82103e0 3px;
+        color: #0c2461;
+    }
+
+    .title-offer{
+        margin-bottom: 15px;
+        justify-self: left;
+        align-self: center;
+    }
+
+    .salary-offer{
+        font-family: 'Arial';
+        font-size: medium;
+        justify-self: right;
+        align-self: flex-start;
+        grid-row: span 3;
+    }
+
+    .desc-offer{
+        justify-self: left;
+        align-self: center;
+        margin-bottom: 30px;
+    }
+
+    .id-offer{
+        font-family: 'Arial';
+        justify-self: flex-start;
+        align-self: flex-end;
+    }
+}

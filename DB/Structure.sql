@@ -3,6 +3,7 @@ DROP TABLE IF EXISTS pages;
 DROP TABLE IF EXISTS team;
 DROP TABLE IF EXISTS offers;
 DROP TABLE IF EXISTS jobs;
+DROP TABLE IF EXISTS gallery;
 
 
 CREATE TABLE users (
@@ -60,4 +61,12 @@ CREATE TABLE offers (
 	PRIMARY KEY pk_offers(id),
 	FOREIGN KEY (id_job) REFERENCES jobs(id) ON DELETE RESTRICT
 
+) engine = innoDB character set utf8 collate utf8_general_ci;
+
+CREATE TABLE gallery (
+	id INT NOT NULL AUTO_INCREMENT,
+	image_url VARCHAR(64),
+	img_desc TEXT,
+
+	PRIMARY KEY pk_gallery(id)
 ) engine = innoDB character set utf8 collate utf8_general_ci;

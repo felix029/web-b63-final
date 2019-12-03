@@ -22,6 +22,26 @@
             </script>
             <?php
         }
+        if($_SESSION["page"] == "equipe.php"){
+            ?>
+                <link rel="stylesheet" href="css/equipe.css">
+            <?php
+        }
+        if($_SESSION["page"] == "services.php"){
+            ?>
+                <link rel="stylesheet" href="css/services.css">
+            <?php
+        }
+        if($_SESSION["page"] == "contact.php"){
+            ?>
+                <link rel="stylesheet" href="css/contact.css">
+            <?php
+        }
+        if($_SESSION["page"] == "carrieres.php"){
+            ?>
+                <link rel="stylesheet" href="css/carrieres.css">
+            <?php
+        }
         if(($action->isLoggedIn() && $_SESSION["editable"] == true) && !$action->inPreview()){
             ?>
 
