@@ -1092,7 +1092,7 @@ Set the font-family content used for the HTML content.
         font-weight: bolder;
     }
 
-    #reservation div{
+    #reservation > div{
         font-size: larger;
     }
 

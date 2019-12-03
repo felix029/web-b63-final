@@ -28,27 +28,43 @@
 		Nous vous répondrons dans les plus brefs délais afin de confirmer la réservation.
 	</div>
 	<form action="services.php" method="POST">
-		<label>Type</label>
-		<select name="type">
-			<option value="none" selected>Sélectionnez...</option>
-			<option value="Table">Table</option>
-			<option value="Salle">Salle</option>
-			<option value="Traiteur">Traiteur</option>
-		</select>
-		<label>| Nom complet</label>
-		<input type="text" name="fullname">
-		<label>| Téléphone</label>
-		<input type="tel" name="tel">
-		<label>| Courriel</label>
-		<input type="email" name="email">
-		<label>| Nombre de personnes</label>
-		<input type="number" name="nb">
-		<label>| Date</label>
-		<input type="date" name="date">
-		<label>| Heure</label>
-		<input type="time" name="time">
-		<label>|</label>
-		<input type="submit" value="envoyer" name="reservation" id="btn-res">
+		<div>
+			<label>Type</label>
+			<select name="type">
+				<option value="none" selected>Sélectionnez...</option>
+				<option value="Table">Table</option>
+				<option value="Salle">Salle</option>
+				<option value="Traiteur">Traiteur</option>
+			</select>
+		</div>
+		<div>
+			<label>| Nom complet</label>
+			<input type="text" name="fullname">
+		</div>
+		<div>
+			<label>| Téléphone</label>
+			<input type="tel" name="tel">
+		</div>
+		<div>
+			<label>| Courriel</label>
+			<input type="email" name="email">
+		</div>
+		<div>
+			<label>| Nombre de personnes</label>
+			<input type="number" name="nb">
+		</div>
+		<div>
+			<label>| Date</label>
+			<input type="date" name="date">
+		</div>
+		<div>
+			<label>| Heure</label>
+			<input type="time" name="time">
+		</div>
+		<div>
+			<label>|</label>
+			<input type="submit" value="envoyer" name="reservation" id="btn-res">
+		</div>
 	</form>
 <!-- </div> -->
 <!-- La balise du div reservation sera fermée dans le footer -->
