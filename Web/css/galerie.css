@@ -1,6 +1,7 @@
-/* #content{
-    display: inline-flex;
-} */
+#content{    
+    text-align: center;
+}
+
 
 @media screen and (max-width:1199px){
     /* user */
@@ -59,10 +60,18 @@
     }
 
     /* user */
+    #content{
+        width: calc(100% - 10vw) !important;
+        margin: 5vh 5vw 0 5vw !important;
+    }
 
     a img{
-        width: 20vw;
-        height: 25vh;
+        width: 29vw;
+        height: 34vh;
+    }
+
+    a:hover{
+        opacity: 0.8;
     }
     
     h3{
