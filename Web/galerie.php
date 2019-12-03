@@ -41,7 +41,7 @@
 				<?php
 			}
 		?>
-			<form action="galerie.php" method="POST" enctype="multipart/mixed">
+			<form action="galerie.php" method="POST" enctype="multipart/form-data">
 				<label>Choisir une photo</label>
 				<input type="file" name="photo">
 				<label>Titre</label>
@@ -70,7 +70,7 @@
 					<?php
 					foreach($action->photos as $id => $photo){
 						?>
-							<option value="<?= $id ?>"><?= $id . " - " . $photo[1] ?></option>
+							<option value="<?= $photo[0] ?>"><?= $id . " - " . $photo[1] ?></option>
 						<?php
 					}
 					?>

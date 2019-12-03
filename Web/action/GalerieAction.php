@@ -15,10 +15,8 @@
 
 			$this->photos = UserDAO::getGallery();
 
-			if( $_FILES["photo"]["size"] != 0 && isset($_POST["title"]) && isset($_POST["description"]) ){
+			if( !empty($_FILES["photo"]["name"]) && isset($_POST["title"]) && isset($_POST["description"]) ){
 				try{
-					header("location:contact.php");
-					exit;
 					$target_dir = "img/galerie/";
 					$target_file = $target_dir . basename($_FILES["photo"]["name"]);
 					$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
