@@ -30,7 +30,7 @@
         
     }
 
-    textarea, input:last-child{
+    textarea, button{
         grid-column: span 2;
         justify-self: center;
         align-self: center;
