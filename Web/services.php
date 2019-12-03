@@ -35,14 +35,14 @@
 			<option value="Salle">Salle</option>
 			<option value="Traiteur">Traiteur</option>
 		</select>
-		<label>| Nom complet</label>
-		<input type="text" name="fullname">
-		<label>| Téléphone</label>
-		<input type="tel" name="tel">
-		<label>| Courriel</label>
-		<input type="email" name="email">
-		<label>| Nombre de personnes</label>
-		<input type="number" name="nb">
+		<label>| </label>
+		<input type="text" name="fullname" placeholder="Nom complet...">
+		<label>| </label>
+		<input type="tel" name="tel" placeholder="Téléphone...">
+		<label>| </label>
+		<input type="email" name="email" placeholder="Courriel...">
+		<label>| </label>
+		<input type="number" name="nb" placeholder="Nombre de personnes...">
 		<label>| Date</label>
 		<input type="date" name="date">
 		<label>| Heure</label>

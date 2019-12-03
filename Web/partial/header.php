@@ -11,6 +11,17 @@
     <script src="js/header.js"></script>
     <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
     <?php
+        if($_SESSION["page"] == "galerie.php"){
+            ?>
+            <link rel="stylesheet" href="css/lightgallery.css">
+            <script src="js/lightgallery.min.js"></script>
+            <script>
+                window.addEventListener("load", () => {
+                    lightGallery(document.getElementById('content'));
+                });
+            </script>
+            <?php
+        }
         if(($action->isLoggedIn() && $_SESSION["editable"] == true) && !$action->inPreview()){
             ?>
 
