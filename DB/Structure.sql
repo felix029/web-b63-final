@@ -70,3 +70,20 @@ CREATE TABLE gallery (
 
 	PRIMARY KEY pk_gallery(id)
 ) engine = innoDB character set utf8 collate utf8_general_ci;
+
+-- THESE INSERTIONS ARE MANDATORY FOR THE GOOD FONCTIONNING OF THE WEBSITE
+-- INSERTING DEFAULT ADMIN ACCOUNT *********************************************************************************
+
+INSERT INTO 
+	users(username, pwd, visibility) 
+VALUES 
+	('dkadmin', '$2y$12$Js858VNNiWx/EAAcYh4JQeOsAGDvawDY4z8llqQXBHsqWNLhk/wKG', 3);
+
+-- INSERTING DEFAULT PAGES VALUES **********************************************************************************
+
+INSERT INTO 
+	pages(title, content) 
+VALUES 
+	('index.php', "null"),
+	('resto.php', "null"),
+	('services.php', "null");

@@ -7,7 +7,7 @@ Félix-Olivier Landry
 
 Site web de gestion d'un faux restaurant codé en PHP et avec une BD MySql.
 
-Avant toute chose, executer le script `Structure.sql` pour créer les tables de la BD. créer l'utilisateur administrateur par défaut (détails plus bas). Les mots de passes des utilisateurs seront stockés dans la BD sous forme de hash bcrypt (12 rounds).
+Avant toute chose, executer le script `Structure.sql` pour créer les tables de la BD et créer l'utilisateur administrateur par défaut (détails plus bas). Les mots de passes des utilisateurs seront stockés dans la BD sous forme de hash bcrypt (12 rounds).
 
 ## Administration
 
