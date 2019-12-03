@@ -31,7 +31,7 @@ window.addEventListener("load", () =>{
             done = false;
             $('#hamburger').css("background-color", "#f8c291");
             $('#list').slideDown(1000, () => {
-                $('#hamburger').css("background-image", "url(images/x.png)");
+                $('#hamburger').css("background-image", "url(img/x.png)");
                 done = true;
             });
         }
@@ -39,7 +39,7 @@ window.addEventListener("load", () =>{
         if($('#list:visible') && done == true){
             done = false;
             $('#list').slideUp(1000, () => {
-                $('#hamburger').css("background-image", "url(images/hamburger.png)");
+                $('#hamburger').css("background-image", "url(img/hamburger.png)");
                 $('#hamburger').css("background-color", "transparent");
                 done = true;
             });
