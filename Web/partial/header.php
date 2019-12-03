@@ -26,11 +26,7 @@
             <link rel="stylesheet" href="css/galerie.css">
             <link rel="stylesheet" href="css/lightgallery.css">
             <script src="js/lightgallery.min.js"></script>
-            <script>
-                window.addEventListener("load", () => {
-                    lightGallery(document.getElementById('content'));
-                });
-            </script>
+            <script src="js/gallerie.js"></script>
             <?php
         }
         
