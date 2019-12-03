@@ -25,7 +25,7 @@
 						if(!file_exists($target_file)){
 							if($_FILES["photo"]["size"] < 1000000){
 								if($imageFileType == "jpg" || $imageFileType == "png" || $imageFileType == "jpeg" || $imageFileType == "gif" ){
-									if($this->error = move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file)){
+									if(move_uploaded_file($_FILES["photo"]["tmp_name"], $target_file)){
 										UserDAO::addGalleryImg($target_file, $_POST['title'], $_POST['description']);
 										header("location:galerie.php");
 										exit;
