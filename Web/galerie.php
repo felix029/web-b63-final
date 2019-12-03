@@ -41,12 +41,12 @@
 				<?php
 			}
 		?>
-			<form action="galerie.php" method="post" enctype="multipart/mixed">
+			<form action="galerie.php" method="POST" enctype="multipart/mixed">
 				<label>Choisir une photo</label>
 				<input type="file" name="photo">
 				<label>Titre</label>
 				<input type="text" name="title">
-				<textarea name="description"cols="30" rows="10" placeholder="Ajoutez une description à la photo..."></textarea>
+				<textarea name="description" cols="30" rows="10" placeholder="Ajoutez une description à la photo..."></textarea>
 				<button class="button">confirmer</button>
 			</form>
 		</div>
