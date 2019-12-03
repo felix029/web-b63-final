@@ -8,6 +8,10 @@
 ?>
 </div>
 
+<div id="reservation-mobile">
+	<h1>Cliquez ici pour réserver</h1>
+</div>
+
 <div id="reservation">
 		<?php
 		if($action->error == "MAIL_ERROR"){
@@ -35,20 +39,15 @@
 			<option value="Salle">Salle</option>
 			<option value="Traiteur">Traiteur</option>
 		</select>
-		<label>| </label>
-		<input type="text" name="fullname" placeholder="Nom complet...">
-		<label>| </label>
-		<input type="tel" name="tel" placeholder="Téléphone...">
-		<label>| </label>
-		<input type="email" name="email" placeholder="Courriel...">
-		<label>| </label>
-		<input type="number" name="nb" placeholder="Nombre de personnes...">
-		<label>| Date</label>
+		<input class="res-mobile" type="text" name="fullname" placeholder="Nom complet...">
+		<input class="res-mobile" type="tel" name="tel" placeholder="Téléphone...">
+		<input class="res-mobile" type="email" name="email" placeholder="Courriel...">
+		<input id="nb-pers" class="res-mobile" type="number" name="nb" placeholder="Nombre de personnes...">
+		<label>Date</label>
 		<input type="date" name="date">
-		<label>| Heure</label>
+		<label>Heure</label>
 		<input type="time" name="time">
-		<label>|</label>
-		<input type="submit" value="envoyer" name="reservation" id="btn-res">
+		<input class="res-mobile" type="submit" value="envoyer" name="reservation" id="btn-res">
 	</form>
 <!-- </div> -->
 <!-- La balise du div reservation sera fermée dans le footer -->

@@ -1,12 +1,100 @@
 @media screen and (max-width:1199px) and (orientation: portrait){
+    #content{
+        height: 67vh !important;
+    }
+    
+    #reservation-mobile{
+        position: fixed;
+        top: 93vh;
+        background-color: #f8c291;
+        color: #0c2461;
+        border: solid #a82103 3px;
+        text-align: center;
+        width: 90vw;
+        margin: 0 5vw 0 5vw;
+        z-index: 1000;
+    }
 
+    #reservation-mobile h1{
+        margin: 5px;
+        font-size: larger;
+        font-weight: 1200;
+    }
+    
+    #reservation{
+        display:none;
+        position: fixed;
+        top: 0;
+        
+        height: 520px;
+        width: calc(100% - 140px);
+        
+        margin: 5vh 50px 0 50px;
+        color: #0c2461;
+        
+        background-color: #f8c291;
+        border: solid #a82103 3px;
+        
+        padding: 20px;
+        
+        text-align: center;
+        
+        z-index: 500;
+    }
+
+    #reservation form{
+        margin-top: 1vh;
+        display: grid;
+        grid-template-columns: 25% 75%;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        align-items: center;
+    }
+
+    #nb-pers{
+        width: 100%;
+    }
+
+    .res-mobile{
+        grid-column: span 2;
+    }
+
+    #btn-res{
+        margin-top: 5px;
+        width: 75%;
+        height: 30px;
+        font-family: "above";
+        font-size: medium;
+        background-color: #0c2461;
+        color: #f8c291;
+        border: solid #a82103 3px;
+        justify-self: center;
+    }
 }
 
 @media screen and (max-width:1199px) and (orientation: landscape){
-    /* user */
+    #reservation{
+        position: fixed;
+        top: 65vh;
 
+        height: calc(calc(var(--vh, 1vh) * 25) - 40px);
+        width: calc(100% - 140px);
+
+        margin: 5vh 50px 0 50px;
+        color: #0c2461;
+
+        background-color: #f8c291;
+        border: solid #a82103 3px;
+
+        padding: 20px;
+
+        z-index: 200;
+    }
 }
 @media screen and (min-width:1200px){
+    #reservation-mobile{
+        display: none;
+    }
+    
     #reservation{
         position: fixed;
         top: 65vh;
@@ -48,5 +136,11 @@
         height: 30px;
         font-weight: bold;
         border: solid #a82103 3px;
+    }
+
+    select, input{
+        width: 8vw;
+        height: 3vh;
+        margin-right: 1vw;
     }
 }

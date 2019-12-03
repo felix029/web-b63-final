@@ -36,6 +36,7 @@
         if($_SESSION["page"] == "services.php"){
             ?>
                 <link rel="stylesheet" href="css/services.css">
+                <script src="js/services.js"></script>
             <?php
         }
         if($_SESSION["page"] == "contact.php"){
