@@ -8,7 +8,7 @@
 		}
 
 		protected function executeAction() {
-			$_SESSION["editable"] = true;
+			$_SESSION["editable"] = false;
 			$_SESSION["page"] = "galerie.php";
 		}
 	}
