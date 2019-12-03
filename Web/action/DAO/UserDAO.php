@@ -298,6 +298,32 @@
 			return $offer;
 		}
 
+		public static function getGallery(){
+			$connection = Connection::getConnection();
+			$sql = "SELECT * FROM gallery";
+
+			$photos = [];
+			foreach($connection->query($sql) as $row){
+				$photos[$row["id"]] = [ $row["img_url"], $row["img_desc"]];
+			}
+
+			return $photos;
+		}
+
+
+		public static function addGalleryImg($img_url, $img_desc){
+			$connection = Connection::getConnection();
+			$statement = $connection->prepare("INSERT INTO gallery(img_url, img_desc) VALUES (?, ?)");
+			$statement->bindParam(1, $img_url);
+			$statement->bindParam(2, $img_desc);
+			$statement->execute();
+		}
+
+		public static function deleteGalleryImg($img_url){
+			$connection = Connection::getConnection();
+			
+		}
+
 		public static function editJobOffer($id, $salary, $job_desc){
 			$connection = Connection::getConnection();
 			$statement = $connection->prepare("UPDATE offers SET salary = ?, job_desc = ? WHERE id = ?");
