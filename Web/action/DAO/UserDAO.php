@@ -304,7 +304,7 @@
 
 			$photos = [];
 			foreach($connection->query($sql) as $row){
-				$photos[$row["id"]] = [ $row["img_url"], $row["img_desc"]];
+				$photos[$row["id"]] = [ $row["img_url"], $row["img_title"], $row["img_desc"]];
 			}
 
 			return $photos;
@@ -321,7 +321,7 @@
 
 		public static function deleteGalleryImg($img_url){
 			$connection = Connection::getConnection();
-			
+
 		}
 
 		public static function editJobOffer($id, $salary, $job_desc){
