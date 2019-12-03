@@ -15,7 +15,7 @@
 
 			$this->photos = UserDAO::getGallery();
 
-			if( isset($_FILES["photo"]) && isset($_POST["title"]) && isset($_POST["description"]) ){
+			if( $_FILES["photo"]["size"] != 0 && isset($_POST["title"]) && isset($_POST["description"]) ){
 				try{
 					$target_dir = "img/galerie/";
 					$target_file = $target_dir . basename($_FILES["photo"]["name"]);
