@@ -16,7 +16,7 @@
             <link rel="stylesheet" href="css/lightgallery.css">
             <script src="js/lightgallery.min.js"></script>
             <script>
-                window.addEvenListener("load", () => {
+                window.addEventListener("load", () => {
                     lightGallery(document.getElementById('content'));
                 });
             </script>
