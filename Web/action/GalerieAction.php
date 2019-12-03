@@ -12,6 +12,6 @@
 			$_SESSION["editable"] = false;
 			$_SESSION["page"] = "galerie.php";
 
-			$this->photos = UserDAO::getGalleryImg();
+			$this->photos = UserDAO::getGallery();
 		}
 	}

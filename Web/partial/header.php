@@ -23,7 +23,7 @@
         }
         if($_SESSION["page"] == "galerie.php"){
             ?>
-            <link rel="stylesheet" href="galerie.css">
+            <link rel="stylesheet" href="css/galerie.css">
             <link rel="stylesheet" href="css/lightgallery.css">
             <script src="js/lightgallery.min.js"></script>
             <script>
