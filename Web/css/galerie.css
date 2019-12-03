@@ -3,12 +3,21 @@
 }
 
 
-@media screen and (max-width:1199px){
+@media screen and (max-width:1199px) and (orientation: portrait){
     /* user */
 
     a img{
         width: 80vw;
         height: 30vh;
+    }
+}
+
+@media screen and (max-width:1199px) and (orientation: landscape){
+    /* user */
+
+    a img{
+        width: 19vw;
+        height: 24vh;
     }
 }
 
