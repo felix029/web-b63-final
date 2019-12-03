@@ -195,7 +195,7 @@ Set the font-family content used for the HTML content.
     z-index: 100;
 }
 
-.content-normal::-webkit-scrollbar, .content-services::-webkit-scrollbar{
+#content::-webkit-scrollbar{
     display: none;
 }
 
