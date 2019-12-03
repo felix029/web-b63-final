@@ -44,4 +44,5 @@ Chaque utilisateur aura aussi la possibilité de modifier son mot de passe.
 ## Sources
 
 [**Quill**](https://github.com/quilljs/quill)
+
 [**lightgallery.js**](https://sachinchoolur.github.io/lightgallery.js/)
