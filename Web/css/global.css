@@ -1100,8 +1100,6 @@ Set the font-family content used for the HTML content.
         margin-top: 30px;
         font-size: medium;
         font-weight: bold;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     }
 
     #btn-res{
