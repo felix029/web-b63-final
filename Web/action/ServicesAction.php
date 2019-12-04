@@ -29,7 +29,7 @@
 				unset($_POST['fullname']);
 				unset($_POST['tel']);
 				unset($_POST['email']);
-				unset($_POST['number']);
+				unset($_POST['nb']);
 				unset($_POST['date']);
 				unset($_POST['time']);
 			}
