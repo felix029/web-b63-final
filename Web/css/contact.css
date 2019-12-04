@@ -13,6 +13,10 @@
         padding: 15px;
     }
 
+    iframe{
+        height: 60% !important;
+    }
+
     #location div, #contact div, #contact label{
         margin: 1vh 0 2vh 0;
         font-family: 'above';
