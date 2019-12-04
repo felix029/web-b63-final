@@ -25,9 +25,6 @@
 				unset($_POST['courriel']);
 				unset($_POST['message']);
 			}
-			else{
-				$this->error = "MISSING_FIELDS";
-			}
 
 		}
 	}
