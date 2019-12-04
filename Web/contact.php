@@ -24,6 +24,11 @@
 			<h1 class="error">Erreur lors de l'envoi</h1>
 			<?php
 		}
+		else if($action->error == "MISSING_FIELDS"){
+			?>
+			<h1 class="error">Remplissez tout les champs</h1>
+			<?php
+		}
 		else{
 			?>
 			<h1>Contactez-nous</h1>
