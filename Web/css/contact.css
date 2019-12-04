@@ -43,7 +43,7 @@
     #contact input{
         justify-self: left;
         align-self: center;
-        width: 180px;
+        width: 175px;
         height: 30px;
         margin-left: 30px;
     }
@@ -59,6 +59,7 @@
     }
 
     #contact button{
+        margin-top: 5px;
         grid-column: span 2;
         justify-self: center;
         align-self: center;
