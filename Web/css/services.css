@@ -100,7 +100,7 @@
         top: 5vh;
         
         height: 70vh;
-        width: calc(100% - 140px);
+        width: calc(100% - 100px);
         
         margin: 5vh 50px 0 50px;
         color: #0c2461;
@@ -118,9 +118,11 @@
     }
 
     #reservation form{
+        margin-top: 5px;
         display: grid;
         grid-template-columns: 25% 75%;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        align-items: center
     }
 
     #nb-pers{
@@ -140,6 +142,7 @@
         color: #f8c291;
         border: solid #a82103 3px;
         justify-self: center;
+        margin-top: 5px;
     }
 }
 
