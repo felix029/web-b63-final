@@ -1,6 +1,7 @@
 @media screen and (max-width:1199px) and (orientation: portrait){
     /* general */
     #container-team{
+        text-align: center;
         display: grid;
         grid-template-columns: 100%;
         row-gap: 20px;
@@ -9,7 +10,7 @@
     }
 
     .team-member{
-        width: 90%;
+        width: 94%;
         height: 50vh;
         display: grid;
         grid-template-columns: 100%;
@@ -64,7 +65,93 @@
 }
 
 @media screen and (max-width:1199px) and (orientation: landscape){
-    /* user */
+     /* general */
+     #container-team{
+        display: grid;
+        grid-template-columns: 100%;
+        row-gap: 20px;
+        position: relative;
+        margin-bottom: 100px;
+    }
+
+    .team-member{
+        width: 97%;
+        height: 60vh;
+        display: grid;
+        padding: 20px 5px 20px 5px;
+        border: solid #a82103 5px;
+        border-radius: 10px;
+        font-family: "above";
+    }
+
+    .team-photo{
+        width: 100%;
+        height: 100%;
+        background-size: 65%;
+        background-repeat: no-repeat;
+        background-position: center;
+        justify-self: center;
+        align-self: center;
+        grid-row: span 3;
+    }
+
+    .team-name{
+        font-weight: bolder;
+        justify-self: center;
+        align-self: flex-end;
+    }
+
+    .team-job{
+        font-weight: bold;
+        align-self: flex-start;
+        justify-self: center;
+    }
+
+    .team-bio{
+        justify-self: center;
+        width: 95%;
+        height: 90%;
+        overflow-y: scroll;
+    }
+
+    /* odd div */
+    [id^=team]:nth-child(odd){
+        grid-template-columns: 35% 55%;
+        grid-template-rows: 20% 20% 60%;
+        background-color: #0c2461;
+        color: #f8c291;
+    }
+
+    /* even div */
+    [id^=team]:nth-child(even){
+        grid-template-columns: 55% 35%;
+        grid-template-rows: 20% 20% 60%;
+        background-color: #f8c291;
+        color: #0c2461;
+    }
+
+    [id^=team]:nth-child(even) .team-photo{
+        grid-column: 2;
+        justify-self: right !important;
+    }
+
+    [id^=team]:nth-child(even) .team-name, [id^=team]:nth-child(even) .team-job, [id^=team]:nth-child(even) .team-bio{
+        grid-column: 1;
+    }
+
+    [id^=team]:nth-child(even) .team-name{
+        grid-row: 1;
+    }
+
+    [id^=team]:nth-child(even) .team-job{
+        grid-row: 2;
+    }
+
+    [id^=team]:nth-child(even) .team-bio{
+        grid-row: 3;
+    }
+
+
 
 }
 

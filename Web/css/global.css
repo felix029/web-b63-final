@@ -214,6 +214,11 @@ Set the font-family content used for the HTML content.
 
 @media screen and (max-width:1199px){
 
+    #content{
+        width: calc(100% - 50px) !important;
+        margin: 5vh 25px 0 25px !important;
+    }
+
     /* HEADER */
     #admin-bar{
         display: none;
