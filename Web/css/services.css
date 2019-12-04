@@ -127,6 +127,11 @@
 
     input{
         width: 75%;
+        justify-self: center;
+    }
+
+    select{
+        width: 75%;
     }
 
     .res-mobile{
