@@ -12,7 +12,7 @@
 			$_SESSION["editable"] = true;
 			$_SESSION["page"] = "services.php";
 
-			if(isset($_POST['reservation'])){
+			if(isset($_POST['reservation']) && $_POST['type'] != "none"){
 				$subject = $_POST['type'] . " reservation on DKoncept.com";
 				$headers = "From: " . $_POST['fullname'] . " <" . DK_MAIL .">\r\n";
 				$headers .= "Reply-To: " . $_POST['email'] . "\r\n";

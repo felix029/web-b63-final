@@ -11,7 +11,7 @@
 			$_SESSION["editable"] = false;
 			$_SESSION["page"] = "contact.php";
 
-			if(isset($_POST['prenom']) && isset($_POST['nom']) && isset($_POST['courriel']) && isset($_POST['message'])){
+			if(!empty($_POST['prenom']) && !empty($_POST['nom']) && !empty($_POST['courriel']) && !empty($_POST['message'])){
 				$subject = "Message from DKoncept.com";
 				$headers = "From: " . $_POST['prenom'] . " " . $_POST['nom'] . " <" . DK_MAIL .">\r\n";
 				$headers .= "Reply-To: " . $_POST['courriel'] . "\r\n";
