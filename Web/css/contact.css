@@ -3,7 +3,7 @@
         display: grid;
         grid-template-columns: 100%;
         grid-template-rows: 1fr 1fr;
-        column-gap: 20px;
+        column-gap: 0.5fr;
     }
 
     #location{
