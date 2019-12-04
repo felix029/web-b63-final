@@ -108,7 +108,7 @@
         background-color: #f8c291;
         border: solid #a82103 3px;
         
-        padding: 20px;
+        padding: 10px;
         
         text-align: center;
         
@@ -116,7 +116,6 @@
     }
 
     #reservation form{
-        margin-top: 1vh;
         display: grid;
         grid-template-columns: 25% 75%;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
