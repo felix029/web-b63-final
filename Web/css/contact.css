@@ -55,7 +55,8 @@
     #contact textarea{
         grid-column: span 2;
         padding: 10px;
-        width: 80%;
+        width: 85%;
+        align-self: center;
     }
 
     #contact button{
