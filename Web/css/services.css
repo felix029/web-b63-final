@@ -125,8 +125,8 @@
         align-items: center
     }
 
-    #nb-pers{
-        width: 100%;
+    input{
+        width: 75%;
     }
 
     .res-mobile{
@@ -142,7 +142,7 @@
         color: #f8c291;
         border: solid #a82103 3px;
         justify-self: center;
-        margin-top: 5px;
+        margin: 5px 0 5px 0;
     }
 }
 
