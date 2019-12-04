@@ -21,7 +21,7 @@
     #location div, #contact div, #contact label{
         margin: 1vh 0 2vh 0;
         font-family: 'above';
-        font-size: larger;
+        font-size: large;
     }
 
     #contact{
@@ -34,12 +34,13 @@
         display: grid;
         grid-template-columns: 25% 75%;
         grid-template-rows: 0.5fr 0.5fr 0.5fr 4fr 0.5fr;
+        column-gap: 10px;
     }
 
     #contact input{
         justify-self: left;
         align-self: center;
-        width: 200px;
+        width: 180px;
         height: 30px;
     }
 
