@@ -32,7 +32,7 @@
 
     #contact form{
         display: grid;
-        grid-template-columns: 15% 85%;
+        grid-template-columns: 25% 75%;
         grid-template-rows: 0.5fr 0.5fr 0.5fr 4fr 0.5fr;
     }
 
@@ -56,6 +56,18 @@
         grid-column: span 2;
         justify-self: center;
         align-self: center;
+    }
+
+    .button{
+        margin-top: 5px;
+        width: 75%;
+        height: 30px;
+        font-family: "above";
+        font-size: medium;
+        background-color: #0c2461;
+        color: #f8c291;
+        border: solid #a82103 3px;
+        justify-self: center;
     }
 }
 
