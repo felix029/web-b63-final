@@ -78,7 +78,7 @@
     
     #reservation-mobile{
         position: fixed;
-        top: 93vh;
+        top: 90vh;
         background-color: #f8c291;
         color: #0c2461;
         border: solid #a82103 3px;
@@ -99,7 +99,7 @@
         position: fixed;
         top: 0;
         
-        height: 520px;
+        height: 400px;
         width: calc(100% - 140px);
         
         margin: 5vh 50px 0 50px;
