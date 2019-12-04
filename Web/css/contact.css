@@ -13,6 +13,10 @@
         padding: 15px;
     }
 
+    #location h1{
+        font-size: large;
+    }
+
     iframe{
         margin-top: 2vh;
         height: 60% !important;
@@ -34,7 +38,7 @@
         display: grid;
         grid-template-columns: 25% 75%;
         grid-template-rows: 0.5fr 0.5fr 0.5fr 4fr 0.5fr;
-        column-gap: 10px;
+        column-gap: 30px;
     }
 
     #contact input{
