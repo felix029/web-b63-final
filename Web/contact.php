@@ -46,7 +46,7 @@
 			<label>Courriel</label>
 			<input type="email" name="courriel" id="" placeholder="Entrez votre courriel...">
 			<textarea name="message" id="message" cols="30" rows="15" placeholder="Votre message ici..."></textarea>
-			<button class="button">envoyer</button>
+			<button class="button" name="submit">envoyer</button>
 		</form>
 	</div>
 
