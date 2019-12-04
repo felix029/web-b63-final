@@ -126,12 +126,14 @@
     }
 
     input{
-        width: 75%;
+        width: 80%;
+        height: 30px;
         justify-self: center;
     }
 
     select{
-        width: 75%;
+        width: 80%;
+        height: 30px;
     }
 
     .res-mobile{
