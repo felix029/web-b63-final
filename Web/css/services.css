@@ -96,8 +96,8 @@
     
     #reservation{
         display:none;
-        position: fixed;
-        top: 0;
+        position: absolute;
+        top: 5vh;
         
         height: 70vh;
         width: calc(100% - 140px);
@@ -111,6 +111,8 @@
         padding: 10px;
         
         text-align: center;
+
+        overflow-y:scroll;
         
         z-index: 500;
     }
