@@ -217,7 +217,7 @@ Set the font-family content used for the HTML content.
     #content{
         width: calc(100% - 50px) !important;
         margin: 5vh 25px 0 25px !important;
-        font-weight: 1em !important;
+        font-size: 1em !important;
     }
 
     /* HEADER */
