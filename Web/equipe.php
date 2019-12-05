@@ -32,7 +32,7 @@
 							}
 							else if($action->error == "FILE_TOO_LARGE_NEW"){
 								?>
-								<h1 class="error">Le fichier est trop large (500MB max.)</h1>
+								<h1 class="error">Le fichier est trop large (1000MB max.)</h1>
 								<?php
 							}
 							else if($action->error == "FILE_TYPE_BAD_NEW"){

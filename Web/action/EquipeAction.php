@@ -28,7 +28,7 @@
 					$check = getimagesize($_FILES["newphoto"]["tmp_name"]);
 					if($check !== false){
 						if(!file_exists($target_file)){
-							if($_FILES["newphoto"]["size"] < 500000){
+							if($_FILES["newphoto"]["size"] < 1000000){
 								if($imageFileType == "jpg" || $imageFileType == "png" || $imageFileType == "jpeg" || $imageFileType == "gif" ){
 									if($this->error = move_uploaded_file($_FILES["newphoto"]["tmp_name"], $target_file)){
 										UserDAO::newTeamMember($_POST["newfullname"], $_POST["newjob"], $_POST["newbio"], $target_file);
