@@ -15,6 +15,11 @@
 					<h2 class="error">Les MDP entrés sont différents.</h2>
 				<?php
 			}
+			if($action->error === "PWD_TOO_SHORT"){
+				?>
+					<h2 class="error">Le MDP est trop court. (8 caractères min.)</h2>
+				<?php
+			}
 			else{
 				?>
 					<h2>changer votre mot de passe</h2>
@@ -38,6 +43,11 @@ if($action->isAdmin()){
 					if($action->error === "USER_UNIQUE"){
 					?>
 						<h2 class="error">Cet utilisateur existe déjà.</h2>
+					<?php
+					}
+					if($action->error === "USER_PWD_TOO_SHORT"){
+					?>
+						<h2 class="error">Le MDP est trop court. (8 caractères min.)</h2>
 					<?php
 					}
 					else{
