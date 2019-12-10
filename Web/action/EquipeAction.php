@@ -89,9 +89,9 @@
 						if($check !== false){
 							if($_FILES["editphoto"]["size"] < 500000){
 								if($imageFileType == "jpg" || $imageFileType == "png" || $imageFileType == "jpeg" || $imageFileType == "gif" ){
-									if(file_exists($target_file)){
-										unlink($target_file);
-									}
+									// if(file_exists($target_file)){
+									// 	unlink($target_file);
+									// }
 									if(move_uploaded_file($_FILES["editphoto"]["tmp_name"], $target_file)){
 										UserDAO::editMemberPhoto($_POST["editname"], $target_file);
 									}
