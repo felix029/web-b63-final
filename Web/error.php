@@ -16,7 +16,7 @@
 			}
 			else if ($_GET["code"] == 404) {
 				?>
-				Page non trouvée
+				La page que vous tentez d'accéder n'a pas été trouvée
 				<?php
 			}
 			else if ($_GET["code"] == 500) {
@@ -26,5 +26,6 @@
 			}
 		?>
 	</h1>
+
 <?php
 	require_once("partial/footer.php");
