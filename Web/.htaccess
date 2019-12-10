@@ -1,0 +1,8 @@
+# Accès reffusé
+ErrorDocument 403 http://localhost/error.php?code=403
+
+# Page inexistante
+ErrorDocument 404 http://localhost/error.php?code=404
+
+# erreur interne
+ErrorDocument 500 http://localhost/error.php?code=500
